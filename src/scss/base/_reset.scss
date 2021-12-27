@@ -1,19 +1,34 @@
 // sass-lint:disable-all
 
 * {
-   box-sizing: border-box;
-   margin: 0;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: $font-main;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 55%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  font-weight: 400;
+  font-family: $font-main;
 }
 
 h1 {
-   margin: 0;
+  margin: 0;
 }
 
 a {
-   color: inherit;
-   text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button,
@@ -21,32 +36,32 @@ input,
 select,
 textarea,
 fieldset {
-   background-color: transparent;
-   border: 0;
+  background-color: transparent;
+  border: 0;
 
-   &:focus {
-      outline: none;
-      box-shadow: none;
-   }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 a,
 button {
-   cursor: pointer;
+  cursor: pointer;
 }
 
 button {
-   padding: 0;
+  padding: 0;
 }
 
 ul,
 ol {
-   padding-left: 0;
-   list-style: none;
+  padding-left: 0;
+  list-style: none;
 }
 
 img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

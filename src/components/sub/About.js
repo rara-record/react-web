@@ -1,24 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Department() {
+function About() {
   return (
     <>
-      <section className="content department">
+      <section className="content about">
         <div className="sub-visual">
           <div className="sub-visual__content">
             <h1 className="sub-visual__content-h1">About Us</h1>
             <div className="sub-visual__content-links">
-              <a href="">Home</a>
+              <Link to="/">Home</Link>
               <span className="sub-visual__content-span"></span>
-              <a href="">About Us</a>
+              <Link to="/about">About Us</Link>
             </div>
           </div>
         </div>
 
-        <div className="about">
+        <div className="contents">
           <div className="inner">
             <h2>Who we are?</h2>
-            <div className="about__text">
+            <div className="text">
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
                 reprehenderit unde hic vitae non libero magni quo soluta
@@ -37,4 +38,4 @@ function Department() {
   )
 }
 
-export default Department
+export default About

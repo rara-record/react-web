@@ -3,24 +3,20 @@ import './css/style.css'
 import Header from './components/common/Header.js'
 import Footer from './components/common/Footer.js'
 import Main from './components/main/Main.js'
-import Department from './components/sub/Department.js'
-import Board from './components/sub/Board.js'
-import Gallery from './components/sub/Gallery.js'
-import Location from './components/sub/Location.js'
-import Membership from './components/sub/Membership.js'
+import About from './components/sub/About.js'
 import Youtube from './components/sub/Youtube.js'
+import Gallery from './components/sub/Gallery.js'
+import Contact from './components/sub/Contact.js'
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Route exact path="/" component={Main}></Route>
-      <Route exact path="/department" component={Department}></Route>
-      <Route exact path="/board" component={Board}></Route>
-      <Route exact path="/gallery" component={Gallery}></Route>
+      <Route exact path="/about" component={About}></Route>
       <Route exact path="/youtube" component={Youtube}></Route>
-      <Route exact path="/location" component={Location}></Route>
-      <Route exact path="/membership" component={Membership}></Route>
+      <Route exact path="/gallery" component={Gallery}></Route>
+      <Route exact path="/contact" component={Contact}></Route>
       <Footer />
     </div>
   )

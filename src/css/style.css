@@ -306,8 +306,20 @@ template {
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Oswald", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+html {
+  font-size: 62.5%; }
+  @media screen and (max-width: 1199px) {
+    html {
+      font-size: 55%; } }
+
+body {
+  overflow-x: hidden;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif; }
 
 h1 {
   margin: 0; }
@@ -348,10 +360,6 @@ img {
   height: 100%;
   object-fit: cover; }
 
-body {
-  overflow-x: hidden;
-  font-weight: 400; }
-
 .wrap {
   display: block;
   clear: both;
@@ -374,7 +382,7 @@ body {
     color: black !important; }
 
 .transparent {
-  background: #333; }
+  background: #0c0c0c; }
   .transparent a {
     color: white; }
 
@@ -389,64 +397,64 @@ body {
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important; }
 
-@media screen and (min-width: 768px) {
-  .sm-only {
-    display: none !important; } }
-
-@media screen and (max-width: 767px) {
-  .md-only {
-    display: none !important; } }
-
-@media screen and (min-width: 1200px) {
-  .md-only {
-    display: none !important; } }
-
-@media screen and (max-width: 1199px) {
-  .lg-only {
-    display: none !important; } }
-
-@media screen and (max-width: 767px) {
-  .sm-hidden {
-    display: none !important; } }
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .md-hidden {
-    display: none !important; } }
-
-@media screen and (min-width: 1200px) {
-  .lg-hidden {
-    display: none !important; } }
-
 .content .inner h1 {
   margin-bottom: 30px;
   color: #333;
   font: normal 30px/1 'arial'; }
+
+htmle {
+  font-size: 62.5%; }
 
 header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 100px;
-  background: #333;
+  background: #0c0c0c;
   transition: 0.5s; }
-  header h1 {
+  header .logo {
     position: absolute;
-    bottom: 20px;
-    left: 0; }
-    header h1 a {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4.5rem; }
+    header .logo a {
       color: #fff;
-      font: bold 24px/1 'arial'; }
-  header #gnb {
+      font: bold 5rem/1 "Playfair Display", serif; }
+  header #gnb-desktop {
     position: absolute;
-    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4.5rem;
     bottom: 0; }
-    header #gnb li {
+    header #gnb-desktop li {
       float: left; }
-      header #gnb li a {
+      header #gnb-desktop li a {
         display: inline-block;
-        padding: 22px 30px;
+        padding: 2.2rem 3rem;
         color: #fff;
-        font: 14px/1 'arial'; }
+        font: 1.5rem/1 "Oswald", sans-serif;
+        letter-spacing: 1.1px;
+        text-transform: uppercase; }
+  header .menu__bars {
+    display: none; }
+  @media screen and (max-width: 1199px) {
+    header .logo {
+      left: 2rem; }
+      header .logo a {
+        color: #fff;
+        font: bold 5rem/1 "Playfair Display", serif; }
+    header #gnb-desktop {
+      display: none !important; }
+    header .menu__bars {
+      right: 2rem;
+      display: block;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+      header .menu__bars i {
+        font-size: 2.5rem; } }
 
 footer {
   width: 100%;
@@ -459,107 +467,142 @@ footer {
       font: 12px/1 'arial';
       text-align: center; }
 
-html {
-  font-size: 62.5%; }
+.visual {
+  width: 100%;
+  height: 100vh;
+  max-height: 1100px;
+  background-color: #0c0c0c; }
+  .visual .slider__wrapper {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    margin-left: 10rem;
+    overflow: hidden; }
+    .visual .slider__wrapper .slider {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      height: 100%;
+      margin-right: 46.5rem; }
+      .visual .slider__wrapper .slider__item {
+        position: relative; }
+        .visual .slider__wrapper .slider__item__pic {
+          width: 100%;
+          height: 60rem; }
+        .visual .slider__wrapper .slider__item__text {
+          position: absolute;
+          top: 10%;
+          right: -39.5%;
+          display: inline-block;
+          width: 53%; }
+          .visual .slider__wrapper .slider__item__text a {
+            color: white;
+            font: normal 10rem/1.1em "Oswald", sans-serif;
+            letter-spacing: 10.2px;
+            text-transform: uppercase; }
+  .visual .button__wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+    .visual .button__wrapper button {
+      color: #fff;
+      font-size: 50px; }
 
-#visual {
+.project {
   width: 100%;
   height: 100%;
   padding: 120px 0; }
-  #visual .wrap .top {
+  .project .wrap .top {
     position: relative;
     padding: 2.5rem 0;
     border-bottom: 1px solid #000; }
-    #visual .wrap .top .title {
+    .project .wrap .top .title {
       display: flex;
       flex-wrap: wrap; }
-      #visual .wrap .top .title > div {
+      .project .wrap .top .title > div {
         margin-bottom: 2.5rem;
         padding-right: 5rem; }
-        #visual .wrap .top .title > div span {
+        .project .wrap .top .title > div span {
           display: block;
           font: normal 1.6rem/1.5 'Oswald';
           letter-spacing: 0.05px;
           text-align: right; }
-        #visual .wrap .top .title > div .num {
+        .project .wrap .top .title > div .num {
           font: normal 2rem/1.5 'Oswald'; }
-      #visual .wrap .top .title h1 {
+      .project .wrap .top .title h1 {
         position: relative;
         color: #000;
         font: 600 5rem/1.2 'Playfair Display';
         letter-spacing: 1px;
         transform: translateY(-11px); }
-    #visual .wrap .top .link {
+    .project .wrap .top .link {
       position: absolute;
       right: 0;
       bottom: 1rem;
       font: normal 1.4rem/1 'Oswald';
       letter-spacing: 2px;
       text-transform: uppercase; }
-      #visual .wrap .top .link i {
+      .project .wrap .top .link i {
         padding-left: 1.5rem; }
-  #visual .wrap .contents {
+  .project .wrap .contents {
     width: 100%;
     height: 100%; }
-    #visual .wrap .contents .left {
+    .project .wrap .contents .left {
       float: left;
       width: calc(100% - 80%);
       height: calc(300px + 4rem);
       padding: 5rem 0;
       border-right: 1px solid #000; }
-      #visual .wrap .contents .left article {
+      .project .wrap .contents .left article {
         padding-bottom: 2.5rem;
         letter-spacing: 0.5px; }
-        #visual .wrap .contents .left article h3 {
+        .project .wrap .contents .left article h3 {
           font: normal 1.6rem/1.5 'Oswald'; }
-        #visual .wrap .contents .left article p {
+        .project .wrap .contents .left article p {
           color: #707070;
           font: normal 1.4rem/1.5 'Oswald'; }
-        #visual .wrap .contents .left article:last-child {
+        .project .wrap .contents .left article:last-child {
           padding-bottom: 0; }
-    #visual .wrap .contents .right {
+    .project .wrap .contents .right {
       float: right;
       width: calc(100% - 20%);
       padding: 4rem;
       padding-right: 0; }
-      #visual .wrap .contents .right > article {
+      .project .wrap .contents .right > article {
         float: left;
         width: calc((100% / 3) - 2.7rem);
         margin-right: 4rem; }
-        #visual .wrap .contents .right > article:last-of-type {
+        .project .wrap .contents .right > article:last-of-type {
           margin-right: 0; }
-        #visual .wrap .contents .right > article::after {
+        .project .wrap .contents .right > article::after {
           display: block;
           clear: both;
           content: ''; }
-      #visual .wrap .contents .right .pic {
+      .project .wrap .contents .right .pic {
         height: 300px;
         margin-bottom: 3.5rem; }
-      #visual .wrap .contents .right span {
+      .project .wrap .contents .right span {
         display: block;
         padding: 0.5rem 0;
         font: normal 1.6rem/1 'Oswald';
         letter-spacing: 0.5px; }
-      #visual .wrap .contents .right .num {
+      .project .wrap .contents .right .num {
         color: #707070;
         font: normal 1.2rem/1 'Oswald';
         letter-spacing: 1px; }
-      #visual .wrap .contents .right::after {
+      .project .wrap .contents .right::after {
         display: block;
         clear: both;
         content: ''; }
-    #visual .wrap .contents::after {
+    .project .wrap .contents::after {
       display: block;
       clear: both;
       content: ''; }
 
-html {
-  font-size: 62.5%; }
-
-.department {
+.about {
   width: 100%;
   height: 100%; }
-  .department .sub-visual {
+  .about .sub-visual {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -572,34 +615,34 @@ html {
     background-size: cover;
     background-attachment: fixed;
     background-blend-mode: overlay; }
-    .department .sub-visual__content {
+    .about .sub-visual__content {
       text-align: center; }
-      .department .sub-visual__content-links a {
+      .about .sub-visual__content-links a {
         margin-left: 1rem;
         color: white;
         font-size: 1.7rem; }
-      .department .sub-visual__content-span {
+      .about .sub-visual__content-span {
         display: inline-block;
         width: 0.2rem;
         height: 1.5rem;
         margin-left: 1.5rem;
         background-color: white;
         transform: rotate(10deg); }
-    .department .sub-visual__content-h1 {
+    .about .sub-visual__content-h1 {
       margin-bottom: 2rem;
       font-weight: 600;
       font-size: 7.5rem; }
-  .department .about {
+  .about .contents {
     width: 100%;
     padding: 12rem 0; }
-    .department .about .inner {
+    .about .contents .inner {
       display: flex;
       flex-wrap: wrap; }
-    .department .about h2 {
+    .about .contents h2 {
       width: 30%;
       font-weight: 600;
       font-size: 3rem; }
-    .department .about__text {
+    .about .contents text {
       width: 70%;
       color: #777;
       font-weight: 300;

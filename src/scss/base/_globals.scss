@@ -1,8 +1,3 @@
-body {
-  overflow-x: hidden;
-  font-weight: 400;
-}
-
 .wrap {
   display: block;
   clear: both;
@@ -30,7 +25,7 @@ body {
 }
 
 .transparent {
-  background: #333;
+  background: #0c0c0c;
 
   & a {
     color: $white;
@@ -47,57 +42,4 @@ body {
   white-space: nowrap !important;
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important;
-}
-
-// 모바일에서만 보임
-.sm-only {
-  // 768 부터는 보이지 말것
-  @media screen and (min-width: $md-breakpoint) {
-    display: none !important;
-  }
-}
-
-// 테블릿에서만 보임
-.md-only {
-  // 767 까지 보이지 말것
-  @media screen and (max-width: $md-breakpoint - 1) {
-    display: none !important;
-  }
-
-  // 1200 부터 보이지 말것
-  @media screen and (min-width: $lg-breakpoint) {
-    display: none !important;
-  }
-}
-
-// 데스크탑에서만 보임
-.lg-only {
-  // 1199까지 보이지 말것
-  @media screen and (max-width: $lg-breakpoint - 1) {
-    display: none !important;
-  }
-}
-
-// 모바일에서만 안보임
-.sm-hidden {
-  // 767까지는 안보임
-  @media screen and (max-width: $md-breakpoint - 1) {
-    display: none !important;
-  }
-}
-
-// 테블릿에서만 안보임
-.md-hidden {
-  // 768 ~ 1199 까지 안보임
-  @media screen and (min-width: $md-breakpoint) and (max-width: $lg-breakpoint - 1) {
-    display: none !important;
-  }
-}
-
-// 데스크탑에서만 안보임
-.lg-hidden {
-  // 1200부터 안보임
-  @media screen and (min-width: $lg-breakpoint) {
-    display: none !important;
-  }
 }
