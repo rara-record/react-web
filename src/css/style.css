@@ -352,6 +352,32 @@ body {
   overflow-x: hidden;
   font-weight: 400; }
 
+.wrap {
+  display: block;
+  clear: both;
+  content: ''; }
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px; }
+  @media screen and (min-width: 1200px) {
+    .inner {
+      max-width: 1180px;
+      padding: 0; } }
+
+.whiteBg {
+  background: white !important; }
+  .whiteBg a {
+    color: black !important; }
+
+.transparent {
+  background: #333; }
+  .transparent a {
+    color: white; }
+
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -391,58 +417,193 @@ body {
   .lg-hidden {
     display: none !important; } }
 
-.content {
-  padding: 150px 0; }
-  .content .inner {
-    width: 1180px;
-    margin: 0 auto; }
-    .content .inner h1 {
-      margin-bottom: 30px;
-      color: #333;
-      font: normal 30px/1 'arial'; }
+.content .inner h1 {
+  margin-bottom: 30px;
+  color: #333;
+  font: normal 30px/1 'arial'; }
 
 header {
+  position: fixed;
+  top: 0;
   width: 100%;
-  background: #333; }
-  header .inner {
-    position: relative;
-    width: 1180px;
-    height: 100px;
-    margin: 0 auto; }
-    header .inner h1 {
-      position: absolute;
-      bottom: 20px;
-      left: 0; }
-      header .inner h1 a {
+  height: 100px;
+  background: #333;
+  transition: 0.5s; }
+  header h1 {
+    position: absolute;
+    bottom: 20px;
+    left: 0; }
+    header h1 a {
+      color: #fff;
+      font: bold 24px/1 'arial'; }
+  header #gnb {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+    header #gnb li {
+      float: left; }
+      header #gnb li a {
+        display: inline-block;
+        padding: 22px 30px;
         color: #fff;
-        font: bold 24px/1 'arial'; }
-    header .inner #gnb {
-      position: absolute;
-      right: 0;
-      bottom: 0; }
-      header .inner #gnb li {
-        float: left; }
-        header .inner #gnb li a {
-          display: inline-block;
-          padding: 22px 30px;
-          color: #fff;
-          font: 14px/1 'arial'; }
+        font: 14px/1 'arial'; }
 
 footer {
   width: 100%;
   padding: 50px 0px;
   border-top: 1px solid #ddd; }
   footer .inner {
-    width: 1180px;
-    margin: 0px auto;
     text-align: center; }
     footer .inner p {
       color: #888;
       font: 12px/1 'arial';
       text-align: center; }
 
+html {
+  font-size: 62.5%; }
+
 #visual {
   width: 100%;
+  height: 100%;
+  padding: 120px 0; }
+  #visual .wrap .top {
+    position: relative;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #000; }
+    #visual .wrap .top .title {
+      display: flex;
+      flex-wrap: wrap; }
+      #visual .wrap .top .title > div {
+        margin-bottom: 2.5rem;
+        padding-right: 5rem; }
+        #visual .wrap .top .title > div span {
+          display: block;
+          font: normal 1.6rem/1.5 'Oswald';
+          letter-spacing: 0.05px;
+          text-align: right; }
+        #visual .wrap .top .title > div .num {
+          font: normal 2rem/1.5 'Oswald'; }
+      #visual .wrap .top .title h1 {
+        position: relative;
+        color: #000;
+        font: 600 5rem/1.2 'Playfair Display';
+        letter-spacing: 1px;
+        transform: translateY(-11px); }
+    #visual .wrap .top .link {
+      position: absolute;
+      right: 0;
+      bottom: 1rem;
+      font: normal 1.4rem/1 'Oswald';
+      letter-spacing: 2px;
+      text-transform: uppercase; }
+      #visual .wrap .top .link i {
+        padding-left: 1.5rem; }
+  #visual .wrap .contents {
+    width: 100%;
+    height: 100%; }
+    #visual .wrap .contents .left {
+      float: left;
+      width: calc(100% - 80%);
+      height: calc(300px + 4rem);
+      padding: 5rem 0;
+      border-right: 1px solid #000; }
+      #visual .wrap .contents .left article {
+        padding-bottom: 2.5rem;
+        letter-spacing: 0.5px; }
+        #visual .wrap .contents .left article h3 {
+          font: normal 1.6rem/1.5 'Oswald'; }
+        #visual .wrap .contents .left article p {
+          color: #707070;
+          font: normal 1.4rem/1.5 'Oswald'; }
+        #visual .wrap .contents .left article:last-child {
+          padding-bottom: 0; }
+    #visual .wrap .contents .right {
+      float: right;
+      width: calc(100% - 20%);
+      padding: 4rem;
+      padding-right: 0; }
+      #visual .wrap .contents .right > article {
+        float: left;
+        width: calc((100% / 3) - 2.7rem);
+        margin-right: 4rem; }
+        #visual .wrap .contents .right > article:last-of-type {
+          margin-right: 0; }
+        #visual .wrap .contents .right > article::after {
+          display: block;
+          clear: both;
+          content: ''; }
+      #visual .wrap .contents .right .pic {
+        height: 300px;
+        margin-bottom: 3.5rem; }
+      #visual .wrap .contents .right span {
+        display: block;
+        padding: 0.5rem 0;
+        font: normal 1.6rem/1 'Oswald';
+        letter-spacing: 0.5px; }
+      #visual .wrap .contents .right .num {
+        color: #707070;
+        font: normal 1.2rem/1 'Oswald';
+        letter-spacing: 1px; }
+      #visual .wrap .contents .right::after {
+        display: block;
+        clear: both;
+        content: ''; }
+    #visual .wrap .contents::after {
+      display: block;
+      clear: both;
+      content: ''; }
+
+html {
+  font-size: 62.5%; }
+
+.department {
+  width: 100%;
   height: 100%; }
+  .department .sub-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 75vh;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url("/public/img/about-img-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: overlay; }
+    .department .sub-visual__content {
+      text-align: center; }
+      .department .sub-visual__content-links a {
+        margin-left: 1rem;
+        color: white;
+        font-size: 1.7rem; }
+      .department .sub-visual__content-span {
+        display: inline-block;
+        width: 0.2rem;
+        height: 1.5rem;
+        margin-left: 1.5rem;
+        background-color: white;
+        transform: rotate(10deg); }
+    .department .sub-visual__content-h1 {
+      margin-bottom: 2rem;
+      font-weight: 600;
+      font-size: 7.5rem; }
+  .department .about {
+    width: 100%;
+    padding: 12rem 0; }
+    .department .about .inner {
+      display: flex;
+      flex-wrap: wrap; }
+    .department .about h2 {
+      width: 30%;
+      font-weight: 600;
+      font-size: 3rem; }
+    .department .about__text {
+      width: 70%;
+      color: #777;
+      font-weight: 300;
+      font-size: 1.5rem;
+      line-height: 2; }
 
 /*# sourceMappingURL=style.css.map */

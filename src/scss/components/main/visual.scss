@@ -1,0 +1,143 @@
+html {
+  font-size: 62.5%;
+}
+
+#visual {
+  width: 100%;
+  height: 100%;
+  padding: 120px 0;
+
+  .wrap {
+    .top {
+      position: relative;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid #000;
+
+      .title {
+        display: flex;
+        flex-wrap: wrap;
+
+        > div {
+          margin-bottom: 2.5rem;
+          padding-right: 5rem;
+
+          span {
+            display: block;
+            font: normal 1.6rem/1.5 'Oswald';
+            letter-spacing: 0.05px;
+            text-align: right;
+          }
+
+          .num {
+            font: normal 2rem/1.5 'Oswald';
+          }
+        }
+
+        h1 {
+          position: relative;
+          color: #000;
+          font: 600 5rem/1.2 'Playfair Display';
+          letter-spacing: 1px;
+          transform: translateY(-11px);
+        }
+      }
+
+      .link {
+        position: absolute;
+        right: 0;
+        bottom: 1rem;
+        font: normal 1.4rem/1 'Oswald';
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        i {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+
+    .contents {
+      width: 100%;
+      height: 100%;
+
+      .left {
+        float: left;
+        width: calc(100% - 80%);
+        height: calc(300px + 4rem);
+        padding: 5rem 0;
+        border-right: 1px solid #000;
+
+        article {
+          padding-bottom: 2.5rem;
+          letter-spacing: 0.5px;
+
+          h3 {
+            font: normal 1.6rem/1.5 'Oswald';
+          }
+
+          p {
+            color: #707070;
+            font: normal 1.4rem/1.5 'Oswald';
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      .right {
+        float: right;
+        width: calc(100% - 20%);
+        padding: 4rem;
+        padding-right: 0;
+
+        > article {
+          float: left;
+          width: calc((100% / 3) - 2.7rem);
+          margin-right: 4rem;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+
+          &::after {
+            display: block;
+            clear: both;
+            content: '';
+          }
+        }
+
+        .pic {
+          height: 300px;
+          margin-bottom: 3.5rem;
+        }
+
+        span {
+          display: block;
+          padding: 0.5rem 0;
+          font: normal 1.6rem/1 'Oswald';
+          letter-spacing: 0.5px;
+        }
+
+        .num {
+          color: #707070;
+          font: normal 1.2rem/1 'Oswald';
+          letter-spacing: 1px;
+        }
+
+        &::after {
+          display: block;
+          clear: both;
+          content: '';
+        }
+      }
+
+      &::after {
+        display: block;
+        clear: both;
+        content: '';
+      }
+    }
+  }
+}

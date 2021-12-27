@@ -1,10 +1,19 @@
+import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 function Header() {
   const active = { color: 'aqua' }
+  const [state, setstate] = useState(false)
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleScroll = () => {
+    window.scrollY > 120 ? setstate(true) : setstate(false)
+  }
 
   return (
-    <header>
+    <header className={`header ${state ? 'whiteBg' : 'transparent'}`}>
       <div className="inner">
         <h1>
           <NavLink exact to="/">
@@ -12,7 +21,7 @@ function Header() {
           </NavLink>
         </h1>
 
-        <ul id="gnb">
+        <ul id="gnb" className="lg-only">
           <li>
             <NavLink activeStyle={active} exact to="/department">
               DEPARTMENT

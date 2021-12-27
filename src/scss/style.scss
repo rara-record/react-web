@@ -1,19 +1,23 @@
 @charset 'utf-8';
 
-@import './variables/color';
-@import './variables/breakpoints';
+@import './abstracts/variables/breakpoints';
+@import './abstracts/variables/typography';
+@import './abstracts/variables/color';
 
 @import './base/normalize';
 @import './base/reset';
 @import './base/globals';
 
-@import './mixins/positions';
-@import './mixins/responsive';
+@import './abstracts/mixins/positions';
+@import './abstracts/mixins/background';
+@import './abstracts/mixins/flexbox';
 
-@import './modules/buttons';
+@import './components/modules/buttons';
 
-@import './layouts/common/layout';
-@import './layouts/common/header';
-@import './layouts/common/footer';
+@import './components/common/layout';
+@import './components/common/header';
+@import './components/common/footer';
 
-@import './layouts/main/visual.scss';
+@import './components/main/visual.scss';
+
+@import './components/sub/department.scss';
