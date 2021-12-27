@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { menuData } from '../../data/MenuData'
 
 function Header() {
   const active = { color: 'aqua' }
   const [state, setstate] = useState(false)
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
   }, [])
@@ -14,46 +16,27 @@ function Header() {
 
   return (
     <header className={`header ${state ? 'whiteBg' : 'transparent'}`}>
-      <div className="inner">
-        <h1>
-          <NavLink exact to="/">
-            DCODELAB
-          </NavLink>
-        </h1>
+      <h1 className="logo">
+        <NavLink exact to="/">
+          D.
+        </NavLink>
+      </h1>
 
-        <ul id="gnb" className="lg-only">
-          <li>
-            <NavLink activeStyle={active} exact to="/department">
-              DEPARTMENT
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeStyle={active} exact to="/BOARD">
-              BOARD
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeStyle={active} exact to="/GALLERY">
-              GALLERY
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeStyle={active} exact to="/YOUTUBE">
-              YOUTUBE
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeStyle={active} exact to="/LOCATION">
-              LOCATION
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeStyle={active} exact to="/MEMBERSHIP">
-              MEMBERSHIP
-            </NavLink>
-          </li>
-        </ul>
-      </div>
+      <ul id="gnb-desktop">
+        {menuData.map((item, index) => {
+          return (
+            <li key={index}>
+              <NavLink exact to={item.link} activeStyle={active}>
+                {item.title}
+              </NavLink>
+            </li>
+          )
+        })}
+      </ul>
+
+      <Link to="/" className="menu__bars">
+        <i className="fas fa-bars"></i>
+      </Link>
     </header>
   )
 }

@@ -1,25 +1,28 @@
+htmle {
+  font-size: 62.5%;
+}
+
 header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 100px;
-  background: #333;
+  background: $black;
   transition: 0.5s;
 
-  h1 {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
+  .logo {
+    @include pos-center-y;
+    left: 4.5rem;
 
     a {
       color: #fff;
-      font: bold 24px/1 'arial';
+      font: bold 5rem/1 $font-second;
     }
   }
 
-  #gnb {
-    position: absolute;
-    right: 0;
+  #gnb-desktop {
+    @include pos-center-y;
+    right: 4.5rem;
     bottom: 0;
 
     li {
@@ -27,10 +30,45 @@ header {
 
       a {
         display: inline-block;
-        padding: 22px 30px;
+        padding: 2.2rem 3rem;
         color: #fff;
-        font: 14px/1 'arial';
+        font: 1.5rem/1 $font-main;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
       }
     }
+  }
+
+  .menu__bars {
+    display: none;
+  }
+
+  @media screen and (max-width: 1199px) {
+    .logo {
+      left: 2rem;
+
+      a {
+        color: #fff;
+        font: bold 5rem/1 $font-second;
+      }
+    }
+    #gnb-desktop {
+      display: none !important;
+    }
+
+    .menu__bars {
+      right: 2rem;
+      display: block;
+      color: $white;
+      cursor: pointer;
+      @include pos-center-y;
+
+      i {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
   }
 }
