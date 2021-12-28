@@ -1,12 +1,9 @@
 @charset 'utf-8';
-
-@import './abstracts/variables/breakpoints';
 @import './abstracts/variables/typography';
 @import './abstracts/variables/color';
 
 @import './base/normalize';
 @import './base/reset';
-@import './base/globals';
 
 @import './abstracts/mixins/positions';
 @import './abstracts/mixins/background';
@@ -15,6 +12,7 @@
 @import './components/modules/buttons';
 
 @import './components/common/layout';
+@import './components/common/globals';
 @import './components/common/header';
 @import './components/common/footer';
 
@@ -22,3 +20,4 @@
 @import './components/main/project.scss';
 
 @import './components/sub/about.scss';
+@import './components/sub/gallery.scss';

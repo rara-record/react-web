@@ -6,7 +6,7 @@ import Masonry from 'react-masonry-component'
 const MasonryOptions = {
   fitWidth: false,
   gutter: 0,
-  itemSelector: '.item',
+  itemSelector: '.gallery__item',
 }
 
 function Gallery() {
@@ -35,12 +35,16 @@ function Gallery() {
                 let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
 
                 return (
-                  <li className={'item'} key={index}>
-                    <div className="inner">
+                  <li className={'gallery__item'} key={index}>
+                    <div className="card">
                       <figure>
                         <img src={imgSrc} alt={data.alt} />
                       </figure>
-                      <h2 className="item__title">{data.title}</h2>
+                      <div className="card__title__wrapper">
+                        <div className="card__title">
+                          <h2>{data.title}</h2>
+                        </div>
+                      </div>
                     </div>
                   </li>
                 )
@@ -72,6 +76,5 @@ export default Gallery
 // 4. useRef로 조작할 돔 참조하기
 // 5. masonery 설치하기
 // 6. masonery 옵션 설정하고, ul 만들기
-// 7. 해당 li는 클래스를 꼭 item으로 만들기
-// 8. 데이터 불러올때 1초 지연주기 (모션 적용)
-// 9. 검색 버튼 만들기
+// 7. 데이터 불러올때 1초 지연주기 (모션 적용)
+// 8. 검색 버튼 만들기
