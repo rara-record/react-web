@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 import { FilckrData } from '../../data/FlickrData'
 import Masonry from 'react-masonry-component'
+const path = process.env.PUBLIC_URL
 
 const MasonryOptions = {
   fitWidth: false,
@@ -13,6 +14,7 @@ function Gallery() {
   let [items, setItems] = useState([])
   let [enableClick, setEnableClick] = useState(true)
   let [interest, setInterest] = useState(true)
+  const [loading, setLoading] = useState(true)
   let input = useRef(null)
   let wrapper = useRef(null)
 
@@ -29,7 +31,11 @@ function Gallery() {
           <h1
             onClick={() => {
               if (enableClick && !interest) {
+                wrapper.current.classList.remove('on')
+                setLoading(true)
                 setEnableClick(false)
+                console.log('click')
+
                 getFlickr({
                   type: 'interest',
                 })
@@ -47,8 +53,11 @@ function Gallery() {
                 if (e.key !== 'Enter') return
 
                 if (enableClick) {
+                  wrapper.current.classList.remove('on')
+                  setLoading(true)
                   setInterest(false)
                   setEnableClick(false)
+
                   const tags = input.current.value
                   input.current.value = ''
                   getFlickr({
@@ -61,6 +70,8 @@ function Gallery() {
             <button
               onClick={() => {
                 if (enableClick) {
+                  wrapper.current.classList.remove('on')
+                  setLoading(true)
                   setInterest(false)
                   setEnableClick(false)
                   const tags = input.current.value
@@ -75,6 +86,12 @@ function Gallery() {
               검색
             </button>
           </div>
+
+          {loading && (
+            <div className="loading">
+              <img src={path + '/img/loading.gif'} alt="" />
+            </div>
+          )}
 
           <div className="gallery__wrapper" ref={wrapper}>
             <Masonry
@@ -128,6 +145,7 @@ function Gallery() {
 
     setTimeout(() => {
       wrapper.current.classList.add('on')
+      setLoading(false)
       setTimeout(() => {
         setEnableClick(true)
       }, 1000)

@@ -84,6 +84,12 @@
     }
   }
 
+  .loading {
+    @include pos-center-x;
+    top: 0;
+    width: 50%;
+  }
+
   @media screen and (max-width: 1179px) {
     .gallery {
       &__item {
