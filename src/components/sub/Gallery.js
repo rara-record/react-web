@@ -10,18 +10,72 @@ const MasonryOptions = {
 }
 
 function Gallery() {
-  const [items, setItems] = useState([])
+  let [items, setItems] = useState([])
+  let [enableClick, setEnableClick] = useState(true)
+  let [interest, setInterest] = useState(true)
+  let input = useRef(null)
   let wrapper = useRef(null)
 
   useEffect(() => {
-    getFlickr(FilckrData.initUrl)
+    getFlickr({
+      type: 'interest',
+    })
   }, [])
 
   return (
-    <div>
+    <>
       <section className="content gallery">
         <div className="inner">
-          <h1>Gallery</h1>
+          <h1
+            onClick={() => {
+              if (enableClick && !interest) {
+                setEnableClick(false)
+                getFlickr({
+                  type: 'interest',
+                })
+              }
+            }}
+          >
+            Gallery
+          </h1>
+
+          <div className="search__wrapper">
+            <input
+              type="text"
+              ref={input}
+              onKeyPress={(e) => {
+                if (e.key !== 'Enter') return
+
+                if (enableClick) {
+                  setInterest(false)
+                  setEnableClick(false)
+                  const tags = input.current.value
+                  input.current.value = ''
+                  getFlickr({
+                    type: 'search',
+                    tags: tags,
+                  })
+                }
+              }}
+            />
+            <button
+              onClick={() => {
+                if (enableClick) {
+                  setInterest(false)
+                  setEnableClick(false)
+                  const tags = input.current.value
+                  input.current.value = ''
+                  getFlickr({
+                    type: 'search',
+                    tags: tags,
+                  })
+                }
+              }}
+            >
+              검색
+            </button>
+          </div>
+
           <div className="gallery__wrapper" ref={wrapper}>
             <Masonry
               className={'gallery__list'}
@@ -53,17 +107,30 @@ function Gallery() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   )
 
   // flickr 데이터를 불러온다
-  async function getFlickr(url) {
+  async function getFlickr(opt) {
+    let url = ''
+
+    if (opt.type === 'interest') {
+      url = FilckrData.initURL
+    } else if (opt.type === 'search') {
+      url = `${FilckrData.searchURL}${opt.tags}`
+    } else {
+      console.error('api 요청 타입을 interest, search 중에서 지정하세요')
+    }
+
     await axios.get(url).then((res) => {
       setItems(res.data.photos.photo)
     })
 
     setTimeout(() => {
       wrapper.current.classList.add('on')
+      setTimeout(() => {
+        setEnableClick(true)
+      }, 1000)
     }, 1000)
   }
 }

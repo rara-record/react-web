@@ -15,51 +15,96 @@
   }
 
   &__list {
-    display: block;
-    clear: both;
     width: 100%;
-    content: '';
+  }
 
-    .item {
-      float: left;
-      width: 25%;
-      padding: 1rem;
+  &__item {
+    float: left;
+    width: 33.3333%;
+    padding: 2.5rem;
 
-      .inner {
+    .card {
+      position: relative;
+      width: 100%;
+      background: #000;
+      box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+
+      figure {
+        background: #fff;
+        border: 1px solid #0c0c0c;
+        transition: transform 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+          -webkit-transform 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+        img {
+          padding: 0.5rem;
+        }
+      }
+
+      &__title__wrapper {
+        position: absolute;
+        bottom: -1.5rem;
+        left: 0;
         width: 100%;
-        padding: 1.2rem;
-        background-color: #fff;
-        box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+          -webkit-transform 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
       }
 
       &__title {
-        margin-bottom: 2rem;
-        font: normal 1.8rem/1 $font-main;
+        position: relative;
+        display: inline-block;
+        margin: 0 2rem;
+        padding: 0.8rem 1.5rem;
+        padding-right: 1.4rem;
+        background-color: #fff;
+        border: 1px solid #0c0c0c;
+
+        h2 {
+          font: normal 1.8rem/1 'Oswald';
+        }
+      }
+
+      &:hover .card__title__wrapper {
+        transform: translateY(-100%);
+      }
+
+      &:hover figure {
+        transform: translate(-0.7rem, -0.7rem);
       }
     }
   }
-}
 
-@media screen and (max-width: 1179px) {
-  .gallery {
-    .item {
-      width: 33.3333% !important;
+  .search__wrapper {
+    input {
+      font-size: 1.6rem;
+      border: 1px solid $black;
+    }
+    button {
+      font-size: 1.6rem;
     }
   }
-}
 
-@media screen and (max-width: 739px) {
-  .gallery {
-    .item {
-      width: 50% !important;
+  @media screen and (max-width: 1179px) {
+    .gallery {
+      &__item {
+        width: 33.3333% !important;
+      }
     }
   }
-}
 
-@media screen and (max-width: 479px) {
-  .gallery {
-    .item {
-      width: 100% !important;
+  @media screen and (max-width: 739px) {
+    .gallery {
+      &__item {
+        width: 50% !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .gallery {
+      &__item {
+        width: 100% !important;
+      }
     }
   }
 }

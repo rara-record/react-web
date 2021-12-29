@@ -12,6 +12,7 @@ let options = {
 let { base, method, key, per_page, format } = options
 
 export const FilckrData = {
-  initUrl: `${base}method=${method.init}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1&privacy_filter=1`,
-  searchUrl: `${base}method=${method.search}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1&privacy_filter=1`,
+  initURL: `${base}method=${method.init}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1&privacy_filter=1`,
+
+  searchURL: `${base}method=${method.search}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&&privacy_filter=1&tags=`,
 }
