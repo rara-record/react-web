@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { menuData } from '../../data/MenuData'
 
 function Header() {
   const active = { color: 'aqua' }
   const [state, setstate] = useState(false)
+  const header = useRef(null)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -15,7 +16,10 @@ function Header() {
   }
 
   return (
-    <header className={`header ${state ? 'whiteBg' : 'transparent'}`}>
+    <header
+      className={`header ${state ? 'whiteBg' : 'transparent'}`}
+      ref={header}
+    >
       <h1 className="logo">
         <NavLink exact to="/">
           D.

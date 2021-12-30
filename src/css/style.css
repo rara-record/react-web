@@ -367,16 +367,12 @@ header {
   transition: 0.5s; }
 
 main section {
-  padding: 10rem 0; }
+  padding: 15rem 0; }
   main section > .inner {
     position: relative;
     width: 1180px;
     min-height: 50rem;
     margin: 0 auto; }
-  main section h1 {
-    margin-bottom: 3rem;
-    color: #333;
-    font: normal 3rem/1 'arial'; }
 
 footer {
   width: 100%;
@@ -392,20 +388,20 @@ footer {
       text-align: center; }
 
 @media screen and (max-width: 1179px) {
-  section {
-    padding: 8rem 4rem; }
-    section > .inner {
+  main section {
+    padding: 8rem 0; }
+    main section > .inner {
       width: 100%;
       height: 100%;
       margin: 0 auto;
-      padding: 0 3rem; } }
+      padding: 0 4rem; } }
 
 @media screen and (max-width: 991px) {
   html {
     font-size: 55%; } }
 
 @media screen and (max-width: 768px) {
-  section > .inner {
+  main section > .inner {
     padding: 0 3rem; } }
 
 .wrap {
@@ -414,7 +410,8 @@ footer {
   content: ''; }
 
 .whiteBg {
-  background: white !important; }
+  background: white !important;
+  border-bottom: 1px solid #0c0c0c; }
   .whiteBg a {
     color: black !important; }
 
@@ -575,93 +572,84 @@ header .menu__bars {
       color: #fff;
       font-size: 50px; }
 
-.project .wrap .top {
-  position: relative;
-  padding: 2.5rem 0;
-  border-bottom: 1px solid #000; }
-  .project .wrap .top .title {
-    display: flex;
-    flex-wrap: wrap; }
-    .project .wrap .top .title > div {
-      margin-bottom: 2.5rem;
-      padding-right: 5rem; }
-      .project .wrap .top .title > div span {
-        display: block;
-        font: normal 1.6rem/1.5 'Oswald';
-        letter-spacing: 0.05px;
-        text-align: right; }
-      .project .wrap .top .title > div .num {
-        font: normal 2rem/1.5 'Oswald'; }
-    .project .wrap .top .title h1 {
-      position: relative;
-      color: #000;
-      font: 600 5rem/1.2 'Playfair Display';
-      letter-spacing: 1px;
-      transform: translateY(-11px); }
-  .project .wrap .top .link {
-    position: absolute;
-    right: 0;
-    bottom: 1rem;
-    font: normal 1.4rem/1 'Oswald';
-    letter-spacing: 2px;
-    text-transform: uppercase; }
-    .project .wrap .top .link i {
-      padding-left: 1.5rem; }
+.intro .inner {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 20rem; }
+  .intro .inner > div {
+    width: calc((100% / 2) - 10rem); }
 
-.project .wrap .contents {
-  width: 100%;
-  height: 100%; }
-  .project .wrap .contents .left {
-    float: left;
-    width: calc(100% - 80%);
-    height: calc(300px + 4rem);
-    padding: 5rem 0;
-    border-right: 1px solid #000; }
-    .project .wrap .contents .left article {
-      padding-bottom: 2.5rem;
-      letter-spacing: 0.5px; }
-      .project .wrap .contents .left article h3 {
-        font: normal 1.6rem/1.5 'Oswald'; }
-      .project .wrap .contents .left article p {
-        color: #707070;
-        font: normal 1.4rem/1.5 'Oswald'; }
-      .project .wrap .contents .left article:last-child {
-        padding-bottom: 0; }
-  .project .wrap .contents .right {
-    float: right;
-    width: calc(100% - 20%);
-    padding: 4rem;
-    padding-right: 0; }
-    .project .wrap .contents .right > article {
-      float: left;
-      width: calc((100% / 3) - 2.7rem);
-      margin-right: 4rem; }
-      .project .wrap .contents .right > article:last-of-type {
-        margin-right: 0; }
-      .project .wrap .contents .right > article::after {
-        display: block;
-        clear: both;
-        content: ''; }
-    .project .wrap .contents .right .pic {
-      height: 300px;
-      margin-bottom: 3.5rem; }
-    .project .wrap .contents .right span {
-      display: block;
-      padding: 0.5rem 0;
-      font: normal 1.6rem/1 'Oswald';
-      letter-spacing: 0.5px; }
-    .project .wrap .contents .right .num {
-      color: #707070;
-      font: normal 1.2rem/1 'Oswald';
-      letter-spacing: 1px; }
-    .project .wrap .contents .right::after {
-      display: block;
-      clear: both;
-      content: ''; }
-  .project .wrap .contents::after {
-    display: block;
-    clear: both;
-    content: ''; }
+.intro__left article {
+  margin-bottom: 5rem;
+  border-bottom: 1px solid #9e9e9e; }
+  .intro__left article h2 {
+    margin-bottom: 5rem;
+    color: #222;
+    font: bold 5rem/1 "Mulish", sans-serif; }
+  .intro__left article .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 4rem; }
+    .intro__left article .wrap span {
+      width: 40%;
+      color: #9e9e9e;
+      font: bold 1.6rem/1 "Mulish", sans-serif;
+      text-transform: uppercase; }
+    .intro__left article .wrap p {
+      width: 60%;
+      color: #666;
+      font: normal 1.6rem/1.4 "Mulish", sans-serif; }
+  .intro__left article:first-child {
+    padding-top: 7rem; }
+
+.intro__right h3 {
+  margin-bottom: 4rem;
+  color: #222;
+  font: normal 8rem/1 "Playfair Display", serif; }
+
+.intro__right p {
+  margin-bottom: 7rem;
+  color: #666;
+  font: normal 1.6rem/1.4 "Mulish", sans-serif; }
+
+@media screen and (max-width: 1179px) {
+  .intro .inner {
+    grid-gap: 0; }
+    .intro .inner > div {
+      width: 100%; }
+  .intro__right h3 {
+    font: normal 7rem/1 "Playfair Display", serif; } }
+
+.project__content {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 2rem; }
+  .project__content__box {
+    width: calc((100% / 2) - 2rem); }
+    .project__content__box h2 {
+      margin: -9px 0px 97px 0px;
+      padding: 0% 28% 0% 0%;
+      font: normal 3rem/4rem "Playfair Display", serif; }
+  .project__content__img {
+    padding-bottom: 1.5rem; }
+  .project__content__text h3 {
+    font: normal 1.3rem/2.3rem "Oswald", sans-serif;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase; }
+  .project__content__text p {
+    color: #9e9e9e; }
+    .project__content__text p span {
+      font: normal 1.6rem/2.5rem "Playfair Display", serif; }
+    .project__content__text p em {
+      color: #9e9e9e;
+      font: italic 1.6rem/2.5rem "Playfair Display", serif;
+      font-weight: 600; }
+
+@media screen and (max-width: 768px) {
+  .project__content {
+    grid-gap: 0; }
+    .project__content__box {
+      width: 100%; } }
 
 .aboutUs .sub-visual {
   display: flex;

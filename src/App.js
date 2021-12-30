@@ -7,8 +7,8 @@ import Footer from './components/common/Footer'
 
 //import main component
 import Visual from './components/main/Visual'
+import Intro from './components/main/Intro'
 import Project from './components/main/Project'
-import { SliderData } from './data/SliderData'
 
 //import sub component
 import AboutUs from './components/sub/AboutUs'
@@ -18,7 +18,6 @@ import Community from './components/sub/Community'
 import Contact from './components/sub/Contact'
 
 // public
-const path = process.env.PUBLIC_URL
 
 function App() {
   return (
@@ -27,7 +26,8 @@ function App() {
 
       <Route exact path="/">
         <main>
-          <Visual slides={SliderData} path={path} />
+          <Visual />
+          <Intro />
           <Project />
         </main>
       </Route>

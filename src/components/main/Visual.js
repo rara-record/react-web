@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { SliderData } from './../../data/SliderData'
+const path = process.env.PUBLIC_URL
 
-function Visual(props) {
+function Visual() {
   const [current, setCurrent] = useState(0)
-  const length = props.slides.length
-  const timeout = useRef(null)
-
+  const length = SliderData.length
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1)
   }
@@ -18,8 +18,8 @@ function Visual(props) {
     <>
       <figure className="visual">
         <div className="slider__wrapper">
-          {props.slides.map((slide, index) => {
-            let imgSrc = `${props.path}/img/${slide.image}.jpg`
+          {SliderData.map((slide, index) => {
+            let imgSrc = `${path}/img/${slide.image}.jpg`
             return (
               <div className="slider" key={index}>
                 <article className="slider__item">
@@ -34,7 +34,7 @@ function Visual(props) {
                   <div className="slider__item__contents">
                     <div className="content__info">
                       <span>Designer: </span>
-                      <p>{slide.name}</p>
+                      <p>{SliderData.name}</p>
                     </div>
                     <div className="content__btn">
                       <Link to="/">Know more</Link>
