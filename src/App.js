@@ -9,6 +9,7 @@ import Footer from './components/common/Footer'
 import Visual from './components/main/Visual'
 import Intro from './components/main/Intro'
 import Project from './components/main/Project'
+import Banner from './components/main/Banner'
 
 //import sub component
 import AboutUs from './components/sub/AboutUs'
@@ -28,6 +29,7 @@ function App() {
         <main>
           <Visual />
           <Intro />
+          <Banner />
           <Project />
         </main>
       </Route>

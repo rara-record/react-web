@@ -604,7 +604,7 @@ header .menu__bars {
 
 .intro__right h3 {
   margin-bottom: 4rem;
-  color: #222;
+  color: #0c0c0c;
   font: normal 8rem/1 "Playfair Display", serif; }
 
 .intro__right p {
@@ -619,6 +619,16 @@ header .menu__bars {
       width: 100%; }
   .intro__right h3 {
     font: normal 7rem/1 "Playfair Display", serif; } }
+
+.banner {
+  width: 100%;
+  height: 50rem;
+  background-position: center;
+  background-image: url("/public/img/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay; }
 
 .project__content {
   display: flex;

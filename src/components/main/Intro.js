@@ -30,7 +30,7 @@ function Intro() {
               design for your sweet home.
             </p>
             <figure>
-              <img src={`${path}/img/test.jpg`} alt="" />
+              <img src={`${path}/img/intro.jpg`} alt="" />
             </figure>
           </div>
         </div>
