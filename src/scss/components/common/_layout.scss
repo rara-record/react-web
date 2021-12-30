@@ -17,7 +17,6 @@ main {
     padding: 15rem 0;
 
     > .inner {
-      position: relative;
       width: 1180px;
       min-height: 50rem;
       margin: 0 auto;
@@ -58,13 +57,11 @@ footer {
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 55%;
   }
-}
 
-@media screen and (max-width: 768px) {
   main {
     section {
       > .inner {

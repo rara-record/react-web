@@ -5,7 +5,7 @@
     h1 {
       position: relative;
       margin-bottom: 6rem;
-      color: $dark;
+      color: $black;
       font: normal 4rem/1 $font-main;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -39,7 +39,6 @@
       padding: 3rem 2rem;
 
       border: 2px solid #eaeaea;
-      border-radius: 5px;
       cursor: pointer;
 
       .icon__front {

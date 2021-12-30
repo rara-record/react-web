@@ -369,7 +369,6 @@ header {
 main section {
   padding: 15rem 0; }
   main section > .inner {
-    position: relative;
     width: 1180px;
     min-height: 50rem;
     margin: 0 auto; }
@@ -396,11 +395,9 @@ footer {
       margin: 0 auto;
       padding: 0 4rem; } }
 
-@media screen and (max-width: 991px) {
-  html {
-    font-size: 55%; } }
-
 @media screen and (max-width: 768px) {
+  html {
+    font-size: 55%; }
   main section > .inner {
     padding: 0 3rem; } }
 
@@ -577,7 +574,7 @@ header .menu__bars {
   .intro__title h1 {
     position: relative;
     margin-bottom: 6rem;
-    color: #222;
+    color: #0c0c0c;
     font: normal 4rem/1 "Oswald", sans-serif;
     letter-spacing: 0.1em;
     text-transform: uppercase; }
@@ -605,7 +602,6 @@ header .menu__bars {
     width: calc((100% / 4) - 4rem);
     padding: 3rem 2rem;
     border: 2px solid #eaeaea;
-    border-radius: 5px;
     cursor: pointer; }
     .intro .icon__wrpper .icon__list .icon__front {
       display: flex;
@@ -694,6 +690,86 @@ header .menu__bars {
     grid-gap: 0; }
     .project__content__box {
       width: 100%; } }
+
+.brand {
+  position: relative;
+  background-image: url("/public/img/brand-bg.png");
+  background-position: bottom left; }
+  .brand .brand__wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; }
+  .brand__content {
+    width: calc(100% / 2);
+    padding-right: 7%; }
+    .brand__content__title h1 {
+      position: relative;
+      margin-bottom: 6rem;
+      color: #0c0c0c;
+      font: normal 4rem/1 "Oswald", sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase; }
+      .brand__content__title h1::after {
+        position: absolute;
+        bottom: -75%;
+        left: 0;
+        width: 4rem;
+        height: 0.1rem;
+        background-color: #222;
+        content: ''; }
+    .brand__content__title p {
+      margin: 1.7rem 9rem 4rem 0;
+      margin-bottom: 6rem;
+      color: #222;
+      font: normal 1.7rem/1.5em "Playfair Display", serif; }
+    .brand__content__icon {
+      display: flex;
+      flex-wrap: wrap; }
+      .brand__content__icon article {
+        width: 50%;
+        margin-bottom: 4rem; }
+        .brand__content__icon article figure {
+          float: left;
+          width: 5rem; }
+        .brand__content__icon article .text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          float: rig;
+          padding-left: 2rem;
+          color: #222; }
+          .brand__content__icon article .text h2 {
+            padding-bottom: 1rem;
+            font: normal 1.6rem/1 "Oswald", sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.1em; }
+          .brand__content__icon article .text span {
+            font: normal 1.4rem/1 "Playfair Display", serif; }
+        .brand__content__icon article::after {
+          display: block;
+          clear: both;
+          content: ''; }
+  .brand__image {
+    position: absolute;
+    right: -10rem;
+    bottom: -10rem; }
+  .brand .text__wrapper {
+    position: absolute;
+    right: 15rem;
+    bottom: 6rem;
+    z-index: -1; }
+    .brand .text__wrapper span {
+      color: #edf7fa;
+      font: bold 23rem/1 "Playfair Display", serif;
+      letter-spacing: 0.5rem;
+      opacity: 0.8; }
+
+@media screen and (max-width: 1179px) {
+  .brand__content {
+    width: 100%;
+    padding: 0; }
+  .brand__image {
+    position: static; } }
 
 .aboutUs .sub-visual {
   display: flex;
