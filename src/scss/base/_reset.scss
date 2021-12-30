@@ -8,14 +8,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  font-size: 62.5%;
-
-  @media screen and (max-width: 1199px) {
-    font-size: 55%;
-  }
-}
-
 body {
   overflow-x: hidden;
   font-weight: 400;

@@ -16,7 +16,7 @@ function Visual(props) {
 
   return (
     <>
-      <section className="visual">
+      <figure className="visual">
         <div className="slider__wrapper">
           {props.slides.map((slide, index) => {
             let imgSrc = `${props.path}/img/${slide.image}.jpg`
@@ -26,13 +26,30 @@ function Visual(props) {
                   <figure className="slider__item__pic">
                     <img src={imgSrc} alt={slide.alt} />
                   </figure>
+
                   <h1 className="slider__item__text">
                     <Link to="/">{slide.title}</Link>
                   </h1>
+
+                  <div className="slider__item__contents">
+                    <div className="content__info">
+                      <span>Designer: </span>
+                      <p>{slide.name}</p>
+                    </div>
+                    <div className="content__btn">
+                      <Link to="/">Know more</Link>
+                    </div>
+                  </div>
                 </article>
               </div>
             )
           })}
+        </div>
+
+        <div className="sns__wrapper">
+          <Link to="/">fb</Link>
+          <Link to="/">tw</Link>
+          <Link to="/">in</Link>
         </div>
 
         <div className="button__wrapper">
@@ -43,7 +60,7 @@ function Visual(props) {
             next
           </button>
         </div>
-      </section>
+      </figure>
     </>
   )
 }

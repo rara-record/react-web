@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vh;
   max-height: 1100px;
-  background-color: $black;
+  background-color: #0c0c0c;
 
   .slider__wrapper {
     display: flex;
@@ -34,12 +34,87 @@
           width: 53%;
 
           a {
-            color: $white;
+            color: #fff;
             font: normal 10rem/1.1em $font-main;
             letter-spacing: 10.2px;
             text-transform: uppercase;
           }
         }
+
+        &__contents {
+          position: absolute;
+          bottom: 0;
+          left: 100%;
+          width: 45%;
+          padding-left: 6rem;
+          color: #fff;
+          font-size: 1.4rem;
+          letter-spacing: 0.03rem;
+
+          .content__info {
+            margin-bottom: 4rem;
+
+            span {
+              font-family: $font-second;
+            }
+
+            p {
+              display: inline-block;
+              font: italic 1.6rem/1 $font-second;
+            }
+          }
+
+          .content__btn {
+            position: relative;
+            margin-bottom: 1.5rem;
+
+            a {
+              display: block;
+              padding-bottom: 0.8rem;
+              font-family: $font-second;
+
+              &::after {
+                position: absolute;
+                bottom: 2px;
+                left: 0;
+                width: 18px;
+                height: 2px;
+                background-color: currentColor;
+                transition: all 0.3s ease;
+                content: '';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sns__wrapper {
+    position: absolute;
+    bottom: 6.2vh;
+    left: 10rem;
+    z-index: 50;
+
+    a {
+      position: relative;
+      padding-right: 52px;
+      color: #fff;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+
+      &:not(:last-child)::after {
+        position: absolute;
+        right: 1.2rem;
+        bottom: 0.9rem;
+        width: 2.6rem;
+        height: 0.1rem;
+        background-color: rgba(255, 255, 255, 0.3);
+        content: '';
+      }
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.3);
       }
     }
   }

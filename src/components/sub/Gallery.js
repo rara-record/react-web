@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 import { FilckrData } from '../../data/FlickrData'
 import Masonry from 'react-masonry-component'
+import { Link } from 'react-router-dom'
 const path = process.env.PUBLIC_URL
 
 const MasonryOptions = {
@@ -26,104 +27,119 @@ function Gallery() {
 
   return (
     <>
-      <section className="content gallery">
-        <div className="inner">
-          <h1
-            onClick={() => {
-              if (enableClick && !interest) {
-                wrapper.current.classList.remove('on')
-                setLoading(true)
-                setEnableClick(false)
-                console.log('click')
-
-                getFlickr({
-                  type: 'interest',
-                })
-              }
-            }}
-          >
-            Gallery
-          </h1>
-
-          <div className="search__wrapper">
-            <input
-              type="text"
-              ref={input}
-              onKeyPress={(e) => {
-                if (e.key !== 'Enter') return
-
-                if (enableClick) {
-                  wrapper.current.classList.remove('on')
-                  setLoading(true)
-                  setInterest(false)
-                  setEnableClick(false)
-
-                  const tags = input.current.value
-                  input.current.value = ''
-                  getFlickr({
-                    type: 'search',
-                    tags: tags,
-                  })
-                }
-              }}
-            />
-            <button
-              onClick={() => {
-                if (enableClick) {
-                  wrapper.current.classList.remove('on')
-                  setLoading(true)
-                  setInterest(false)
-                  setEnableClick(false)
-                  const tags = input.current.value
-                  input.current.value = ''
-                  getFlickr({
-                    type: 'search',
-                    tags: tags,
-                  })
-                }
-              }}
-            >
-              검색
-            </button>
-          </div>
-
-          {loading && (
-            <div className="loading">
-              <img src={path + '/img/loading.gif'} alt="" />
+      <main className="gallery">
+        <div className="sub-visual">
+          <div className="sub-visual__content">
+            <h1 className="sub-visual__content-h1">gallery</h1>
+            <div className="sub-visual__content-links">
+              <Link to="/">Home</Link>
+              <span className="sub-visual__content-span"></span>
+              <Link to="/about">gallery</Link>
             </div>
-          )}
-
-          <div className="gallery__wrapper" ref={wrapper}>
-            <Masonry
-              className={'gallery__list'}
-              elementType={'ul'}
-              disableImagesLoaded={false}
-              updateOnEachImageLoad={false}
-              options={MasonryOptions}
-            >
-              {items.map((data, index) => {
-                // 썸네일 이미지 주소
-                let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
-
-                return (
-                  <li className={'gallery__item'} key={index}>
-                    <div className="card">
-                      <figure>
-                        <img src={imgSrc} alt={data.alt} />
-                      </figure>
-                      <div className="card__title__wrapper">
-                        <div className="card__title">
-                          <h2>{data.title}</h2>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                )
-              })}
-            </Masonry>
           </div>
         </div>
-      </section>
+
+        <div className="contents">
+          <section>
+            <div className="inner">
+              <h1
+                onClick={() => {
+                  if (enableClick && !interest) {
+                    wrapper.current.classList.remove('on')
+                    setLoading(true)
+                    setEnableClick(false)
+                    console.log('click')
+
+                    getFlickr({
+                      type: 'interest',
+                    })
+                  }
+                }}
+              >
+                Gallery
+              </h1>
+
+              <div className="search__wrapper">
+                <input
+                  type="text"
+                  ref={input}
+                  onKeyPress={(e) => {
+                    if (e.key !== 'Enter') return
+
+                    if (enableClick) {
+                      wrapper.current.classList.remove('on')
+                      setLoading(true)
+                      setInterest(false)
+                      setEnableClick(false)
+
+                      const tags = input.current.value
+                      input.current.value = ''
+                      getFlickr({
+                        type: 'search',
+                        tags: tags,
+                      })
+                    }
+                  }}
+                />
+                <button
+                  onClick={() => {
+                    if (enableClick) {
+                      wrapper.current.classList.remove('on')
+                      setLoading(true)
+                      setInterest(false)
+                      setEnableClick(false)
+                      const tags = input.current.value
+                      input.current.value = ''
+                      getFlickr({
+                        type: 'search',
+                        tags: tags,
+                      })
+                    }
+                  }}
+                >
+                  검색
+                </button>
+              </div>
+
+              {loading && (
+                <div className="loading">
+                  <img src={path + '/img/loading.gif'} alt="" />
+                </div>
+              )}
+
+              <div className="gallery__wrapper" ref={wrapper}>
+                <Masonry
+                  className={'gallery__list'}
+                  elementType={'ul'}
+                  disableImagesLoaded={false}
+                  updateOnEachImageLoad={false}
+                  options={MasonryOptions}
+                >
+                  {items.map((data, index) => {
+                    // 썸네일 이미지 주소
+                    let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
+
+                    return (
+                      <li className={'gallery__item'} key={index}>
+                        <div className="card">
+                          <figure>
+                            <img src={imgSrc} alt={data.alt} />
+                          </figure>
+                          <div className="card__title__wrapper">
+                            <div className="card__title">
+                              <h2>{data.title}</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    )
+                  })}
+                </Masonry>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
     </>
   )
 

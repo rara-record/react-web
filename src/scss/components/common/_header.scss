@@ -1,15 +1,4 @@
-htmle {
-  font-size: 62.5%;
-}
-
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100px;
-  background: $black;
-  transition: 0.5s;
-
   .logo {
     @include pos-center-y;
     left: 4.5rem;

@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
 
-function Contact() {
+function Join() {
   return (
-    <main className="contact">
+    <main className="join">
       <div className="sub-visual">
         <div className="sub-visual__content">
-          <h1 className="sub-visual__content-h1">Contact</h1>
+          <h1 className="sub-visual__content-h1">join</h1>
           <div className="sub-visual__content-links">
             <Link to="/">Home</Link>
             <span className="sub-visual__content-span"></span>
-            <Link to="/about">Contact</Link>
+            <Link to="/about">join</Link>
           </div>
         </div>
       </div>
@@ -31,4 +31,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default Join
