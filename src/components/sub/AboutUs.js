@@ -9,9 +9,9 @@ function About() {
           <div className="sub-visual__content">
             <h1 className="sub-visual__content-h1">About Us</h1>
             <div className="sub-visual__content-links">
-              <Link to="/">Home</Link>
+              {/* <Link to="/">Home</Link> */}
               <span className="sub-visual__content-span"></span>
-              <Link to="/about">About Us</Link>
+              {/* <Link to="/about">About Us</Link> */}
             </div>
           </div>
         </div>
