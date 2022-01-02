@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom'
 function Contact() {
   return (
     <main className="contact">
-      <div className="sub-visual">
-        <div className="sub-visual__content">
-          <h1 className="sub-visual__content-h1">Contact</h1>
-          <div className="sub-visual__content-links">
-            <Link to="/">Home</Link>
-            <span className="sub-visual__content-span"></span>
-            <Link to="/about">Contact</Link>
-          </div>
-        </div>
-      </div>
+      <section className="sub__visual">
+        <h1>Contact</h1>
+        <p>
+          Property Group offers a full-service, residential project development.
+        </p>
+      </section>
 
       <div className="contents">
         <section className="sec01">

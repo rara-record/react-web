@@ -19,16 +19,15 @@ function Youtube() {
 
   return (
     <main className="youtube">
-      <div className="sub-visual">
-        <div className="sub-visual__content">
-          <h1 className="sub-visual__content-h1">Youtube</h1>
-          <div className="sub-visual__content-links">
-            <Link to="/">Youtube</Link>
-            <span className="sub-visual__content-span"></span>
-            <Link to="/about">Youtube</Link>
-          </div>
+      <section className="sub__visual">
+        <div className="inner">
+          <h1>YOUTUBE</h1>
+          <p>
+            Property Group offers a full-service, <br></br>
+            residential project development.
+          </p>
         </div>
-      </div>
+      </section>
 
       <div className="contents">
         <section>

@@ -373,6 +373,24 @@ main section {
     min-height: 50rem;
     margin: 0 auto; }
 
+.sub__visual {
+  width: 100%;
+  height: 70vh;
+  color: white; }
+  .sub__visual .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .sub__visual h1 {
+    font: normal 6rem/7rem "Oswald", sans-serif;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    transform: translateY(-2rem);
+    cursor: pointer; }
+  .sub__visual p {
+    font: normal 2.5rem/3.5rem "Playfair Display", serif;
+    font-size: 25px; }
+
 footer {
   width: 100%;
   padding: 5rem 0;
@@ -656,9 +674,8 @@ header .menu__bars {
   background-position: center;
   background-image: url("/public/img/banner.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-blend-mode: overlay; }
+  background-position: center 100px;
+  background-attachment: fixed; }
 
 .project__content {
   display: flex;
@@ -771,52 +788,21 @@ header .menu__bars {
   .brand__image {
     position: static; } }
 
-.aboutUs .sub-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 75vh;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.6); }
-  .aboutUs .sub-visual__content {
-    text-align: center; }
-    .aboutUs .sub-visual__content-links a {
-      margin-left: 1rem;
-      color: white;
-      font-size: 1.7rem; }
-    .aboutUs .sub-visual__content-span {
-      display: inline-block;
-      width: 0.2rem;
-      height: 1.5rem;
-      margin-left: 1.5rem;
-      background-color: white;
-      transform: rotate(10deg); }
-  .aboutUs .sub-visual__content-h1 {
-    margin-bottom: 2rem;
-    font-weight: 600;
-    font-size: 7.5rem; }
-
-.aboutUs .contents {
-  width: 100%;
-  padding: 12rem 0; }
-  .aboutUs .contents .inner {
-    display: flex;
-    flex-wrap: wrap; }
-  .aboutUs .contents h2 {
-    width: 30%;
-    font-weight: 600;
-    font-size: 3rem; }
-  .aboutUs .contents text {
-    width: 70%;
-    color: #777;
-    font-weight: 300;
-    font-size: 1.5rem;
-    line-height: 2; }
+.about .sub__visual {
+  background-image: url("/public/img/about-sub-visual.jpg");
+  background-repeat: no-repeat;
+  background-position: center 100px;
+  background-attachment: fixed;
+  background-position: center; }
 
 .gallery {
   width: 100%;
   height: 100%; }
+  .gallery .sub__visual {
+    background-image: url("/public/img/gallery-sub-visual.jpg");
+    background-repeat: no-repeat;
+    background-position: center 100px;
+    background-attachment: fixed; }
   .gallery__wrapper {
     position: relative;
     transform: translateY(200px);
@@ -884,6 +870,12 @@ header .menu__bars {
     .gallery .gallery__item {
       width: 100% !important; } }
 
+.youtube .sub__visual {
+  background-image: url("/public/img/youtube-sub-visual.jpg");
+  background-repeat: no-repeat;
+  background-position: center 100px;
+  background-attachment: fixed; }
+
 .youtube .inner .frame::after {
   display: block;
   clear: both;
@@ -905,13 +897,13 @@ header .menu__bars {
     background-color: white;
     box-shadow: 5px 5px 15px rgba(5, 5, 5, 0.1); }
     .youtube .inner .frame article .inner .txt h2 {
-      font: bold 1.6rem/1.2em 'arial';
-      color: #555;
       margin-bottom: 2rem;
+      color: #555;
+      font: bold 1.6rem/1.2em 'arial';
       word-break: break-all; }
     .youtube .inner .frame article .inner .txt p {
-      font: 1.2rem/1.2em 'arial';
       color: #888;
+      font: 1.2rem/1.2em 'arial';
       word-break: break-all; }
     .youtube .inner .frame article .inner .pic {
       width: 100%;
@@ -920,5 +912,22 @@ header .menu__bars {
         width: 100%;
         height: 100%;
         object-fit: cover; }
+
+.youtube .pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding: 5vw;
+  background-color: rgba(0, 0, 0, 0.9); }
+  .youtube .pop span {
+    position: absolute;
+    top: 3vw;
+    right: 5vw;
+    color: #fff;
+    font: bold 14px/1 'arial';
+    cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

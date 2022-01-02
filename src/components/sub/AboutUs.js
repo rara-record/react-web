@@ -1,20 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function About() {
   return (
     <>
-      <main className="aboutUs">
-        <div className="sub-visual">
-          <div className="sub-visual__content">
-            <h1 className="sub-visual__content-h1">About Us</h1>
-            <div className="sub-visual__content-links">
-              {/* <Link to="/">Home</Link> */}
-              <span className="sub-visual__content-span"></span>
-              {/* <Link to="/about">About Us</Link> */}
-            </div>
+      <main className="about">
+        <section className="sub__visual">
+          <div className="inner">
+            <h1>ABOUT US</h1>
+            <p>
+              Property Group offers a full-service, <br></br>
+              residential project development.
+            </p>
           </div>
-        </div>
+        </section>
 
         <div className="contents">
           <section className="sec01">

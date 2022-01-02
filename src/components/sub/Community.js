@@ -14,9 +14,12 @@ function Community() {
 
   return (
     <main className="community">
-      <div className="sub__visual">
+      <section className="sub__visual">
         <h1>Community</h1>
-      </div>
+        <p>
+          Property Group offers a full-service, residential project development.
+        </p>
+      </section>
 
       <div className="contents">
         <section className="sec01">

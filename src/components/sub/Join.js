@@ -1,18 +1,12 @@
-import { Link } from 'react-router-dom'
-
 function Join() {
   return (
     <main className="join">
-      <div className="sub-visual">
-        <div className="sub-visual__content">
-          <h1 className="sub-visual__content-h1">join</h1>
-          <div className="sub-visual__content-links">
-            <Link to="/">Home</Link>
-            <span className="sub-visual__content-span"></span>
-            <Link to="/about">join</Link>
-          </div>
-        </div>
-      </div>
+      <section className="sub__visual">
+        <h1>JOIN</h1>
+        <p>
+          Property Group offers a full-service, residential project development.
+        </p>
+      </section>
 
       <div className="contents">
         <section className="sec01">

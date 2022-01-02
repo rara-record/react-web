@@ -1,9 +1,10 @@
 .youtube {
+  .sub__visual {
+    @include bgImge('/public/img/youtube-sub-visual.jpg');
+  }
 
   .inner {
-
     .frame {
-
       &::after {
         display: block;
         clear: both;
@@ -12,11 +13,11 @@
 
       article {
         float: left;
-        width: 20%; 
+        width: 20%;
         height: 50rem;
-        padding: 1rem; 
+        padding: 1rem;
         overflow: hidden;
-  
+
         .inner {
           display: flex;
           flex-wrap: wrap;
@@ -27,60 +28,53 @@
           background-color: $white;
           box-shadow: 5px 5px 15px rgba(5, 5, 5, 0.1);
 
-
-  
           .txt {
-
             h2 {
-              font: bold 1.6rem/1.2em 'arial';
-              color: #555;
               margin-bottom: 2rem;
+              color: #555;
+              font: bold 1.6rem/1.2em 'arial';
               word-break: break-all;
             }
-    
+
             p {
-              font: 1.2rem/1.2em 'arial';
               color: #888;
+              font: 1.2rem/1.2em 'arial';
               word-break: break-all;
             }
           }
 
-
           .pic {
-            width: 100%; 
+            width: 100%;
             height: 15rem;
 
             img {
-              width: 100%; 
-              height: 100%; 
+              width: 100%;
+              height: 100%;
               object-fit: cover;
-
             }
           }
         }
       }
     }
-
-
   }
 
-  // .pop {
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   z-index: 100;
-  //   width: 100%;
-  //   height: 100%;
-  //   padding: 5vw;
-  //   background-color: rgba(0, 0, 0, 0.9);
+  .pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding: 5vw;
+    background-color: rgba(0, 0, 0, 0.9);
 
-  //   span {
-  //     position: absolute;
-  //     top: 3vw;
-  //     right: 5vw;
-  //     color: #fff;
-  //     font: bold 14px/1 'arial';
-  //     cursor: pointer;
-  //   }
-  // }
+    span {
+      position: absolute;
+      top: 3vw;
+      right: 5vw;
+      color: #fff;
+      font: bold 14px/1 'arial';
+      cursor: pointer;
+    }
+  }
 }

@@ -1,23 +1,22 @@
 import { useEffect, useState, useRef } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-// import { menuData } from '../../data/MenuData'
+import { NavLink } from 'react-router-dom'
 
 function Header() {
   const active = { color: 'aqua' }
   const [state, setstate] = useState(false)
   const header = useRef(null)
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll)
-  // }, [])
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+  }, [])
 
-  // const handleScroll = () => {
-  //   window.scrollY > 120 ? setstate(true) : setstate(false)
-  // }
+  const handleScroll = () => {
+    window.scrollY > 120 ? setstate(true) : setstate(false)
+  }
 
   return (
     <header
-      // className={`header ${state ? 'whiteBg' : 'transparent'}`}
+      className={`header ${state ? 'whiteBg' : 'transparent'}`}
       ref={header}
     >
       <h1 className="logo">
@@ -49,8 +48,8 @@ function Header() {
           </NavLink>
         </li>
         <li>
-          <NavLink activeStyle={active} exact to="/concat">
-            Concat
+          <NavLink activeStyle={active} exact to="/Contact">
+            Contact
           </NavLink>
         </li>
         <li>

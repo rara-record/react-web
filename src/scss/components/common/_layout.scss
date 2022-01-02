@@ -24,6 +24,31 @@ main {
   }
 }
 
+.sub__visual {
+  width: 100%;
+  height: 70vh;
+  color: white;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font: normal 6rem/7rem $font-main;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    transform: translateY(-2rem);
+    cursor: pointer;
+  }
+
+  p {
+    font: normal 2.5rem/3.5rem $font-second;
+    font-size: 25px;
+  }
+}
+
 footer {
   width: 100%;
   padding: 5rem 0;

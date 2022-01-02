@@ -26,121 +26,116 @@ function Gallery() {
   }, [])
 
   return (
-    <>
-      <main className="gallery">
-        <div className="sub-visual">
-          <div className="sub-visual__content">
-            <h1 className="sub-visual__content-h1">gallery</h1>
-            <div className="sub-visual__content-links">
-              <Link to="/">Home</Link>
-              <span className="sub-visual__content-span"></span>
-              <Link to="/about">gallery</Link>
-            </div>
-          </div>
-        </div>
+    <main className="gallery">
+      <section className="sub__visual">
+        <div className="inner">
+          <h1
+            onClick={() => {
+              if (enableClick && !interest) {
+                wrapper.current.classList.remove('on')
+                setLoading(true)
+                setEnableClick(false)
+                console.log('click')
 
-        <div className="contents">
-          <section>
-            <div className="inner">
-              <h1
-                onClick={() => {
-                  if (enableClick && !interest) {
+                getFlickr({
+                  type: 'interest',
+                })
+              }
+            }}
+          >
+            Gallery
+          </h1>
+          <p>
+            Property Group offers a full-service, <br></br>
+            residential project development.
+          </p>
+        </div>
+      </section>
+
+      <div className="contents">
+        <section>
+          <div className="inner">
+            <div className="search__wrapper">
+              <input
+                type="text"
+                ref={input}
+                onKeyPress={(e) => {
+                  if (e.key !== 'Enter') return
+
+                  if (enableClick) {
                     wrapper.current.classList.remove('on')
                     setLoading(true)
+                    setInterest(false)
                     setEnableClick(false)
-                    console.log('click')
 
+                    const tags = input.current.value
+                    input.current.value = ''
                     getFlickr({
-                      type: 'interest',
+                      type: 'search',
+                      tags: tags,
+                    })
+                  }
+                }}
+              />
+              <button
+                onClick={() => {
+                  if (enableClick) {
+                    wrapper.current.classList.remove('on')
+                    setLoading(true)
+                    setInterest(false)
+                    setEnableClick(false)
+                    const tags = input.current.value
+                    input.current.value = ''
+                    getFlickr({
+                      type: 'search',
+                      tags: tags,
                     })
                   }
                 }}
               >
-                Gallery
-              </h1>
+                검색
+              </button>
+            </div>
 
-              <div className="search__wrapper">
-                <input
-                  type="text"
-                  ref={input}
-                  onKeyPress={(e) => {
-                    if (e.key !== 'Enter') return
-
-                    if (enableClick) {
-                      wrapper.current.classList.remove('on')
-                      setLoading(true)
-                      setInterest(false)
-                      setEnableClick(false)
-
-                      const tags = input.current.value
-                      input.current.value = ''
-                      getFlickr({
-                        type: 'search',
-                        tags: tags,
-                      })
-                    }
-                  }}
-                />
-                <button
-                  onClick={() => {
-                    if (enableClick) {
-                      wrapper.current.classList.remove('on')
-                      setLoading(true)
-                      setInterest(false)
-                      setEnableClick(false)
-                      const tags = input.current.value
-                      input.current.value = ''
-                      getFlickr({
-                        type: 'search',
-                        tags: tags,
-                      })
-                    }
-                  }}
-                >
-                  검색
-                </button>
+            {loading && (
+              <div className="loading">
+                <img src={path + '/img/loading.gif'} alt="" />
               </div>
+            )}
 
-              {loading && (
-                <div className="loading">
-                  <img src={path + '/img/loading.gif'} alt="" />
-                </div>
-              )}
+            <div className="gallery__wrapper" ref={wrapper}>
+              <Masonry
+                className={'gallery__list'}
+                elementType={'ul'}
+                disableImagesLoaded={false}
+                updateOnEachImageLoad={false}
+                options={MasonryOptions}
+              >
+                {items.map((data, index) => {
+                  // 썸네일 이미지 주소
+                  let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
 
-              <div className="gallery__wrapper" ref={wrapper}>
-                <Masonry
-                  className={'gallery__list'}
-                  elementType={'ul'}
-                  disableImagesLoaded={false}
-                  updateOnEachImageLoad={false}
-                  options={MasonryOptions}
-                >
-                  {items.map((data, index) => {
-                    // 썸네일 이미지 주소
-                    let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
-
-                    return (
-                      <li className={'gallery__item'} key={index}>
-                        <div className="card">
-                          <figure>
-                            <img src={imgSrc} alt={data.alt} />
-                          </figure>
-                          <div className="card__title__wrapper">
-                            <div className="card__title">
-                              <h2>{data.title}</h2>
-                            </div>
+                  return (
+                    <li className={'gallery__item'} key={index}>
+                      <div className="card">
+                        <figure>
+                          <img src={imgSrc} alt={data.alt} />
+                        </figure>
+                        <div className="card__title__wrapper">
+                          <div className="card__title">
+                            <h2>{data.title}</h2>
                           </div>
                         </div>
-                      </li>
-                    )
-                  })}
-                </Masonry>
-              </div>
+                      </div>
+                    </li>
+                  )
+                })}
+              </Masonry>
             </div>
-          </section>
-        </div>
-      </main>
-    </>
+          </div>
+        </section>
+      </div>
+    </main>
   )
 
   // flickr 데이터를 불러온다
