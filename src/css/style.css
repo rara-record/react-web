@@ -671,7 +671,11 @@ header .menu__bars {
 .banner {
   width: 100%;
   height: 50rem;
-  background-position: center; }
+  background-position: center;
+  background-image: url("/public/img/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center 100px;
+  background-attachment: fixed; }
 
 .project__content {
   display: flex;
@@ -872,42 +876,47 @@ header .menu__bars {
   background-position: center 100px;
   background-attachment: fixed; }
 
-.youtube .inner .frame::after {
-  display: block;
-  clear: both;
-  content: ''; }
-
-.youtube .inner .frame article {
-  float: left;
-  width: 20%;
-  height: 50rem;
-  padding: 1rem;
-  overflow: hidden; }
-  .youtube .inner .frame article .inner {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    background-color: white;
-    box-shadow: 5px 5px 15px rgba(5, 5, 5, 0.1); }
-    .youtube .inner .frame article .inner .txt h2 {
-      margin-bottom: 2rem;
-      color: #555;
-      font: bold 1.6rem/1.2em 'arial';
-      word-break: break-all; }
-    .youtube .inner .frame article .inner .txt p {
-      color: #888;
-      font: 1.2rem/1.2em 'arial';
-      word-break: break-all; }
-    .youtube .inner .frame article .inner .pic {
+.youtube .frame {
+  width: 100%; }
+  .youtube .frame article {
+    float: left;
+    width: calc(100% / 3);
+    height: 520px;
+    padding-right: 40px; }
+    .youtube .frame article figure {
+      position: relative;
+      display: block;
       width: 100%;
-      height: 15rem; }
-      .youtube .inner .frame article .inner .pic img {
+      height: 300px;
+      margin-bottom: 20px;
+      overflow: hidden; }
+      .youtube .frame article figure img {
         width: 100%;
         height: 100%;
-        object-fit: cover; }
+        object-fit: corver;
+        cursor: pointer;
+        filter: grayscale(80%) contrast(80%); }
+    .youtube .frame article .text-box .title {
+      padding: 10px 0;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000; }
+      .youtube .frame article .text-box .title h2 {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 40px;
+        overflow: hidden;
+        font-size: 22px;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .youtube .frame article .text-box .title .date {
+        font-size: 12px; }
+    .youtube .frame article .text-box p {
+      padding: 20px 0;
+      font-size: 14px; }
+  .youtube .frame::after {
+    display: block;
+    clear: both;
+    content: ''; }
 
 .youtube .pop {
   position: fixed;
@@ -925,5 +934,73 @@ header .menu__bars {
     color: #fff;
     font: bold 14px/1 'arial';
     cursor: pointer; }
+
+.community .sub__visual {
+  background-image: url("/public/img/community-sub-visual.jpg");
+  background-repeat: no-repeat;
+  background-position: center 100px;
+  background-attachment: fixed;
+  background-position: center; }
+
+.community .notice {
+  padding-bottom: 0; }
+  .community .notice table {
+    width: 100%;
+    margin-bottom: 5rem;
+    border-top: 1px solid #999999;
+    border-collapse: collapse; }
+    .community .notice table th {
+      padding: 1.4rem 0;
+      color: #333333;
+      font: 1.4rem/1 "Oswald", sans-serif;
+      background: white;
+      border-bottom: 1px solid #dbdbdb; }
+    .community .notice table td {
+      padding: 2rem;
+      font: 1.6rem/1 "Oswald", sans-serif;
+      letter-spacing: 0.5px;
+      text-align: center;
+      border-bottom: 1px solid #bbb; }
+      .community .notice table td a {
+        color: #333; }
+      .community .notice table td:nth-of-type(2) {
+        text-align: left; }
+    .community .notice table tr:hover td {
+      background: #eeeded; }
+
+.community .pagination {
+  position: relative;
+  width: 100%;
+  padding-bottom: 2rem;
+  text-align: center; }
+  .community .pagination::after {
+    display: block;
+    clear: both;
+    content: ''; }
+  .community .pagination .prev,
+  .community .pagination .next {
+    display: inline-block;
+    color: #666;
+    font: 2rem/3rem "Oswald", sans-serif;
+    text-align: center; }
+  .community .pagination .numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    font-size: 0;
+    text-align: center; }
+    .community .pagination .numbers a {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      margin: 0 0.5rem;
+      color: #666;
+      font: 1.1rem/3rem "Oswald", sans-serif;
+      text-align: center;
+      transition: 0.5s; }
+      .community .pagination .numbers a:hover {
+        font: bold 1.3rem/3rem;
+        border-bottom: 1px solid #bbb; }
 
 /*# sourceMappingURL=style.css.map */

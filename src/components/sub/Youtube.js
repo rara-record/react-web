@@ -43,14 +43,6 @@ function Youtube() {
                 return (
                   <article key={index}>
                     <div className="inner">
-                      <div className="txt">
-                        <h2>
-                          {tit_len >= 40 ? tit.substr(0, 30) + '...' : tit}
-                        </h2>
-                        <p>
-                          {desc_len >= 20 ? desc.substr(0, 250) + '...' : desc}
-                        </p>
-                      </div>
                       <figure
                         className="pic"
                         onClick={() => {
@@ -60,6 +52,19 @@ function Youtube() {
                       >
                         <img src={item.snippet.thumbnails.medium.url} alt="" />
                       </figure>
+                      <div className="text-box">
+                        <div className="title">
+                          <h2>
+                            {tit_len >= 40 ? tit.substr(0, 30) + '...' : tit}
+                          </h2>
+                          <div className="date">
+                            {item.snippet.publishedAt.split('T')[0].slice(2)}
+                          </div>
+                        </div>
+                        <p>
+                          {desc_len >= 20 ? desc.substr(0, 250) + '...' : desc}
+                        </p>
+                      </div>
                     </div>
                   </article>
                 )
