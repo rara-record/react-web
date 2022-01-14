@@ -3,4 +3,84 @@
     @include bgImge('/public/img/about-sub-visual.jpg');
     background-position: center;
   }
+
+  .contents {
+    .about__project {
+      position: relative;
+
+      .inner {
+        min-height: 30rem;
+        .text__box {
+          text-align: center;
+
+          h2 {
+            font: bold 5.9rem/1.12em $font-main;
+            letter-spacing: -0.2rem;
+          }
+
+          p {
+            margin: 1.4rem 0 0.7rem;
+            padding: 0 20%;
+            font: 300 1.6rem/1.63em $font-main;
+            font-style: italic;
+          }
+        }
+      }
+
+      .slider {
+        .slider__wrapper {
+          display: flex;
+        }
+      }
+    }
+
+    .about__info {
+      padding: 10rem 0;
+      background-color: #111;
+
+      .inner {
+        min-height: 0;
+      }
+
+      .info__wrapper {
+        display: flex;
+        grid-gap: 12rem;
+
+        article {
+          position: relative;
+          color: #fff;
+
+          span {
+            position: absolute;
+            top: -10rem;
+            left: 0;
+            color: #1e1e1e;
+            font: 700 16rem/1 $font-point;
+            opacity: 0.8;
+          }
+
+          h2 {
+            position: relative;
+            padding-bottom: 2.1rem;
+            font: normal 2.7rem/1.2em $font-main;
+
+            &::after {
+              position: absolute;
+              bottom: 5px;
+              left: 0;
+              width: 4rem;
+              height: 1px;
+              background-color: #fff;
+              content: '';
+            }
+          }
+
+          p {
+            margin-top: 1.4rem;
+            font: normal 1.3rem/2 $font-point;
+          }
+        }
+      }
+    }
+  }
 }
