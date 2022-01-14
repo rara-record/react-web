@@ -1,0 +1,24 @@
+.contact {
+  .location {
+    .inner {
+      #map {
+        width: 100%;
+        height: 500px;
+      }
+
+      .branch {
+        display: flex;
+
+        li {
+          font-size: 2rem;
+          border: 1px solid #000;
+          cursor: pointer;
+
+          &.on {
+            color: pink;
+          }
+        }
+      }
+    }
+  }
+}
