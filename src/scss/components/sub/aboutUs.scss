@@ -7,6 +7,7 @@
   .contents {
     .about__project {
       position: relative;
+      padding: 9rem 0;
 
       .inner {
         min-height: 30rem;
@@ -78,6 +79,151 @@
           p {
             margin-top: 1.4rem;
             font: normal 1.3rem/2 $font-point;
+          }
+        }
+      }
+    }
+
+    .about__team {
+      position: relative;
+      padding: 9rem 0;
+
+      .title__wrapper {
+        padding: 10rem 0;
+        text-align: center;
+
+        h2 {
+          position: relative;
+          font: bold 3.9rem/5rem 'Roboto Condensed', sans-serif;
+
+          &::before {
+            @include pos-center-x;
+            top: -150%;
+            width: 0.1px;
+            height: 5rem;
+            margin-bottom: 2rem;
+            background-color: #858585;
+            content: '';
+          }
+
+          &::after {
+            @include pos-center-x;
+            bottom: -250%;
+            width: 0.1px;
+            height: 5rem;
+            margin-bottom: 2rem;
+            background-color: #858585;
+            content: '';
+          }
+        }
+
+        p {
+          font: italic 1.6rem/2rem $font-main;
+          font-weight: 300;
+        }
+      }
+
+      .team__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+
+        .team__list {
+          position: relative;
+          display: flex;
+          width: calc(100% / 3);
+          margin: 4rem 0;
+          padding: 0 4rem;
+
+          .team__info {
+            position: absolute;
+            bottom: 0;
+            left: 2rem;
+            transform: rotate(-90deg);
+            transform-origin: bottom left;
+
+            .team__name {
+              display: inline-block;
+              font: 700 2.2rem/1.3em $font-point;
+              letter-spacing: 0.01em;
+            }
+
+            .team__position {
+              position: relative;
+              display: inline-block;
+              padding-left: 2rem;
+              color: #878787;
+              font: italic 1.4rem/1.3em $font-main;
+              font-weight: 300;
+              letter-spacing: 0.05em;
+
+              &::before {
+                position: absolute;
+                top: 0;
+                left: 0.7rem;
+                content: '/';
+              }
+            }
+          }
+
+          .team__img {
+            position: relative;
+            cursor: pointer;
+
+            .team__sns {
+              @include flexCenter;
+              position: absolute;
+              top: 0;
+              left: 0;
+              align-items: flex-end;
+              width: 100%;
+              height: 100%;
+
+              li {
+                padding: 0 1rem;
+                transform: translateY(50px);
+                opacity: 0;
+                transition: all 0.2s;
+
+                @for $i from 1 through 4 {
+                  &:nth-of-type(#{$i}) {
+                    transition-delay: (0.1s * $i) - 0.1s;
+                  }
+                }
+
+                i {
+                  color: #fff;
+                  font-size: 2rem;
+                }
+              }
+            }
+
+            &:hover {
+              .team__sns {
+                background: linear-gradient(
+                  to top,
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0)
+                );
+
+                li {
+                  transform: translateY(-20px);
+                  opacity: 1;
+                }
+              }
+            }
+          }
+
+          &:first-child {
+            transform: translateY(50%);
+          }
+
+          &:nth-of-type(3) {
+            transform: translateY(50%);
+          }
+
+          &:nth-of-type(4) {
+            transform: translateX(100%);
           }
         }
       }

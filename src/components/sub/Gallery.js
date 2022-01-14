@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 import { FilckrData } from '../../data/FlickrData'
 import Masonry from 'react-masonry-component'
-import { Link } from 'react-router-dom'
 const path = process.env.PUBLIC_URL
 
 const MasonryOptions = {

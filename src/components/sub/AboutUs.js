@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function About() {
   const path = process.env.PUBLIC_URL
@@ -116,19 +117,44 @@ function About() {
               <div className="team__wrapper">
                 {team.map((team, index) => {
                   return (
-                    <article key={index}>
+                    <article key={index} className="team__list">
                       <div className="team__info">
                         <h3 className="team__name">{team.name}</h3>
                         <h4 className="team__position">{team.position}</h4>
                       </div>
-                      <figure className="team">
+
+                      <figure className="team__img">
                         <img src={path + team.image} alt={team.alt} />
+
+                        <ul className="team__sns">
+                          <li>
+                            <Link to="/">
+                              <i className="fab fa-tumblr"></i>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/">
+                              <i className="fab fa-twitter"></i>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/">
+                              <i className="fab fa-instagram"></i>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/">
+                              <i className="fab fa-github-alt"></i>
+                            </Link>
+                          </li>
+                        </ul>
                       </figure>
                     </article>
                   )
                 })}
               </div>
             </div>
+
             <div className="bg-grid">
               <div></div>
               <div></div>

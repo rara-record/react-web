@@ -9,9 +9,9 @@
     top: 0;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
 
-    @for $i from 1 through 8 {
+    @for $i from 1 through 6 {
       &:nth-of-type(#{$i}) {
-        left: (100% / 8) * $i;
+        left: (100% / 6) * $i;
       }
     }
 
