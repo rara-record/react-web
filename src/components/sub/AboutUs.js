@@ -1,7 +1,17 @@
 import React from 'react'
-const path = process.env.PUBLIC_URL
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 function About() {
+  const path = process.env.PUBLIC_URL
+  const [team, setTeam] = useState([])
+
+  useEffect(() => {
+    axios.get(`${path}/db/team.json`).then((data) => {
+      setTeam(data.data.data)
+    })
+  }, [])
+
   return (
     <>
       <main className="about">
@@ -56,8 +66,6 @@ function About() {
               <div></div>
               <div></div>
               <div></div>
-              <div></div>
-              <div></div>
             </div>
           </section>
 
@@ -92,6 +100,42 @@ function About() {
                   </p>
                 </article>
               </div>
+            </div>
+          </section>
+
+          <section className="about__team">
+            <div className="inner">
+              <div className="title__wrapper">
+                <h2>BEST OUR TEAM</h2>
+                <p>
+                  Proin gravida nibh vel velit auctor aliquet. Aenean
+                  sollicitudin, lorem quis
+                </p>
+              </div>
+
+              <div className="team__wrapper">
+                {team.map((team, index) => {
+                  return (
+                    <article key={index}>
+                      <div className="team__info">
+                        <h3 className="team__name">{team.name}</h3>
+                        <h4 className="team__position">{team.position}</h4>
+                      </div>
+                      <figure className="team">
+                        <img src={path + team.image} alt={team.alt} />
+                      </figure>
+                    </article>
+                  )
+                })}
+              </div>
+            </div>
+            <div className="bg-grid">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
             </div>
           </section>
         </div>
