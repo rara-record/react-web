@@ -34,7 +34,6 @@ function Gallery() {
                 wrapper.current.classList.remove('on')
                 setLoading(true)
                 setEnableClick(false)
-                console.log('click')
 
                 getFlickr({
                   type: 'interest',
@@ -45,10 +44,11 @@ function Gallery() {
             Gallery
           </h1>
 
-          {/* <div className="search__wrapper">
+          <div className="search__wrapper">
             <input
               type="text"
               ref={input}
+              placeholder="검색어를 입력해주세요"
               onKeyPress={(e) => {
                 if (e.key !== 'Enter') return
 
@@ -83,13 +83,19 @@ function Gallery() {
                 }
               }}
             >
-              검색
+              <i className="fas fa-search"></i>
             </button>
-          </div> */}
+          </div>
 
           {loading && (
             <div className="loading">
-              <img src={path + '/img/loading.gif'} alt="" />
+              <ul className="loading__list">
+                <li className="load1"></li>
+                <li className="load2"></li>
+                <li className="load3"></li>
+                <li className="load4"></li>
+                <li className="load5"></li>
+              </ul>
             </div>
           )}
 
@@ -113,12 +119,13 @@ function Gallery() {
 
                     <div className="title__wrapper">
                       <h2>{data.title}</h2>
-                      <p>Lorem ipsum</p>
+                      <p>{data.owner}</p>
                     </div>
 
                     <figure>
                       <img src={imgSrc} alt={data.alt} />
                     </figure>
+
                     <span className="date">2017.09.28</span>
                   </li>
                 )
