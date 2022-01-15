@@ -91,14 +91,9 @@ function Gallery() {
           </div>
 
           {loading && (
-            <div className="loading">
-              <ul className="loading__list">
-                <li className="load1"></li>
-                <li className="load2"></li>
-                <li className="load3"></li>
-                <li className="load4"></li>
-                <li className="load5"></li>
-              </ul>
+            <div className="loading-container">
+              <div className="loading"></div>
+              <div className="loading-text">loading</div>
             </div>
           )}
 
