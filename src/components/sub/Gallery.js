@@ -11,12 +11,15 @@ const MasonryOptions = {
 }
 
 function Gallery() {
-  let [items, setItems] = useState([])
-  let [enableClick, setEnableClick] = useState(true)
-  let [interest, setInterest] = useState(true)
+  const [items, setItems] = useState([])
+  const [enableClick, setEnableClick] = useState(true)
+  const [interest, setInterest] = useState(true)
   const [loading, setLoading] = useState(true)
-  let input = useRef(null)
-  let wrapper = useRef(null)
+  const [isPopup, setIsPopup] = useState(false)
+  const [index, setIndex] = useState(0)
+
+  const input = useRef(null)
+  const wrapper = useRef(null)
 
   useEffect(() => {
     getFlickr({
@@ -122,7 +125,12 @@ function Gallery() {
                       <p>{data.owner}</p>
                     </div>
 
-                    <figure>
+                    <figure
+                      onClick={() => {
+                        setIsPopup(true)
+                        setIndex(index)
+                      }}
+                    >
                       <img src={imgSrc} alt={data.alt} />
                     </figure>
 
@@ -133,9 +141,32 @@ function Gallery() {
             </Masonry>
           </div>
         </div>
+
+        {isPopup && <Pop />}
       </section>
     </main>
   )
+
+  function Pop() {
+    const target = items[index]
+    const imgSrc = `https://live.staticflickr.com/${target.server}/${target.id}_${target.secret}_b.jpg`
+
+    return (
+      <aside className="pop">
+        <h1>{target.title}</h1>
+        <figure>
+          <img src={imgSrc} alt={target.alt} />
+        </figure>
+        <span
+          onClick={() => {
+            setIsPopup(false)
+          }}
+        >
+          close
+        </span>
+      </aside>
+    )
+  }
 
   // flickr 데이터를 불러온다
   async function getFlickr(opt) {
