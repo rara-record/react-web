@@ -18,11 +18,14 @@ function About() {
       <main className="about">
         <section className="sub__visual">
           <div className="inner">
-            <h1>ABOUT US</h1>
-            <p>
-              Property Group offers a full-service, <br></br>
-              residential project development.
-            </p>
+            <div className="slogan">
+              <h1>
+                <div className="about__title">ABOUT US</div>
+              </h1>
+              <h2>
+                <div className="about__subtitle">GUSTAV CALATRAVA</div>
+              </h2>
+            </div>
           </div>
         </section>
 

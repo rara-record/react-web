@@ -1,7 +1,58 @@
 .about {
   .sub__visual {
-    @include bgImge('/public/img/about-sub-visual.jpg');
+    position: relative;
     background-position: center;
+    @include bgImge('/public/img/about-sub-visual.jpg');
+
+    .slogan {
+      position: absolute;
+      top: 50%;
+      left: 4.5rem;
+      padding: 2rem 10rem;
+      transform: translate(0, -50%);
+      perspective: 900px;
+
+      h1 {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+
+        .about__title {
+          position: relative;
+          color: #878787;
+          font: 700 8rem/10rem $font-main;
+          letter-spacing: -0.2rem;
+          text-align: center;
+          cursor: pointer;
+          opacity: 0;
+          animation: text_animation 0.5s 0.5s ease-in-out forwards;
+        }
+      }
+
+      h2 {
+        position: relative;
+        overflow: hidden;
+
+        .about__subtitle {
+          color: #878787;
+          font: 700 3rem/3.5rem $font-main;
+          text-align: center;
+          opacity: 0;
+          animation: text_animation 0.5s 0.7s ease-in-out forwards;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        height: 100%;
+        background: $black;
+        animation: text_animation_before 0.5s 0.2s ease-in-out forwards;
+        content: '';
+      }
+    }
   }
 
   .contents {
@@ -228,5 +279,24 @@
         }
       }
     }
+  }
+}
+
+@keyframes text_animation_before {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes text_animation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
