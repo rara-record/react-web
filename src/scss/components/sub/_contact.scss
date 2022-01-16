@@ -1,0 +1,176 @@
+.contact {
+  section {
+    padding: 0;
+  }
+
+  .sub__visual {
+    position: relative;
+
+    @include bgImge('/public/img/contact-sub-visual.jpg');
+
+    .slogan {
+      position: absolute;
+      top: 50%;
+      left: 4.5rem;
+      padding: 2rem 10rem;
+      transform: translate(0, -50%);
+      perspective: 900px;
+
+      h1 {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+
+        .about__title {
+          position: relative;
+          color: $white;
+          font: 700 8rem/10rem $font-main;
+          letter-spacing: -0.2rem;
+          text-align: center;
+          cursor: pointer;
+          opacity: 0;
+          animation: text_animation 0.5s 0.5s ease-in-out forwards;
+        }
+      }
+
+      h2 {
+        position: relative;
+        overflow: hidden;
+
+        .about__subtitle {
+          color: $white;
+          font: 700 3rem/3.5rem $font-main;
+          text-align: center;
+          opacity: 0;
+          animation: text_animation 0.5s 0.7s ease-in-out forwards;
+        }
+      }
+
+      // &::before {
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      //   display: block;
+      //   height: 100%;
+      //   background: $black;
+      //   animation: text_animation_before 0.5s 0.2s ease-in-out forwards;
+      //   content: '';
+      // }
+    }
+  }
+
+  .contents {
+    .inner {
+      @include flexCenter;
+      flex-wrap: wrap;
+      grid-gap: 2.5rem;
+
+      article {
+        position: relative;
+        width: calc((100% / 4) - 2.5rem);
+        height: 22rem;
+        text-align: center;
+        box-shadow: 0 0 0.7rem 0 rgba(43, 52, 58, 0.08);
+        cursor: pointer;
+
+        .info__icon {
+          position: relative;
+          display: inline-block;
+          width: 6rem;
+          height: 6rem;
+          background-color: #5f5c5c;
+          transform-style: preserve-3d;
+
+          i {
+            display: block;
+            color: $white;
+            font-size: 2.5rem;
+            transform: translateY(40%);
+          }
+
+          &::after {
+            position: absolute;
+            top: -11px;
+            right: 0;
+            z-index: -4;
+            width: 100%;
+            height: 11px;
+            background-color: #5f5c5c;
+            transform: scale(1, 1.2);
+            transition: all 0.5s;
+            content: '';
+          }
+
+          &::before {
+            position: absolute;
+            top: -1.2rem;
+            left: 6rem;
+            display: block;
+            color: #5f5c5c;
+            border-style: solid;
+            border-width: 0 13px 12px 0;
+            border-right-color: transparent !important;
+            border-left-color: transparent !important;
+            opacity: 0.7;
+            transition: all 0.4s;
+            content: '';
+          }
+        }
+
+        h1 {
+          padding-top: 3rem;
+          font: normal 2.3rem/1 $font-main;
+        }
+
+        .detail {
+          padding-top: 1.5rem;
+
+          li {
+            padding: 0.7rem 0;
+            color: #777;
+            font: normal 1.5rem/1 $font-second;
+          }
+        }
+
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          border-bottom: 5px solid #5f5c5c;
+          transform: scaleX(0);
+          transition: transform 800ms ease-in-out;
+          content: '';
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    .location {
+      .inner {
+        #map {
+          width: 100%;
+          height: 500px;
+        }
+
+        .branch {
+          display: flex;
+
+          li {
+            font-size: 2rem;
+            border: 1px solid #000;
+            cursor: pointer;
+
+            &.on {
+              color: pink;
+            }
+          }
+        }
+      }
+    }
+  }
+}

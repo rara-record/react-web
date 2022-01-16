@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import { ContactData } from './../../data/ContactData'
 
 function Contact() {
   //윈도우 전역에 등록되어 있는 kakao객체를 불러옴
@@ -8,12 +9,14 @@ function Contact() {
   const btnBranch = useRef(null)
   //생성된 map인스턴스가 담길 state생성
   const [map, setMap] = useState(null)
+  const infoWapper = useRef(null)
   // 순서값을 index스테이트에 넣어서 관리
   const [index, setIndex] = useState(0)
   //toggle값에 따라 트래픽보기 버튼 활성화, 비활성화
   const [toggle, setToggle] = useState(false)
+
   //state에 담을 초기 정보값
-  const info = [
+  const data = [
     {
       title: '본점',
       latlng: new kakao.maps.LatLng(37.5132313, 127.0594368),
@@ -38,12 +41,12 @@ function Contact() {
     },
   ]
 
-  const [mapInfo, setMapInfo] = useState(info)
+  const [mapData, setMapData] = useState(data)
 
   //컴포넌트 생성시
   useEffect(() => {
     const options = {
-      center: mapInfo[index].latlng,
+      center: mapData[index].latlng,
       level: 3,
     }
 
@@ -51,19 +54,19 @@ function Contact() {
     const map = new kakao.maps.Map(container.current, options)
     setMap(map)
 
-    // 마커 인스턴스 호출 (호출시 mapInfo라는 stae에서 정보값 호출)
+    // 마커 인스턴스 호출 (호출시 mapData stae에서 정보값 호출)
     new kakao.maps.Marker({
       map: map,
-      position: mapInfo[index].latlng,
-      title: mapInfo[index].title,
+      position: mapData[index].latlng,
+      title: mapData[index].title,
       image: new kakao.maps.MarkerImage(
-        mapInfo[index].imgSrc,
-        mapInfo[index].imgSize,
-        mapInfo[index].imgPos
+        mapData[index].imgSrc,
+        mapData[index].imgSize,
+        mapData[index].imgPos
       ),
     })
 
-    map.setCenter(mapInfo[index].latlng)
+    map.setCenter(mapData[index].latlng)
 
     //지도 타입변경 패널 프레임에 생성
     const mapTypeControl = new kakao.maps.MapTypeControl()
@@ -79,7 +82,7 @@ function Contact() {
       btnBranch.current.children[index].classList.add('on')
     }
 
-    const mapSet = () => map.setCenter(mapInfo[index].latlng)
+    const mapSet = () => map.setCenter(mapData[index].latlng)
 
     // 윈도우 리사이즈시 마커 위치 중앙배치
     window.addEventListener('resize', mapSet)
@@ -91,13 +94,38 @@ function Contact() {
   return (
     <main className="contact">
       <section className="sub__visual">
-        <h1>Contact</h1>
-        <p>
-          Property Group offers a full-service, residential project development.
-        </p>
+        <div className="inner">
+          <div className="slogan">
+            <h1>
+              <div className="about__title">CONTACT US</div>
+            </h1>
+            <h2>
+              <div className="about__subtitle">GUSTAV CALATRAVA</div>
+            </h2>
+          </div>
+        </div>
       </section>
 
       <div className="contents">
+        <section className="contact__info">
+          <div className="inner">
+            {ContactData.map((info, index) => {
+              return (
+                <article key={index}>
+                  <div className="info__icon">
+                    <i className={info.icon}></i>
+                  </div>
+                  <h1>{info.title}</h1>
+                  <ul className="detail">
+                    <li>{info.detail[0]}</li>
+                    <li>{info.detail[1]}</li>
+                  </ul>
+                </article>
+              )
+            })}
+          </div>
+        </section>
+
         <section className="location">
           <div className="inner">
             {/* 맵이 출력될 프레임 useRef로 참조 */}
@@ -131,7 +159,7 @@ function Contact() {
               }
             </ul>
 
-            {/* 각 브랜치 버튼 클릭시 mapInfo state에서 정보값 불러와 지도 위치 변경 */}
+            {/* 각 브랜치 버튼 클릭시 mapData state에서 정보값 불러와 지도 위치 변경 */}
             <ul className="branch" ref={btnBranch}>
               <li
                 onClick={() => {
