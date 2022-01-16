@@ -1,0 +1,28 @@
+{
+  "team": [
+    {
+      "name": "Marie Fleur",
+      "position": "Web Designer",
+      "image": "/img/about-team-img-01.jpg",
+      "alt": "TEAM1"
+    },
+    {
+      "name": "Joe Olson",
+      "position": "Game Designer",
+      "image": "/img/about-team-img-02.jpg",
+      "alt": "TEAM2"
+    },
+    {
+      "name": "Nick Forest",
+      "position": "Developer",
+      "image": "/img/about-team-img-03.jpg",
+      "alt": "TEAM3"
+    },
+    {
+      "name": "Mary Hart",
+      "position": "Art Director",
+      "image": "/img/about-team-img-04.jpg",
+      "alt": "TEAM4"
+    }
+  ]
+}

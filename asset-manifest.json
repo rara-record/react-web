@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.3d00c0aa.css",
-    "main.js": "/react-portfolio/static/js/main.243ff8b3.js",
-    "static/media/about-sub-visual.jpg": "/react-portfolio/static/media/about-sub-visual.1449aae9a42c3cc7a29c.jpg",
+    "main.css": "/react-portfolio/static/css/main.cc4c334f.css",
+    "main.js": "/react-portfolio/static/js/main.469f579e.js",
     "static/media/banner.jpg": "/react-portfolio/static/media/banner.321e2a194d0ec66d24d9.jpg",
     "static/media/community-sub-visual.jpg": "/react-portfolio/static/media/community-sub-visual.8ebbc0c6c5686cb194b4.jpg",
     "static/media/youtube-sub-visual.jpg": "/react-portfolio/static/media/youtube-sub-visual.b40cefd7def47133099d.jpg",
-    "static/media/gallery-sub-visual.jpg": "/react-portfolio/static/media/gallery-sub-visual.efbbb178b935a275c3c5.jpg",
+    "static/media/about-sub-visual.jpg": "/react-portfolio/static/media/about-sub-visual.bd0b16f9791661777b7e.jpg",
+    "static/media/contact-sub-visual.jpg": "/react-portfolio/static/media/contact-sub-visual.a5ccbf24d020ba9678a8.jpg",
     "static/media/brand-bg.png": "/react-portfolio/static/media/brand-bg.b77db0407710b6abcaba.png",
     "index.html": "/react-portfolio/index.html",
-    "main.3d00c0aa.css.map": "/react-portfolio/static/css/main.3d00c0aa.css.map",
-    "main.243ff8b3.js.map": "/react-portfolio/static/js/main.243ff8b3.js.map"
+    "main.cc4c334f.css.map": "/react-portfolio/static/css/main.cc4c334f.css.map",
+    "main.469f579e.js.map": "/react-portfolio/static/js/main.469f579e.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d00c0aa.css",
-    "static/js/main.243ff8b3.js"
+    "static/css/main.cc4c334f.css",
+    "static/js/main.469f579e.js"
   ]
 }
