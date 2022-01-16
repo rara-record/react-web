@@ -1421,7 +1421,7 @@ header .menu__bars {
         text-align: center;
         cursor: pointer;
         opacity: 0;
-        animation: text_animation 0.5s 0.5s ease-in-out forwards; }
+        animation: text_animation 0.5s 0.2s ease-in-out forwards; }
     .contact .sub__visual .slogan h2 {
       position: relative;
       overflow: hidden; }
@@ -1430,34 +1430,34 @@ header .menu__bars {
         font: 700 3rem/3.5rem "Roboto Condensed", sans-serif;
         text-align: center;
         opacity: 0;
-        animation: text_animation 0.5s 0.7s ease-in-out forwards; }
+        animation: text_animation 0.5s 0.4s ease-in-out forwards; }
 
-.contact .contents .inner {
+.contact .contents .contact__info .inner {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  grid-gap: 2.5rem; }
-  .contact .contents .inner article {
+  flex-wrap: wrap; }
+  .contact .contents .contact__info .inner article {
     position: relative;
-    width: calc((100% / 4) - 2.5rem);
+    width: calc((100% / 4) - 1.5rem);
     height: 22rem;
+    margin-right: 2rem;
     text-align: center;
     box-shadow: 0 0 0.7rem 0 rgba(43, 52, 58, 0.08);
-    cursor: pointer; }
-    .contact .contents .inner article .info__icon {
+    cursor: pointer;
+    color: #222; }
+    .contact .contents .contact__info .inner article .info__icon {
       position: relative;
       display: inline-block;
       width: 6rem;
       height: 6rem;
       background-color: #5f5c5c;
       transform-style: preserve-3d; }
-      .contact .contents .inner article .info__icon i {
+      .contact .contents .contact__info .inner article .info__icon i {
         display: block;
         color: white;
         font-size: 2.5rem;
         transform: translateY(40%); }
-      .contact .contents .inner article .info__icon::after {
+      .contact .contents .contact__info .inner article .info__icon::after {
         position: absolute;
         top: -11px;
         right: 0;
@@ -1468,7 +1468,7 @@ header .menu__bars {
         transform: scale(1, 1.2);
         transition: all 0.5s;
         content: ''; }
-      .contact .contents .inner article .info__icon::before {
+      .contact .contents .contact__info .inner article .info__icon::before {
         position: absolute;
         top: -1.2rem;
         left: 6rem;
@@ -1481,16 +1481,18 @@ header .menu__bars {
         opacity: 0.7;
         transition: all 0.4s;
         content: ''; }
-    .contact .contents .inner article h1 {
+    .contact .contents .contact__info .inner article h1 {
       padding-top: 3rem;
       font: normal 2.3rem/1 "Roboto Condensed", sans-serif; }
-    .contact .contents .inner article .detail {
+    .contact .contents .contact__info .inner article .detail {
       padding-top: 1.5rem; }
-      .contact .contents .inner article .detail li {
+      .contact .contents .contact__info .inner article .detail li {
         padding: 0.7rem 0;
         color: #777;
         font: normal 1.5rem/1 "Roboto", sans-serif; }
-    .contact .contents .inner article::after {
+    .contact .contents .contact__info .inner article:last-child {
+      margin-right: 0; }
+    .contact .contents .contact__info .inner article::after {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -1500,20 +1502,188 @@ header .menu__bars {
       transform: scaleX(0);
       transition: transform 800ms ease-in-out;
       content: ''; }
-    .contact .contents .inner article:hover::after {
+    .contact .contents .contact__info .inner article:hover::after {
       transform: scaleX(1); }
 
-.contact .contents .location .inner #map {
-  width: 100%;
-  height: 500px; }
+.contact .contents .contact__form .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: 3.5rem; }
 
-.contact .contents .location .inner .branch {
-  display: flex; }
-  .contact .contents .location .inner .branch li {
-    font-size: 2rem;
-    border: 1px solid #000;
-    cursor: pointer; }
-    .contact .contents .location .inner .branch li.on {
-      color: pink; }
+.contact .contents .contact__form figure {
+  width: 32%; }
+  .contact .contents .contact__form figure img {
+    height: 50rem; }
+
+.contact .contents .contact__form .form__wrapper {
+  width: calc((100% - 32%) - 3.5rem);
+  height: 50rem; }
+  .contact .contents .contact__form .form__wrapper h1 {
+    font: 500 3rem/3.5rem "Roboto", sans-serif; }
+  .contact .contents .contact__form .form__wrapper form input[type="text"] {
+    width: calc(50% - 1rem);
+    font: normal 1.5rem/1 "Roboto", sans-serif;
+    border: 1px solid rgba(119, 119, 119, 0.2);
+    padding: 1.5rem;
+    margin: 1.5rem 0; }
+    .contact .contents .contact__form .form__wrapper form input[type="text"]::placeholder {
+      color: #d3cdcd; }
+    .contact .contents .contact__form .form__wrapper form input[type="text"]:nth-of-type(odd) {
+      margin-right: 2rem; }
+    .contact .contents .contact__form .form__wrapper form input[type="text"]:focus {
+      border-color: #9a1824; }
+  .contact .contents .contact__form .form__wrapper form textarea {
+    width: 100%;
+    height: 13rem;
+    font: normal 1.5rem/1 "Roboto", sans-serif;
+    border: 1px solid #999;
+    padding: 1.5rem;
+    margin: 1.5rem 0; }
+    .contact .contents .contact__form .form__wrapper form textarea::placeholder {
+      color: #d3cdcd; }
+    .contact .contents .contact__form .form__wrapper form textarea:focus {
+      border-color: #9a1824; }
+  .contact .contents .contact__form .form__wrapper form .check {
+    margin: 2rem 0;
+    font: normal 1.5rem/1 "Roboto Condensed", sans-serif; }
+    .contact .contents .contact__form .form__wrapper form .check span {
+      padding-left: 1rem;
+      color: #777;
+      letter-spacing: 0.05rem; }
+  .contact .contents .contact__form .form__wrapper form .button__outline {
+    position: relative;
+    display: inline-block;
+    margin: 2rem 0;
+    transition: all 0.5s ease 0s; }
+    .contact .contents .contact__form .form__wrapper form .button__outline input {
+      font: normal 1.5rem/1 "Roboto", sans-serif;
+      border: 1px solid #1e1e1e;
+      padding: 1.5rem 3rem;
+      cursor: pointer; }
+    .contact .contents .contact__form .form__wrapper form .button__outline::before {
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      display: inline-block;
+      padding: 0.3rem;
+      border: solid;
+      border-width: 0 1px 1px 0;
+      border-color: #232323;
+      transition: all .7s ease-out;
+      transform: rotate(0deg);
+      content: ""; }
+    .contact .contents .contact__form .form__wrapper form .button__outline::after {
+      position: absolute;
+      bottom: -6px;
+      right: -6px;
+      display: inline-block;
+      padding: 0.3rem;
+      border: solid;
+      border-width: 1px 0 0 1px;
+      border-color: #232323;
+      transition: all .7s ease-out;
+      transform: rotate(0deg);
+      content: ""; }
+    .contact .contents .contact__form .form__wrapper form .button__outline:hover {
+      border-color: #232323;
+      background-color: #232323; }
+    .contact .contents .contact__form .form__wrapper form .button__outline:hover input {
+      color: white; }
+    .contact .contents .contact__form .form__wrapper form .button__outline:hover::before {
+      left: 100%;
+      transform: rotate(90deg); }
+    .contact .contents .contact__form .form__wrapper form .button__outline:hover::after {
+      right: 100%;
+      transform: rotate(90deg); }
+
+.contact .contents .contact__location {
+  padding: 10rem 0 5rem; }
+  .contact .contents .contact__location h1 {
+    margin: 2rem 0;
+    font: normal 5rem/1 "Roboto Condensed", sans-serif;
+    color: #9a1824; }
+  .contact .contents .contact__location .inner {
+    position: relative; }
+    .contact .contents .contact__location .inner #map {
+      width: 100%;
+      height: 500px; }
+    .contact .contents .contact__location .inner .branch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: inline-flex;
+      margin: 3rem 0;
+      border: 1px solid #d3cdcd; }
+      .contact .contents .contact__location .inner .branch li {
+        font: normal 1.6rem/1 "Roboto Condensed", sans-serif;
+        padding: 2rem 8rem;
+        cursor: pointer;
+        border-right: 1px solid #d3cdcd;
+        color: #555; }
+        .contact .contents .contact__location .inner .branch li.on {
+          background-color: #9a1824;
+          color: white;
+          font-weight: bold; }
+    .contact .contents .contact__location .inner .traffic {
+      background: #fff;
+      padding: 1.5rem 0; }
+      .contact .contents .contact__location .inner .traffic li {
+        font: bold 1.7rem/1 "Roboto Condensed", sans-serif;
+        cursor: pointer;
+        color: #222; }
+        .contact .contents .contact__location .inner .traffic li span {
+          color: #9a1824; }
+
+.contact .contents .contact__table {
+  margin-bottom: 10rem; }
+  .contact .contents .contact__table h2 {
+    position: relative;
+    font: bold 2rem/1 "Roboto Condensed", sans-serif;
+    margin: 5rem 0 2rem;
+    padding-left: 1.2rem;
+    letter-spacing: -0.045em; }
+    .contact .contents .contact__table h2::after {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 4px;
+      height: 20px;
+      background-color: #9a1824;
+      content: ''; }
+  .contact .contents .contact__table table {
+    width: 100%;
+    table-layout: fixed;
+    border-top: 1px solid #000;
+    border-right: 1px solid #e1e1e1; }
+    .contact .contents .contact__table table caption {
+      overflow: hidden;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      line-height: 0; }
+    .contact .contents .contact__table table colgroup .head {
+      width: 20%; }
+    .contact .contents .contact__table table tbody tr {
+      width: 100%; }
+      .contact .contents .contact__table table tbody tr th {
+        padding: 2rem 0;
+        font: bold 1.5rem/1 "Roboto Condensed", sans-serif;
+        text-align: center;
+        background-color: #f7f7f7;
+        border-left: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1; }
+      .contact .contents .contact__table table tbody tr td {
+        padding: 2rem 1rem;
+        font: normal 1.5rem/1 "Roboto", sans-serif;
+        text-align: left;
+        border-left: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1; }
+        .contact .contents .contact__table table tbody tr td span {
+          display: block;
+          margin-top: 1.2rem;
+          font: normal 1.2rem/1 "Roboto", sans-serif;
+          color: #9a1824; }
 
 /*# sourceMappingURL=style.css.map */

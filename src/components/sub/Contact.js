@@ -1,12 +1,15 @@
 import { useEffect, useState, useRef } from 'react'
-import { ContactData } from './../../data/ContactData'
+import { ContactData } from '../../data/ContactData'
+const path = process.env.PUBLIC_URL
 
 function Contact() {
+  console.log('렌더링')
   //윈도우 전역에 등록되어 있는 kakao객체를 불러옴
   const { kakao } = window
   //useRef로 #map 참조
   const container = useRef(null)
   const btnBranch = useRef(null)
+
   //생성된 map인스턴스가 담길 state생성
   const [map, setMap] = useState(null)
   const infoWapper = useRef(null)
@@ -26,15 +29,15 @@ function Contact() {
       imgPos: { offset: new kakao.maps.Point(116, 99) },
     },
     {
-      title: '지점1',
-      latlng: new kakao.maps.LatLng(37.507099899564444, 126.75639338893572),
+      title: '전라도 지점',
+      latlng: new kakao.maps.LatLng(35.58874404973356, 126.82353435118392),
       imgSrc: process.env.PUBLIC_URL + '/img/marker2.png',
       imgSize: new kakao.maps.Size(232, 99),
       imgPos: { offset: new kakao.maps.Point(116, 99) },
     },
     {
-      title: '지점2',
-      latlng: new kakao.maps.LatLng(35.17422705914147, 129.10766665201712),
+      title: '제주도 지점',
+      latlng: new kakao.maps.LatLng(33.46701997404598, 126.54544061331417),
       imgSrc: process.env.PUBLIC_URL + '/img/marker3.png',
       imgSize: new kakao.maps.Size(232, 99),
       imgPos: { offset: new kakao.maps.Point(116, 99) },
@@ -126,8 +129,65 @@ function Contact() {
           </div>
         </section>
 
-        <section className="location">
+        <section className="contact__form">
           <div className="inner">
+            <figure>
+              <img src={path + '/img/contact-form-img.jpg'} alt="" />
+            </figure>
+
+            <div className="form__wrapper">
+              <h1>Send Your Message To Us</h1>
+              <form>
+                <input
+                  type="text"
+                  name="to_name"
+                  required
+                  placeholder="Full Name"
+                />
+                <input
+                  type="text"
+                  name="contact"
+                  required
+                  placeholder="Phone"
+                />
+                <input
+                  type="text"
+                  name="from_name"
+                  required
+                  placeholder="Email Address"
+                />
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="Location Of Event"
+                />
+                <textarea
+                  name="message_html"
+                  cols="30"
+                  rows="5"
+                  required
+                  placeholder="Enter Message Here"
+                />
+                <div className="check">
+                  <input type="checkbox" />
+                  <span>
+                    Save my name, email in this browser for the next time Send
+                    message
+                  </span>
+                </div>
+
+                <div className="button__outline">
+                  <input type="submit" value="Post Comment" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact__location">
+          <div className="inner">
+            <h1>LOCATION</h1>
+
             {/* 맵이 출력될 프레임 useRef로 참조 */}
             <div id="map" ref={container}></div>
 
@@ -142,7 +202,8 @@ function Contact() {
                       setToggle(!toggle)
                     }}
                   >
-                    교통정보 끄기
+                    🚗 교통정보
+                    <span> OFF</span>
                   </li>
                 ) : (
                   //토글값이 false일때 켜기버튼 활성화
@@ -153,7 +214,8 @@ function Contact() {
                       setToggle(!toggle)
                     }}
                   >
-                    교통정보 보기
+                    🚗 교통정보
+                    <span> ON</span>
                   </li>
                 )
               }
@@ -166,23 +228,98 @@ function Contact() {
                   setIndex(0)
                 }}
               >
-                본점
+                서울 본점
               </li>
               <li
                 onClick={() => {
                   setIndex(1)
                 }}
               >
-                지점1
+                전라도 지점
               </li>
               <li
                 onClick={() => {
                   setIndex(2)
                 }}
               >
-                지점2
+                제주 지점
               </li>
             </ul>
+          </div>
+        </section>
+
+        <section className="contact__table">
+          <h1 className="visually-hidden">오시는 길 정보</h1>
+          <div className="inner">
+            <h2>주차장 이용방법</h2>
+            <table cellpadding="0" cellspacing="0">
+              <caption></caption>
+              <colgroup>
+                <col className="head"></col>
+                <col></col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="col">홈플러스 주차장 이용시</th>
+                  <td>홈플러스 주차 후 4층 구름다리를 이용하여 이동</td>
+                </tr>
+                <tr>
+                  <th scope="col">단원미술관 주차장 이용시</th>
+                  <td>
+                    노적봉 폭포를 지나 바로 우측(맨 오른쪽차선)전시관으로 이동
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>문의전화</h2>
+            <table cellpadding="0" cellspacing="0">
+              <caption></caption>
+              <colgroup>
+                <col className="head"></col>
+                <col></col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="col">단원미술관 문의</th>
+                  <td>031-481-0505</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>교통편 안내</h2>
+            <table cellpadding="0" cellspacing="0">
+              <caption></caption>
+              <colgroup>
+                <col className="head"></col>
+                <col></col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="col">버스</th>
+                  <td>
+                    23번, 31번, 52번 이용 (성포동 홈플러스 앞 하차, 도보 5분)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="col">지하철</th>
+                  <td>
+                    4호선 한대앞역 하차(3번출구) &gt; 버스 환승(31번, 33번,
+                    52번) [성포동 홈플러스 앞 하차, 도보 5분]
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="col">자가용</th>
+                  <td>
+                    성포동 홈플러스 4층 주차 후 미술관 연결통로 이용(무료주차)
+                    <span>
+                      * 연결통로 개방시간 : 동절기 10:00 ~ 19:00 / 하절기 10:00
+                      ~ 20:00
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
       </div>
