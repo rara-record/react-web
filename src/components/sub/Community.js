@@ -31,7 +31,7 @@ function Community() {
           <div className="inner">
             <div className="table__wrapper">
               <table>
-                <caption class="visually-hidden">공지 사항 게시판</caption>
+                <caption className="visually-hidden">공지 사항 게시판</caption>
                 <thead>
                   <tr>
                     <th scope="col">NO</th>
@@ -62,41 +62,41 @@ function Community() {
           </div>
         </section>
 
-        <div class="pagination">
-          <Link to="#" class="prev"></Link>
-          <ul class="numbers">
+        <div className="pagination">
+          <Link to="/" className="prev"></Link>
+          <ul className="numbers">
             <li>
-              <Link>1</Link>
+              <Link to="/">1</Link>
             </li>
             <li>
-              <Link>2</Link>
+              <Link to="/">2</Link>
             </li>
             <li>
-              <Link>3</Link>
+              <Link to="/">3</Link>
             </li>
             <li>
-              <Link>4</Link>
+              <Link to="/">4</Link>
             </li>
             <li>
-              <Link>5</Link>
+              <Link to="/">5</Link>
             </li>
             <li>
-              <Link>6</Link>
+              <Link to="/">6</Link>
             </li>
             <li>
-              <Link>7</Link>
+              <Link to="/">7</Link>
             </li>
             <li>
-              <Link>8</Link>
+              <Link to="/">8</Link>
             </li>
             <li>
-              <Link>9</Link>
+              <Link to="/">9</Link>
             </li>
             <li>
-              <Link>10</Link>
+              <Link to="/">10</Link>
             </li>
           </ul>
-          <Link to="#" class="next"></Link>
+          <Link to="/" className="next"></Link>
         </div>
       </div>
     </main>

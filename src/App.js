@@ -1,18 +1,18 @@
 import { Route } from 'react-router-dom'
 import './css/style.css'
 
-//import common component
+// import common component
 import Header from './components/common/Header'
 import Footer from './components/common/Footer'
 
-// //import main component
+// import main component
 import Visual from './components/main/Visual'
 import Intro from './components/main/Intro'
 import Banner from './components/main/Banner'
 import Project from './components/main/Project'
 import Brand from './components/main/Brand'
 
-// //import sub component
+// import sub component
 import AboutUs from './components/sub/AboutUs'
 import Youtube from './components/sub/Youtube'
 import Gallery from './components/sub/Gallery'

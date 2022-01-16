@@ -27,25 +27,25 @@ main {
 .sub__visual {
   width: 100%;
   height: 70vh;
+  padding: 0;
   color: white;
 
   .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+    width: 100%;
+    height: 100%;
 
-  h1 {
-    font: normal 6rem/7rem $font-main;
-    letter-spacing: 0.5rem;
-    text-transform: uppercase;
-    transform: translateY(-2rem);
-    cursor: pointer;
-  }
+    h1 {
+      font: normal 8rem/10rem $font-main;
+      letter-spacing: -0.4rem;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
 
-  p {
-    font: normal 2.5rem/3.5rem $font-second;
-    font-size: 25px;
+    p {
+      color: $black;
+      font: normal 3rem/3.5rem $font-main;
+      text-align: right;
+    }
   }
 }
 

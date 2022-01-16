@@ -8,8 +8,8 @@ function About() {
   const [team, setTeam] = useState([])
 
   useEffect(() => {
-    axios.get(`${path}/db/team.json`).then((data) => {
-      setTeam(data.data.data)
+    axios.get(`${path}/db/team.json`).then((json) => {
+      setTeam(json.data.team)
     })
   }, [])
 

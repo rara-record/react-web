@@ -5,7 +5,7 @@ let options = {
     search: 'flickr.photos.search',
   },
   key: 'c0a94718ea348229ebc99f0d38e533a1',
-  per_page: 20,
+  per_page: 8,
   format: 'json',
   alt: 'galleryImg',
 }
