@@ -16,7 +16,7 @@ function Visual() {
 
   return (
     <>
-      <figure className="visual">
+      <figure className="visual myScroll">
         <div className="slider__wrapper">
           {SliderData.map((slide, index) => {
             let imgSrc = `${path}/img/${slide.image}.jpg`

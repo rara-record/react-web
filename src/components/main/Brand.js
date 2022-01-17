@@ -8,7 +8,7 @@ function Brand() {
   const [text, setText] = useState(letter)
 
   return (
-    <section className="brand">
+    <section className="brand myScroll">
       <div className="inner">
         <div className="brand__wrapper">
           <div className="brand__content">

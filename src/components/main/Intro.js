@@ -5,7 +5,7 @@ const path = process.env.PUBLIC_URL
 function Intro() {
   return (
     <>
-      <section className="intro">
+      <section className="intro myScroll">
         <div className="inner">
           <div className="intro__title">
             <h1>service</h1>

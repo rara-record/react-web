@@ -8,6 +8,7 @@ function Header() {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
+    console.log('렌더링')
   }, [])
 
   const handleScroll = () => {

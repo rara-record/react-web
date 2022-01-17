@@ -3,7 +3,7 @@ const path = process.env.PUBLIC_URL
 
 function Project() {
   return (
-    <section className="project">
+    <section className="project myScroll">
       <div className="inner">
         <div className="project__content">
           <div className="project__content__box">

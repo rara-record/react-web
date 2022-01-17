@@ -1,27 +1,36 @@
 @charset 'utf-8';
+
+// variables
 @import './abstracts/variables/typography';
 @import './abstracts/variables/color';
 
+// base
 @import './base/normalize';
 @import './base/reset';
 
+// mixins
 @import './abstracts/mixins/positions';
 @import './abstracts/mixins/background';
 @import './abstracts/mixins/flexbox';
 
+// modules
 @import './components/modules/buttons';
 
+// common style
 @import './components/common/layout';
 @import './components/common/globals';
 @import './components/common/header';
 @import './components/common/footer';
 
+// main style
 @import './components/main/visual.scss';
 @import './components/main/intro.scss';
 @import './components/main/banner.scss';
 @import './components/main/project.scss';
 @import './components/main/brand.scss';
+@import './components/main/btns.scss';
 
+// sub style
 @import './components/sub/aboutUs.scss';
 @import './components/sub/gallery.scss';
 @import './components/sub/youtube.scss';

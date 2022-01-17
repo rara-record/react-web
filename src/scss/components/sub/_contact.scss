@@ -8,7 +8,6 @@
 
   .sub__visual {
     position: relative;
-
     @include bgImge('/public/img/contact-sub-visual.jpg');
 
     .slogan {
@@ -64,6 +63,10 @@
 
   .contents {
     .contact__info {
+      transform: translateY(200px);
+      opacity: 0;
+      transition: all 0.6s 0.5s ease-in-out;
+
       .inner {
         display: flex;
         align-items: center;
@@ -158,6 +161,11 @@
             transform: scaleX(1);
           }
         }
+      }
+
+      &.on {
+        transform: translateY(0);
+        opacity: 1;
       }
     }
 
@@ -301,7 +309,7 @@
       padding: 10rem 0 5rem;
 
       h1 {
-        margin: 2rem 0;
+        margin: 2rem 0 1.5rem;
         font: normal 5rem/1 $font-main;
         color: $point;
       } 
@@ -317,7 +325,7 @@
         .branch {
           @include flexCenter;
           display: inline-flex;
-          margin: 3rem 0;
+          margin: 2rem 0;
           border: 1px solid $border;
 
           li {
@@ -325,6 +333,7 @@
             padding: 2rem 8rem;
             cursor: pointer;
             border-right: 1px solid $border;
+            letter-spacing: 0.05rem;
             color: #555;
 
             &.on {
@@ -336,8 +345,10 @@
         }
 
         .traffic {
-          background: #fff;
-          padding: 1.5rem 0;
+          position: absolute;
+          right: 0;
+          top: 3rem;
+          background: #fff; 
 
           li {
             font: bold 1.7rem/1 $font-main;
@@ -430,8 +441,6 @@
     }
   }
 }
-
-
 
 // @keyframes bounce {
 // 	0%, 50%, 100% {transform:translateY(0px);}
