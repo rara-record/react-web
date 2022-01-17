@@ -3,16 +3,14 @@ import { ContactData } from '../../data/ContactData'
 const path = process.env.PUBLIC_URL
 
 function Contact() {
-  console.log('렌더링')
-  //윈도우 전역에 등록되어 있는 kakao객체를 불러옴
   const { kakao } = window
-  //useRef로 #map 참조
+
+  const frame = useRef(null)
   const container = useRef(null)
   const btnBranch = useRef(null)
 
   //생성된 map인스턴스가 담길 state생성
   const [map, setMap] = useState(null)
-  const infoWapper = useRef(null)
   // 순서값을 index스테이트에 넣어서 관리
   const [index, setIndex] = useState(0)
   //toggle값에 따라 트래픽보기 버튼 활성화, 비활성화
@@ -22,25 +20,25 @@ function Contact() {
   const data = [
     {
       title: '본점',
-      latlng: new kakao.maps.LatLng(37.5132313, 127.0594368),
+      latlng: new kakao.maps.LatLng(37.55748635344998, 126.8361409, 18.75),
       //public폴더 안쪽의 절대경로와 이미지 주소 연결
-      imgSrc: process.env.PUBLIC_URL + '/img/marker1.png',
-      imgSize: new kakao.maps.Size(232, 99),
-      imgPos: { offset: new kakao.maps.Point(116, 99) },
+      imgSrc: process.env.PUBLIC_URL + '/img/marker.png',
+      imgSize: new kakao.maps.Size(50, 50),
+      imgPos: { offset: new kakao.maps.Point(20, 50) },
     },
     {
-      title: '전라도 지점',
-      latlng: new kakao.maps.LatLng(35.58874404973356, 126.82353435118392),
-      imgSrc: process.env.PUBLIC_URL + '/img/marker2.png',
-      imgSize: new kakao.maps.Size(232, 99),
-      imgPos: { offset: new kakao.maps.Point(116, 99) },
+      title: ' 수원 지점',
+      latlng: new kakao.maps.LatLng(37.27837104859774, 127.02751275725485),
+      imgSrc: process.env.PUBLIC_URL + '/img/marker.png',
+      imgSize: new kakao.maps.Size(50, 50),
+      imgPos: { offset: new kakao.maps.Point(25, 40) },
     },
     {
-      title: '제주도 지점',
+      title: '제주 지점',
       latlng: new kakao.maps.LatLng(33.46701997404598, 126.54544061331417),
-      imgSrc: process.env.PUBLIC_URL + '/img/marker3.png',
-      imgSize: new kakao.maps.Size(232, 99),
-      imgPos: { offset: new kakao.maps.Point(116, 99) },
+      imgSrc: process.env.PUBLIC_URL + '/img/marker.png',
+      imgSize: new kakao.maps.Size(50, 50),
+      imgPos: { offset: new kakao.maps.Point(25, 40) },
     },
   ]
 
@@ -48,6 +46,8 @@ function Contact() {
 
   //컴포넌트 생성시
   useEffect(() => {
+    frame.current.classList.add('on')
+    container.current.innerHTML = ''
     const options = {
       center: mapData[index].latlng,
       level: 3,
@@ -110,7 +110,7 @@ function Contact() {
       </section>
 
       <div className="contents">
-        <section className="contact__info">
+        <section className="contact__info" ref={frame}>
           <div className="inner">
             {ContactData.map((info, index) => {
               return (
@@ -202,7 +202,7 @@ function Contact() {
                       setToggle(!toggle)
                     }}
                   >
-                    🚗 교통정보
+                    🚗 TRAFFIC
                     <span> OFF</span>
                   </li>
                 ) : (
@@ -214,7 +214,7 @@ function Contact() {
                       setToggle(!toggle)
                     }}
                   >
-                    🚗 교통정보
+                    🚗 TRAFFIC
                     <span> ON</span>
                   </li>
                 )
@@ -228,21 +228,21 @@ function Contact() {
                   setIndex(0)
                 }}
               >
-                서울 본점
+                서울지점
               </li>
               <li
                 onClick={() => {
                   setIndex(1)
                 }}
               >
-                전라도 지점
+                수원지점
               </li>
               <li
                 onClick={() => {
                   setIndex(2)
                 }}
               >
-                제주 지점
+                제주지점
               </li>
             </ul>
           </div>
@@ -252,7 +252,7 @@ function Contact() {
           <h1 className="visually-hidden">오시는 길 정보</h1>
           <div className="inner">
             <h2>주차장 이용방법</h2>
-            <table cellpadding="0" cellspacing="0">
+            <table cellPadding="0" cellSpacing="0">
               <caption></caption>
               <colgroup>
                 <col className="head"></col>
@@ -273,7 +273,7 @@ function Contact() {
             </table>
 
             <h2>문의전화</h2>
-            <table cellpadding="0" cellspacing="0">
+            <table cellPadding="0" cellSpacing="0">
               <caption></caption>
               <colgroup>
                 <col className="head"></col>
@@ -288,7 +288,7 @@ function Contact() {
             </table>
 
             <h2>교통편 안내</h2>
-            <table cellpadding="0" cellspacing="0">
+            <table cellPadding="0" cellSpacing="0">
               <caption></caption>
               <colgroup>
                 <col className="head"></col>
