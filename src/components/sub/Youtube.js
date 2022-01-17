@@ -1,9 +1,11 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
-import { Link } from 'react-router-dom'
-import axios from 'axios'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/swiper.scss'
 
 function Youtube() {
+  const path = process.env.PUBLIC_URL
   const key = 'AIzaSyDcBGvXJV3oUXOEOuKGWX8KoJHrdp8sF4s'
   const playListId = 'PLjyJ0gUvOKvCsP_vyVlJZbiwgHIycsuKN'
   const num = 5
@@ -20,8 +22,16 @@ function Youtube() {
   return (
     <main className="youtube">
       <section className="sub__visual">
+        <figure>
+          <video
+            src={`${path}/video/youtube-sub-visual.mp4`}
+            // autoPlay
+            muted
+            loop
+          ></video>
+        </figure>
         <div className="inner">
-          <h1>YOUTUBE</h1>
+          <h1 className="title">YOUTUBE</h1>
           <p>
             Property Group offers a full-service, <br></br>
             residential project development.
@@ -29,19 +39,30 @@ function Youtube() {
         </div>
       </section>
 
-      <div className="contents">
-        <section>
-          <div className="inner">
-            <div className="frame">
-              {data.map((item, index) => {
-                let tit = item.snippet.title
-                let tit_len = tit.length
+      <section className="contents">
+        <div className="inner">
+          <Swiper
+            className="mySwiper"
+            slidesPerView={3}
+            spaceBetween={50}
+            loop={true}
+            loopedSlides={2}
+            centeredSlides={true}
+            breakpoints={
+              ({ 320: { slidesPerView: 1, spaceBetween: 0 } },
+              { 760: { slidesPerView: 'auto' } })
+            }
+          >
+            {data.map((item, index) => {
+              let tit = item.snippet.title
+              let tit_len = tit.length
 
-                let desc = item.snippet.description
-                let desc_len = desc.length
+              let desc = item.snippet.description
+              let desc_len = desc.length
 
-                return (
-                  <article key={index}>
+              return (
+                <SwiperSlide key={index}>
+                  <article>
                     <div className="inner">
                       <figure
                         className="pic"
@@ -62,19 +83,19 @@ function Youtube() {
                           </div>
                         </div>
                         <p>
-                          {desc_len >= 20 ? desc.substr(0, 250) + '...' : desc}
+                          {desc_len >= 20 ? desc.substr(0, 50) + '...' : desc}
                         </p>
                       </div>
                     </div>
                   </article>
-                )
-              })}
-            </div>
-          </div>
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+        </div>
 
-          {isPopup && <Pop />}
-        </section>
-      </div>
+        {isPopup && <Pop />}
+      </section>
     </main>
   )
 

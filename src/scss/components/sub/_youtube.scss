@@ -1,68 +1,112 @@
 .youtube {
   .sub__visual {
-    @include bgImge('/public/img/youtube-sub-visual.jpg');
-  }
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
 
-  .frame {
-    width: 100%;
+    .inner {
+      @include flexCenter;
 
-    article {
-      float: left;
-      width: calc(100% / 3);
-      height: 520px;
-      padding-right: 40px;
-
-      figure {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 300px;
-        margin-bottom: 20px;
-        overflow: hidden;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: corver;
-          cursor: pointer;
-          filter: grayscale(80%) contrast(80%);
-        }
-      }
-
-      .text-box {
-        .title {
-          padding: 10px 0;
-          border-top: 2px solid #000;
-          border-bottom: 2px solid #000;
-
-          h2 {
-            display: inline-block;
-            width: 100%;
-            margin-bottom: 40px;
-            overflow: hidden;
-            font-size: 22px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
-
-          .date {
-            font-size: 12px;
-          }
-        }
-        p {
-          padding: 20px 0;
-          font-size: 14px;
-        }
+      .title {
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        transform: translate(-50%, 0);
+        font: bold 12rem/1 $font-main;
+        letter-spacing: 0.05rem;
+        color: $white;
+        z-index: 100;
       }
     }
 
-    &::after {
-      display: block;
-      clear: both;
-      content: '';
+    figure {
+      position: absolute;
+      left: 0;
+      top: -45%;
+      filter: grayscale(100%) contrast(80%);
+      width: 100%;
+      overflow: hidden;
     }
   }
 
+  .contents {
+      height: 100vh;
+      padding: 0;
+      background-image: url('/public/img/youtube-projector.jpg'); 
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+      
+      .inner {
+        max-width: 95rem;
+
+        .mySwiper {
+          padding: 20rem 0;
+        
+          .swiper-wrapper {
+
+            .swiper-slide {
+              width: 30rem;
+              padding: 2rem;
+
+              article {
+                figure {
+                  position: relative;
+                  display: block;
+                  width: 100%;
+                  height: 35rem;
+                  margin-bottom: 2rem;
+                  overflow: hidden;
+                } 
+              }
+                          
+              .text-box {
+                .title {
+        
+                  h2 {
+                    display: inline-block;
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    font-size: 2.2rem;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                  }
+        
+                  .date {
+                    font-size: 1.4rem;
+                  }
+                }
+
+                p {
+                  padding: 2rem 0;
+                  font-size: 1.4rem;
+                }
+              }
+
+              // article {
+              //   // figure {
+              //   //   position: relative;
+              //   //   display: block;
+              //   //   width: 100%;
+              //   //   height: 20rem;
+              //   //   margin-bottom: 20px;
+              //   //   overflow: hidden;
+          
+              //   //   img {
+              //   //     width: 100%;
+              //   //     height: 100%;
+              //   //     object-fit: corver;
+              //   //     cursor: pointer;
+              //   //     // filter: grayscale(80%) contrast(80%);
+              //   //   }
+              //   } 
+              }
+            }
+          }
+      }
+  }
+  
   .pop {
     position: fixed;
     top: 0;

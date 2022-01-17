@@ -378,18 +378,15 @@ main section {
   height: 70vh;
   padding: 0;
   color: white; }
-  .sub__visual .inner {
-    width: 100%;
-    height: 100%; }
-    .sub__visual .inner h1 {
-      font: normal 8rem/10rem "Roboto Condensed", sans-serif;
-      letter-spacing: -0.4rem;
-      text-transform: uppercase;
-      cursor: pointer; }
-    .sub__visual .inner p {
-      color: #1e1e1e;
-      font: normal 3rem/3.5rem "Roboto Condensed", sans-serif;
-      text-align: right; }
+  .sub__visual .inner h1 {
+    font: normal 8rem/10rem "Roboto Condensed", sans-serif;
+    letter-spacing: -0.4rem;
+    text-transform: uppercase;
+    cursor: pointer; }
+  .sub__visual .inner p {
+    color: #1e1e1e;
+    font: normal 3rem/3.5rem "Roboto Condensed", sans-serif;
+    text-align: right; }
 
 footer {
   width: 100%;
@@ -1214,51 +1211,64 @@ header .menu__bars {
     opacity: 0; } }
 
 .youtube .sub__visual {
-  background-image: url("/public/img/youtube-sub-visual.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
+  position: relative;
+  height: 50vh;
+  overflow: hidden; }
+  .youtube .sub__visual .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .youtube .sub__visual .inner .title {
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      transform: translate(-50%, 0);
+      font: bold 12rem/1 "Roboto Condensed", sans-serif;
+      letter-spacing: 0.05rem;
+      color: white;
+      z-index: 100; }
+  .youtube .sub__visual figure {
+    position: absolute;
+    left: 0;
+    top: -45%;
+    filter: grayscale(100%) contrast(80%);
+    width: 100%;
+    overflow: hidden; }
 
-.youtube .frame {
-  width: 100%; }
-  .youtube .frame article {
-    float: left;
-    width: calc(100% / 3);
-    height: 520px;
-    padding-right: 40px; }
-    .youtube .frame article figure {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: 300px;
-      margin-bottom: 20px;
-      overflow: hidden; }
-      .youtube .frame article figure img {
-        width: 100%;
-        height: 100%;
-        object-fit: corver;
-        cursor: pointer;
-        filter: grayscale(80%) contrast(80%); }
-    .youtube .frame article .text-box .title {
-      padding: 10px 0;
-      border-top: 2px solid #000;
-      border-bottom: 2px solid #000; }
-      .youtube .frame article .text-box .title h2 {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 40px;
-        overflow: hidden;
-        font-size: 22px;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
-      .youtube .frame article .text-box .title .date {
-        font-size: 12px; }
-    .youtube .frame article .text-box p {
-      padding: 20px 0;
-      font-size: 14px; }
-  .youtube .frame::after {
-    display: block;
-    clear: both;
-    content: ''; }
+.youtube .contents {
+  height: 100vh;
+  padding: 0;
+  background-image: url("/public/img/youtube-projector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right; }
+  .youtube .contents .inner {
+    max-width: 95rem; }
+    .youtube .contents .inner .mySwiper {
+      padding: 20rem 0; }
+      .youtube .contents .inner .mySwiper .swiper-wrapper .swiper-slide {
+        width: 30rem;
+        padding: 2rem; }
+        .youtube .contents .inner .mySwiper .swiper-wrapper .swiper-slide article figure {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 35rem;
+          margin-bottom: 2rem;
+          overflow: hidden; }
+        .youtube .contents .inner .mySwiper .swiper-wrapper .swiper-slide .text-box .title h2 {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 1rem;
+          font-size: 2.2rem;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden; }
+        .youtube .contents .inner .mySwiper .swiper-wrapper .swiper-slide .text-box .title .date {
+          font-size: 1.4rem; }
+        .youtube .contents .inner .mySwiper .swiper-wrapper .swiper-slide .text-box p {
+          padding: 2rem 0;
+          font-size: 1.4rem; }
 
 .youtube .pop {
   position: fixed;
