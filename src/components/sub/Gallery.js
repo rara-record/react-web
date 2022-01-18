@@ -20,7 +20,6 @@ function Gallery() {
 
   const input = useRef(null)
   const wrapper = useRef(null)
-
   useEffect(() => {
     getFlickr({
       type: 'interest',
@@ -47,6 +46,7 @@ function Gallery() {
             Gallery
           </h1>
 
+          {/* search */}
           <div className="search__wrapper">
             <input
               type="text"
@@ -90,6 +90,7 @@ function Gallery() {
             </button>
           </div>
 
+          {/* loading */}
           {loading && (
             <div className="loading-container">
               <div className="loading"></div>
@@ -97,6 +98,7 @@ function Gallery() {
             </div>
           )}
 
+          {/* gallery */}
           <div className="gallery__wrapper" ref={wrapper}>
             <Masonry
               className={'gallery__list'}
@@ -137,11 +139,13 @@ function Gallery() {
           </div>
         </div>
 
+        {/* popup */}
         {isPopup && <Pop />}
       </section>
     </main>
   )
 
+  // 팝업 함수
   function Pop() {
     const target = items[index]
     const imgSrc = `https://live.staticflickr.com/${target.server}/${target.id}_${target.secret}_b.jpg`

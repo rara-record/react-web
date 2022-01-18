@@ -15,53 +15,51 @@ function Visual() {
   }
 
   return (
-    <>
-      <figure className="visual myScroll">
-        <div className="slider__wrapper">
-          {SliderData.map((slide, index) => {
-            let imgSrc = `${path}/img/${slide.image}.jpg`
-            return (
-              <div className="slider" key={index}>
-                <article className="slider__item">
-                  <figure className="slider__item__pic">
-                    <img src={imgSrc} alt={slide.alt} />
-                  </figure>
+    <figure className="visual">
+      <div className="slider__wrapper">
+        {SliderData.map((slide, index) => {
+          let imgSrc = `${path}/img/${slide.image}.jpg`
+          return (
+            <div className="slider" key={index}>
+              <article className="slider__item">
+                <figure className="slider__item__pic">
+                  <img src={imgSrc} alt={slide.alt} />
+                </figure>
 
-                  <h1 className="slider__item__text">
-                    <Link to="/">{slide.title}</Link>
-                  </h1>
+                <h1 className="slider__item__text">
+                  <Link to="/">{slide.title}</Link>
+                </h1>
 
-                  <div className="slider__item__contents">
-                    <div className="content__info">
-                      <span>Designer: </span>
-                      <p>{SliderData.name}</p>
-                    </div>
-                    <div className="content__btn">
-                      <Link to="/">Know more</Link>
-                    </div>
+                <div className="slider__item__contents">
+                  <div className="content__info">
+                    <span>Designer: </span>
+                    <p>{SliderData.name}</p>
                   </div>
-                </article>
-              </div>
-            )
-          })}
-        </div>
+                  <div className="content__btn">
+                    <Link to="/">Know more</Link>
+                  </div>
+                </div>
+              </article>
+            </div>
+          )
+        })}
+      </div>
 
-        <div className="sns__wrapper">
-          <Link to="/">fb</Link>
-          <Link to="/">tw</Link>
-          <Link to="/">in</Link>
-        </div>
+      <div className="sns__wrapper">
+        <Link to="/">fb</Link>
+        <Link to="/">tw</Link>
+        <Link to="/">in</Link>
+      </div>
 
-        <div className="button__wrapper">
-          <button className="prev" onClick={prevSlide}>
-            prev
-          </button>
-          <button className="next" onClick={nextSlide}>
-            next
-          </button>
-        </div>
-      </figure>
-    </>
+      <div className="button__wrapper">
+        <button className="prev" onClick={prevSlide}>
+          prev
+        </button>
+        <button className="next" onClick={nextSlide}>
+          next
+        </button>
+      </div>
+    </figure>
   )
 }
 

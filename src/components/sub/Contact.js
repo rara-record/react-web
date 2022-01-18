@@ -47,6 +47,7 @@ function Contact() {
   //컴포넌트 생성시
   useEffect(() => {
     frame.current.classList.add('on')
+
     container.current.innerHTML = ''
     const options = {
       center: mapData[index].latlng,
@@ -109,8 +110,8 @@ function Contact() {
         </div>
       </section>
 
-      <div className="contents">
-        <section className="contact__info" ref={frame}>
+      <div className="contents" ref={frame}>
+        <section className="contact__info">
           <div className="inner">
             {ContactData.map((info, index) => {
               return (

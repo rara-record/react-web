@@ -13,14 +13,14 @@ header {
 }
 
 main {
+  .inner {
+    width: 1180px;
+    min-height: 50rem;
+    margin: 0 auto;
+  }
+
   section {
     padding: 15rem 0;
-
-    > .inner {
-      width: 1180px;
-      min-height: 50rem;
-      margin: 0 auto;
-    }
   }
 }
 
@@ -28,7 +28,6 @@ main {
   width: 100%;
   height: 70vh;
   padding: 0;
-  color: white;
 
   .inner {
     h1 {
@@ -43,6 +42,28 @@ main {
       font: normal 3rem/3.5rem $font-main;
       text-align: right;
     }
+  }
+}
+
+.contents {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.5s 0.7s ease-in-out;
+
+  &.on {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.anime {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+
+  &.on {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
 

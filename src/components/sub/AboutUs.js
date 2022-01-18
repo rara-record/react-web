@@ -1,16 +1,18 @@
 import React from 'react'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 function About() {
   const path = process.env.PUBLIC_URL
   const [team, setTeam] = useState([])
+  const frame = useRef(null)
 
   useEffect(() => {
     axios.get(`${path}/db/team.json`).then((json) => {
       setTeam(json.data.team)
     })
+    frame.current.classList.add('on')
   }, [])
 
   return (
@@ -29,7 +31,7 @@ function About() {
           </div>
         </section>
 
-        <div className="contents">
+        <div className="contents" ref={frame}>
           <section className="about__project">
             <div className="inner">
               <div className="text__box">

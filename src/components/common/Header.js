@@ -1,14 +1,17 @@
 import { useEffect, useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 
-function Header() {
+function Header(props) {
   const active = { color: 'aqua' }
   const [state, setstate] = useState(false)
-  const header = useRef(null)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     console.log('렌더링')
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   const handleScroll = () => {
@@ -17,8 +20,7 @@ function Header() {
 
   return (
     <header
-      className={`header ${state ? 'whiteBg' : 'transparent'}`}
-      ref={header}
+      className={`${props.type} myScroll ${state ? 'whiteBg' : 'transparent'}`}
     >
       <h1 className="logo">
         <NavLink exact to="/">
