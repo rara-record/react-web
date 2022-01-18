@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -8,12 +8,14 @@ function Youtube() {
   const path = process.env.PUBLIC_URL
   const key = 'AIzaSyDcBGvXJV3oUXOEOuKGWX8KoJHrdp8sF4s'
   const playListId = 'PLjyJ0gUvOKvCsP_vyVlJZbiwgHIycsuKN'
-  const num = 5
+  const num = 10
   const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=${num}`
 
   const [data, setData] = useState([])
   const [isPopup, setIsPopup] = useState(false)
   const [index, setIndex] = useState(0)
+
+  const frame = useRef(null)
 
   useEffect(() => {
     getYoutube(url)
@@ -22,36 +24,38 @@ function Youtube() {
   return (
     <main className="youtube">
       <section className="sub__visual">
+        <h1 className="title">YOUTUBE</h1>
         <figure>
           <video
             src={`${path}/video/youtube-sub-visual.mp4`}
-            // autoPlay
             muted
             loop
           ></video>
         </figure>
-        <div className="inner">
-          <h1 className="title">YOUTUBE</h1>
-          <p>
-            Property Group offers a full-service, <br></br>
-            residential project development.
-          </p>
-        </div>
       </section>
 
-      <section className="contents">
+      <section className="youtube__contents">
         <div className="inner">
           <Swiper
-            className="mySwiper"
-            slidesPerView={3}
-            spaceBetween={50}
+            ref={frame}
+            className="mySwiper anime"
+            slidesPerView={'auto'}
+            spaceBetween={20}
+            autoplay={{
+              delay: 1000,
+            }}
+            speed={500}
             loop={true}
-            loopedSlides={2}
+            loopedSlides={3}
+            initialSlide={3}
             centeredSlides={true}
-            breakpoints={
-              ({ 320: { slidesPerView: 1, spaceBetween: 0 } },
-              { 760: { slidesPerView: 'auto' } })
-            }
+            keyboard={{
+              enabled: true,
+            }}
+            // breakpoints={
+            //   ({ 320: { slidesPerView: 1, spaceBetween: 0 } },
+            //   { 760: { slidesPerView: 'auto' } })
+            // }
           >
             {data.map((item, index) => {
               let tit = item.snippet.title
@@ -63,29 +67,27 @@ function Youtube() {
               return (
                 <SwiperSlide key={index}>
                   <article>
-                    <div className="inner">
-                      <figure
-                        className="pic"
-                        onClick={() => {
-                          setIsPopup(true)
-                          setIndex(index)
-                        }}
-                      >
-                        <img src={item.snippet.thumbnails.medium.url} alt="" />
-                      </figure>
-                      <div className="text-box">
-                        <div className="title">
-                          <h2>
-                            {tit_len >= 40 ? tit.substr(0, 30) + '...' : tit}
-                          </h2>
-                          <div className="date">
-                            {item.snippet.publishedAt.split('T')[0].slice(2)}
-                          </div>
+                    <figure
+                      className="pic"
+                      onClick={() => {
+                        setIsPopup(true)
+                        setIndex(index)
+                      }}
+                    >
+                      <img src={item.snippet.thumbnails.medium.url} alt="" />
+                    </figure>
+                    <div className="text-box">
+                      <div className="title">
+                        <h2>
+                          {tit_len >= 40 ? tit.substr(0, 30) + '...' : tit}
+                        </h2>
+                        <div className="date">
+                          {item.snippet.publishedAt.split('T')[0].slice(2)}
                         </div>
-                        <p>
-                          {desc_len >= 20 ? desc.substr(0, 50) + '...' : desc}
-                        </p>
                       </div>
+                      <p>
+                        {desc_len >= 20 ? desc.substr(0, 50) + '...' : desc}
+                      </p>
                     </div>
                   </article>
                 </SwiperSlide>
@@ -124,6 +126,10 @@ function Youtube() {
 
   async function getYoutube(url) {
     await axios.get(url).then((json) => setData(json.data.items))
+
+    setTimeout(() => {
+      frame.current.classList.add('on')
+    }, 0)
   }
 }
 

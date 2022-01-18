@@ -1,23 +1,23 @@
 .youtube {
+  $ponit: #9a1824;
+
   .sub__visual {
     position: relative;
     height: 50vh;
     overflow: hidden;
 
-    .inner {
-      @include flexCenter;
-
-      .title {
-        position: absolute;
-        left: 50%;
-        bottom: 10%;
-        transform: translate(-50%, 0);
-        font: bold 12rem/1 $font-main;
-        letter-spacing: 0.05rem;
-        color: $white;
-        z-index: 100;
-      }
+    .title {
+      position: absolute;
+      left: 50%;
+      bottom: 20%;
+      transform: translate(-50%, 20%);
+      font: bold 12rem/1 $font-main;
+      letter-spacing: 0.05rem;
+      color: $white;
+      -webkit-text-stroke: 2px $ponit;
+      z-index: 50;
     }
+
 
     figure {
       position: absolute;
@@ -29,82 +29,83 @@
     }
   }
 
-  .contents {
-      height: 100vh;
-      padding: 0;
-      background-image: url('/public/img/youtube-projector.jpg'); 
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: right;
-      
-      .inner {
-        max-width: 95rem;
+  .youtube__contents {
+    height: 100vh;
+    padding: 0;
+    background-image: url('/public/img/youtube-bg.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
 
-        .mySwiper {
-          padding: 20rem 0;
-        
-          .swiper-wrapper {
+    .mySwiper {
+    
+    .swiper-wrapper {
 
-            .swiper-slide {
-              width: 30rem;
-              padding: 2rem;
+      .swiper-slide {
+        width: 30rem;
+        height: 65rem;
+        padding: 0 2rem;
 
-              article {
-                figure {
-                  position: relative;
-                  display: block;
-                  width: 100%;
-                  height: 35rem;
-                  margin-bottom: 2rem;
-                  overflow: hidden;
-                } 
+        article {
+          margin-top: 15rem;
+
+          figure {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 20rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+          } 
+
+                                    
+          .text-box {
+            .title {
+              h2 {
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 1rem;
+                font-size: 2.2rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                color: $white; 
               }
-                          
-              .text-box {
-                .title {
-        
-                  h2 {
-                    display: inline-block;
-                    width: 100%;
-                    margin-bottom: 1rem;
-                    font-size: 2.2rem;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                  }
-        
-                  .date {
-                    font-size: 1.4rem;
-                  }
-                }
-
-                p {
-                  padding: 2rem 0;
-                  font-size: 1.4rem;
-                }
-              }
-
-              // article {
-              //   // figure {
-              //   //   position: relative;
-              //   //   display: block;
-              //   //   width: 100%;
-              //   //   height: 20rem;
-              //   //   margin-bottom: 20px;
-              //   //   overflow: hidden;
-          
-              //   //   img {
-              //   //     width: 100%;
-              //   //     height: 100%;
-              //   //     object-fit: corver;
-              //   //     cursor: pointer;
-              //   //     // filter: grayscale(80%) contrast(80%);
-              //   //   }
-              //   } 
+    
+              .date {
+                font-size: 1.4rem;
+                color: $white; 
               }
             }
+
+            p {
+              padding: 2rem 0;
+              font-size: 1.4rem;
+              color: $white; 
+            }
           }
+        }
+
+
+        // article {
+        //   // figure {
+        //   //   position: relative;
+        //   //   display: block;
+        //   //   width: 100%;
+        //   //   height: 20rem;
+        //   //   margin-bottom: 20px;
+        //   //   overflow: hidden;
+    
+        //   //   img {
+        //   //     width: 100%;
+        //   //     height: 100%;
+        //   //     object-fit: corver;
+        //   //     cursor: pointer;
+        //   //     // filter: grayscale(80%) contrast(80%);
+        //   //   }
+        //   } 
+        }
       }
+    }
   }
   
   .pop {
