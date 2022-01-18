@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
+import SwiperCore, { EffectCoverflow } from 'swiper'
+SwiperCore.use([EffectCoverflow])
 
 function Youtube() {
   const path = process.env.PUBLIC_URL
@@ -38,12 +40,17 @@ function Youtube() {
         <div className="inner">
           <Swiper
             ref={frame}
+            effect={'coverflow'}
             className="mySwiper anime"
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
             slidesPerView={'auto'}
             spaceBetween={20}
-            autoplay={{
-              delay: 1000,
-            }}
             speed={500}
             loop={true}
             loopedSlides={3}
@@ -53,8 +60,8 @@ function Youtube() {
               enabled: true,
             }}
             // breakpoints={
-            //   ({ 320: { slidesPerView: 1, spaceBetween: 0 } },
-            //   { 760: { slidesPerView: 'auto' } })
+            //   ({ 768: { slidesPerView: 'auto' } },
+            //   { 320: { slidesPerView: 1, spaceBetween: 0 } })
             // }
           >
             {data.map((item, index) => {
