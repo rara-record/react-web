@@ -1,5 +1,6 @@
 .join {
   $point: #9a1824;
+  $border: #e1e1e1;
 
   section {
     .inner {
@@ -10,7 +11,7 @@
 
       .step__box {
         position: relative;
-        margin-bottom: 5.6rem;
+        margin-bottom: 10rem;
         text-align: center;
 
         ol {
@@ -73,6 +74,124 @@
             height: 0.6rem;
             background-color: #eee;
             content: '';
+          }
+        }
+      }
+
+      .join__wrapper {
+        margin-top: 2rem;
+        color: #353535;
+
+        .join__title {
+          margin-bottom: 2rem;
+
+          em {
+            float: left;
+            padding-left: 30px;
+            font: normal 1.8rem/1 $font-main;
+            background: url('/public/img/join-dot.gif') 0 0 no-repeat;
+          }
+
+          span {
+            position: relative;
+            float: right;
+            margin-top: 0.4rem;
+            padding-right: 1rem;
+            color: $point;
+            font: normal 1.4rem/1 $font-second;
+
+            &::after {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 0.3rem;
+              height: 0.3rem;
+              background-color: $point;
+              border: 1px solid $point;
+              border-radius: 50%;
+              content: '';
+            }
+          }
+
+          &::after {
+            display: block;
+            clear: both;
+            content: '';
+          }
+        }
+
+        form {
+          border-top: 2px solid #000;
+
+          colgroup {
+            head {
+              width: 20rem;
+            }
+          }
+
+          table {
+            width: 100%;
+
+            tr {
+              th {
+                width: 20%;
+                padding: 3rem 0 3rem 2.5rem;
+                font: bold 1.6rem/1 $font-second;
+                text-align: left;
+                border-bottom: 1px solid $border;
+
+                label {
+                  position: relative;
+                  padding-right: 1rem;
+
+                  &::after {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 0.3rem;
+                    height: 0.3rem;
+                    background-color: $point;
+                    border: 1px solid $point;
+                    border-radius: 50%;
+                    content: '';
+                  }
+                }
+              }
+
+              td {
+                padding: 14px 0;
+                border-bottom: 1px solid $border;
+
+                input {
+                  box-sizing: border-box;
+                  width: 183px;
+                  height: 48px;
+                  padding: 14px 0 13px 15px;
+                  font: normal 1.6rem/1 $font-second;
+                  border: 1px solid #ccc;
+
+                  &:focus {
+                    border-color: $point;
+                  }
+                }
+
+                button {
+                  display: inline-block;
+                  width: 10rem;
+                  margin-left: 1rem;
+                  padding: 1.6rem;
+                  color: $white;
+                  font: normal 1.5rem/1 $font-second;
+                  text-align: center;
+                  background-color: #555b65;
+                }
+
+                p {
+                  margin-top: 1rem;
+                  font: normal 1.3rem/1 $font-second;
+                }
+              }
+            }
           }
         }
       }
