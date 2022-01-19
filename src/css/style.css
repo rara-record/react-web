@@ -370,6 +370,12 @@ main .inner {
   width: 1180px;
   min-height: 50rem;
   margin: 0 auto; }
+  main .inner > h1 {
+    margin-bottom: 5rem;
+    padding: 5rem 0;
+    color: #222;
+    font: bold 7rem/1 'Roboto Condensed', sans-serif;
+    text-transform: uppercase; }
 
 main section {
   padding: 15rem 0; }
@@ -1059,9 +1065,9 @@ header .menu__bars {
   width: 100%;
   height: 100%;
   background-color: #f5f5f5; }
+  .gallery .inner {
+    padding: 15rem 0; }
   .gallery h1 {
-    padding: 5rem 0;
-    font: normal 10rem/1 "Roboto Condensed", sans-serif;
     cursor: pointer; }
   .gallery__wrapper {
     position: relative;
@@ -1248,29 +1254,29 @@ header .menu__bars {
     overflow: hidden;
     filter: grayscale(100%) contrast(80%); }
 
-.youtube .youtube__contents {
+.youtube__contents {
   height: 100vh;
   padding: 0;
   background-image: url("/public/img/youtube-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
-  .youtube .youtube__contents .mySwiper .swiper-wrapper .swiper-slide {
+  .youtube__contents .mySwiper .swiper-wrapper .swiper-slide {
     width: 50rem;
     height: 65rem;
     padding: 0 2rem;
     cursor: pointer; }
-    .youtube .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article {
+    .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article {
       width: 100%;
       height: 30rem;
       margin-top: 15rem; }
-      .youtube .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article figure {
+      .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article figure {
         position: relative;
         display: block;
         width: 100%;
         height: 25rem;
         margin-bottom: 2rem;
         overflow: hidden; }
-      .youtube .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article .text-box .title h2 {
+      .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article .text-box .title h2 {
         display: inline-block;
         width: 100%;
         margin-bottom: 1rem;
@@ -1279,10 +1285,10 @@ header .menu__bars {
         font-size: 2.2rem;
         white-space: nowrap;
         text-overflow: ellipsis; }
-      .youtube .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article .text-box .title .date {
+      .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article .text-box .title .date {
         color: white;
         font-size: 1.4rem; }
-      .youtube .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article .text-box p {
+      .youtube__contents .mySwiper .swiper-wrapper .swiper-slide article .text-box p {
         padding: 2rem 0;
         color: white;
         font-size: 1.4rem; }
@@ -1304,18 +1310,8 @@ header .menu__bars {
     font: bold 14px/1 'arial';
     cursor: pointer; }
 
-.community h1 {
-  padding: 5rem 0;
-  font: normal 10rem/1 "Roboto Condensed", sans-serif;
-  cursor: pointer; }
-
-.community input {
-  border: 1px solid #000; }
-
-.community h1 {
-  padding: 5rem 0;
-  font: normal 10rem/1 "Roboto Condensed", sans-serif;
-  cursor: pointer; }
+.community .inner {
+  padding: 15rem 0; }
 
 .community input {
   border: 1px solid #000; }
@@ -1615,139 +1611,139 @@ header .menu__bars {
           font: normal 1.2rem/1 "Roboto", sans-serif;
           color: #9a1824; }
 
-.join section .inner h1 {
-  margin-bottom: 5rem;
-  font: bold 7rem/1 "Roboto Condensed", sans-serif; }
-
-.join section .inner .step__box {
-  position: relative;
-  margin-bottom: 10rem;
-  text-align: center; }
-  .join section .inner .step__box ol {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-    justify-content: center; }
-    .join section .inner .step__box ol li {
-      position: relative;
-      margin-left: 13%; }
-      .join section .inner .step__box ol li div {
-        box-sizing: border-box;
-        width: 9rem;
-        height: 9rem;
-        margin: 0 auto;
-        color: #555b65;
-        background-color: #fff;
-        border: 6px solid #727b89;
-        border-radius: 100px; }
-        .join section .inner .step__box ol li div p {
-          margin: 1.8rem 0 0.7rem;
-          font: normal 1.4rem/1 "Roboto", sans-serif;
-          text-transform: uppercase; }
-        .join section .inner .step__box ol li div em {
-          font: bold 2.4rem/1 "Roboto", sans-serif; }
-      .join section .inner .step__box ol li span {
-        display: block;
-        margin-top: 2rem;
-        color: #555b65;
-        font: bold 1.6rem/1 "Roboto", sans-serif; }
-      .join section .inner .step__box ol li:first-child {
-        margin-left: 0; }
-      .join section .inner .step__box ol li:nth-of-type(3) div {
-        color: #fff;
-        background-color: #9a1824;
-        border: 6px solid #9a1824; }
-      .join section .inner .step__box ol li:nth-of-type(3) span {
-        color: #9a1824; }
-    .join section .inner .step__box ol::before {
-      position: absolute;
-      top: 4.2rem;
-      left: 0;
-      width: 100%;
-      height: 0.6rem;
-      background-color: #eee;
-      content: ''; }
-
-.join section .inner .join__wrapper {
-  margin-top: 2rem;
-  color: #353535; }
-  .join section .inner .join__wrapper .join__title {
-    margin-bottom: 2rem; }
-    .join section .inner .join__wrapper .join__title em {
-      float: left;
-      padding-left: 30px;
-      font: normal 1.8rem/1 "Roboto Condensed", sans-serif;
-      background: url("/public/img/join-dot.gif") 0 0 no-repeat; }
-    .join section .inner .join__wrapper .join__title span {
-      position: relative;
-      float: right;
-      margin-top: 0.4rem;
-      padding-right: 1rem;
-      color: #9a1824;
-      font: normal 1.4rem/1 "Roboto", sans-serif; }
-      .join section .inner .join__wrapper .join__title span::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 0.3rem;
-        height: 0.3rem;
-        background-color: #9a1824;
-        border: 1px solid #9a1824;
-        border-radius: 50%;
-        content: ''; }
-    .join section .inner .join__wrapper .join__title::after {
-      display: block;
-      clear: both;
-      content: ''; }
-  .join section .inner .join__wrapper form {
-    border-top: 2px solid #000; }
-    .join section .inner .join__wrapper form colgroup head {
-      width: 20rem; }
-    .join section .inner .join__wrapper form table {
-      width: 100%; }
-      .join section .inner .join__wrapper form table tr th {
-        width: 20%;
-        padding: 3rem 0 3rem 2.5rem;
-        font: bold 1.6rem/1 "Roboto", sans-serif;
-        text-align: left;
-        border-bottom: 1px solid #e1e1e1; }
-        .join section .inner .join__wrapper form table tr th label {
-          position: relative;
-          padding-right: 1rem; }
-          .join section .inner .join__wrapper form table tr th label::after {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 0.3rem;
-            height: 0.3rem;
-            background-color: #9a1824;
-            border: 1px solid #9a1824;
-            border-radius: 50%;
-            content: ''; }
-      .join section .inner .join__wrapper form table tr td {
-        padding: 14px 0;
-        border-bottom: 1px solid #e1e1e1; }
-        .join section .inner .join__wrapper form table tr td input {
+.join .inner {
+  padding: 15rem 0; }
+  .join .inner h1 {
+    margin-bottom: 5rem;
+    font: bold 7rem/1 "Roboto Condensed", sans-serif; }
+  .join .inner .step__box {
+    position: relative;
+    margin-bottom: 10rem;
+    text-align: center; }
+    .join .inner .step__box ol {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      justify-content: center; }
+      .join .inner .step__box ol li {
+        position: relative;
+        margin-left: 13%; }
+        .join .inner .step__box ol li div {
           box-sizing: border-box;
-          width: 183px;
-          height: 48px;
-          padding: 14px 0 13px 15px;
-          font: normal 1.6rem/1 "Roboto", sans-serif;
-          border: 1px solid #ccc; }
-          .join section .inner .join__wrapper form table tr td input:focus {
-            border-color: #9a1824; }
-        .join section .inner .join__wrapper form table tr td button {
-          display: inline-block;
-          width: 10rem;
-          margin-left: 1rem;
-          padding: 1.6rem;
-          color: white;
-          font: normal 1.5rem/1 "Roboto", sans-serif;
-          text-align: center;
-          background-color: #555b65; }
-        .join section .inner .join__wrapper form table tr td p {
-          margin-top: 1rem;
-          font: normal 1.3rem/1 "Roboto", sans-serif; }
+          width: 9rem;
+          height: 9rem;
+          margin: 0 auto;
+          color: #555b65;
+          background-color: #fff;
+          border: 6px solid #727b89;
+          border-radius: 100px; }
+          .join .inner .step__box ol li div p {
+            margin: 1.8rem 0 0.7rem;
+            font: normal 1.4rem/1 "Roboto", sans-serif;
+            text-transform: uppercase; }
+          .join .inner .step__box ol li div em {
+            font: bold 2.4rem/1 "Roboto", sans-serif; }
+        .join .inner .step__box ol li span {
+          display: block;
+          margin-top: 2rem;
+          color: #555b65;
+          font: bold 1.6rem/1 "Roboto", sans-serif; }
+        .join .inner .step__box ol li:first-child {
+          margin-left: 0; }
+        .join .inner .step__box ol li:nth-of-type(3) div {
+          color: #fff;
+          background-color: #9a1824;
+          border: 6px solid #9a1824; }
+        .join .inner .step__box ol li:nth-of-type(3) span {
+          color: #9a1824; }
+      .join .inner .step__box ol::before {
+        position: absolute;
+        top: 4.2rem;
+        left: 0;
+        width: 100%;
+        height: 0.6rem;
+        background-color: #eee;
+        content: ''; }
+  .join .inner .join__wrapper {
+    margin-top: 2rem;
+    color: #353535; }
+    .join .inner .join__wrapper .join__title {
+      margin-bottom: 2rem; }
+      .join .inner .join__wrapper .join__title em {
+        float: left;
+        padding-left: 30px;
+        font: normal 1.8rem/1 "Roboto Condensed", sans-serif;
+        background: url("/public/img/join-dot.gif") 0 0 no-repeat; }
+      .join .inner .join__wrapper .join__title span {
+        position: relative;
+        float: right;
+        margin-top: 0.4rem;
+        padding-right: 1rem;
+        color: #9a1824;
+        font: normal 1.4rem/1 "Roboto", sans-serif; }
+        .join .inner .join__wrapper .join__title span::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0.3rem;
+          height: 0.3rem;
+          background-color: #9a1824;
+          border: 1px solid #9a1824;
+          border-radius: 50%;
+          content: ''; }
+      .join .inner .join__wrapper .join__title::after {
+        display: block;
+        clear: both;
+        content: ''; }
+    .join .inner .join__wrapper form {
+      border-top: 2px solid #000; }
+      .join .inner .join__wrapper form colgroup head {
+        width: 20rem; }
+      .join .inner .join__wrapper form table {
+        width: 100%; }
+        .join .inner .join__wrapper form table tr th {
+          width: 20%;
+          padding: 3rem 0 3rem 2.5rem;
+          font: bold 1.6rem/1 "Roboto", sans-serif;
+          text-align: left;
+          border-bottom: 1px solid #e1e1e1; }
+          .join .inner .join__wrapper form table tr th label {
+            position: relative;
+            padding-right: 1rem; }
+            .join .inner .join__wrapper form table tr th label::after {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 0.3rem;
+              height: 0.3rem;
+              background-color: #9a1824;
+              border: 1px solid #9a1824;
+              border-radius: 50%;
+              content: ''; }
+        .join .inner .join__wrapper form table tr td {
+          padding: 14px 0;
+          border-bottom: 1px solid #e1e1e1; }
+          .join .inner .join__wrapper form table tr td input {
+            box-sizing: border-box;
+            width: 183px;
+            height: 48px;
+            padding: 14px 0 13px 15px;
+            font: normal 1.6rem/1 "Roboto", sans-serif;
+            border: 1px solid #ccc; }
+            .join .inner .join__wrapper form table tr td input:focus {
+              border-color: #9a1824; }
+          .join .inner .join__wrapper form table tr td button {
+            display: inline-block;
+            width: 10rem;
+            margin-left: 1rem;
+            padding: 1.6rem;
+            color: white;
+            font: normal 1.5rem/1 "Roboto", sans-serif;
+            text-align: center;
+            background-color: #555b65; }
+          .join .inner .join__wrapper form table tr td p {
+            margin-top: 1rem;
+            font: normal 1.3rem/1 "Roboto", sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

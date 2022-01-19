@@ -25,7 +25,7 @@ function Youtube() {
 
   return (
     <main className="youtube">
-      <section className="sub__visual">
+      <div className="sub__visual">
         <h1 className="title">YOUTUBE</h1>
         <figure>
           <video
@@ -34,14 +34,13 @@ function Youtube() {
             loop
           ></video>
         </figure>
-      </section>
+      </div>
 
-      <section className="youtube__contents">
-        <div className="inner">
+      <div className="youtube__contents">
+        <div className="inner anime" ref={frame}>
           <Swiper
-            ref={frame}
             effect={'coverflow'}
-            className="mySwiper anime"
+            className="mySwiper"
             coverflowEffect={{
               rotate: 50,
               stretch: 0,
@@ -49,16 +48,14 @@ function Youtube() {
               modifier: 1,
               slideShadows: true,
             }}
+            loop={true}
             slidesPerView={'auto'}
+            loopedSlides={3}
             spaceBetween={20}
             speed={500}
-            loop={true}
-            loopedSlides={3}
-            initialSlide={3}
             centeredSlides={true}
-            keyboard={{
-              enabled: true,
-            }}
+            observer={true}
+            observeParents={true}
             // breakpoints={
             //   ({ 768: { slidesPerView: 'auto' } },
             //   { 320: { slidesPerView: 1, spaceBetween: 0 } })
@@ -104,7 +101,7 @@ function Youtube() {
         </div>
 
         {isPopup && <Pop />}
-      </section>
+      </div>
     </main>
   )
 

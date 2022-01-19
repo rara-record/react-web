@@ -18,7 +18,7 @@ function About() {
   return (
     <>
       <main className="about">
-        <section className="sub__visual">
+        <div className="sub__visual">
           <div className="inner">
             <div className="slogan">
               <h1>
@@ -29,7 +29,7 @@ function About() {
               </h2>
             </div>
           </div>
-        </section>
+        </div>
 
         <div className="contents" ref={frame}>
           <section className="about__project">

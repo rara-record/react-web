@@ -17,6 +17,14 @@ main {
     width: 1180px;
     min-height: 50rem;
     margin: 0 auto;
+
+    > h1 {
+      margin-bottom: 5rem;
+      padding: 5rem 0;
+      color: $dark;
+      font: bold 7rem/1 'Roboto Condensed', sans-serif;
+      text-transform: uppercase;
+    }
   }
 
   section {

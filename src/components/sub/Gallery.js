@@ -20,6 +20,7 @@ function Gallery() {
 
   const input = useRef(null)
   const wrapper = useRef(null)
+
   useEffect(() => {
     getFlickr({
       type: 'interest',
@@ -28,120 +29,118 @@ function Gallery() {
 
   return (
     <main className="gallery">
-      <section>
-        <div className="inner">
-          <h1
-            onClick={() => {
-              if (enableClick && !interest) {
+      <div className="inner">
+        <h1
+          onClick={() => {
+            if (enableClick && !interest) {
+              wrapper.current.classList.remove('on')
+              setLoading(true)
+              setEnableClick(false)
+
+              getFlickr({
+                type: 'interest',
+              })
+            }
+          }}
+        >
+          Gallery
+        </h1>
+
+        {/* search */}
+        <div className="search__wrapper">
+          <input
+            type="text"
+            ref={input}
+            placeholder="검색어를 입력해주세요"
+            onKeyPress={(e) => {
+              if (e.key !== 'Enter') return
+
+              if (enableClick) {
                 wrapper.current.classList.remove('on')
                 setLoading(true)
+                setInterest(false)
                 setEnableClick(false)
 
+                const tags = input.current.value
+                input.current.value = ''
                 getFlickr({
-                  type: 'interest',
+                  type: 'search',
+                  tags: tags,
+                })
+              }
+            }}
+          />
+          <button
+            onClick={() => {
+              if (enableClick) {
+                wrapper.current.classList.remove('on')
+                setLoading(true)
+                setInterest(false)
+                setEnableClick(false)
+                const tags = input.current.value
+                input.current.value = ''
+                getFlickr({
+                  type: 'search',
+                  tags: tags,
                 })
               }
             }}
           >
-            Gallery
-          </h1>
-
-          {/* search */}
-          <div className="search__wrapper">
-            <input
-              type="text"
-              ref={input}
-              placeholder="검색어를 입력해주세요"
-              onKeyPress={(e) => {
-                if (e.key !== 'Enter') return
-
-                if (enableClick) {
-                  wrapper.current.classList.remove('on')
-                  setLoading(true)
-                  setInterest(false)
-                  setEnableClick(false)
-
-                  const tags = input.current.value
-                  input.current.value = ''
-                  getFlickr({
-                    type: 'search',
-                    tags: tags,
-                  })
-                }
-              }}
-            />
-            <button
-              onClick={() => {
-                if (enableClick) {
-                  wrapper.current.classList.remove('on')
-                  setLoading(true)
-                  setInterest(false)
-                  setEnableClick(false)
-                  const tags = input.current.value
-                  input.current.value = ''
-                  getFlickr({
-                    type: 'search',
-                    tags: tags,
-                  })
-                }
-              }}
-            >
-              <i className="fas fa-search"></i>
-            </button>
-          </div>
-
-          {/* loading */}
-          {loading && (
-            <div className="loading-container">
-              <div className="loading"></div>
-              <div className="loading-text">loading</div>
-            </div>
-          )}
-
-          {/* gallery */}
-          <div className="gallery__wrapper" ref={wrapper}>
-            <Masonry
-              className={'gallery__list'}
-              elementType={'ul'}
-              disableImagesLoaded={false}
-              updateOnEachImageLoad={false}
-              options={MasonryOptions}
-            >
-              {items.map((data, index) => {
-                // 썸네일 이미지 주소
-                let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
-
-                return (
-                  <li className={'gallery__item'} key={index}>
-                    <div className="number">
-                      <span>0{index + 1}</span>
-                    </div>
-
-                    <div className="title__wrapper">
-                      <h2>{data.title}</h2>
-                      <p>{data.owner}</p>
-                    </div>
-
-                    <figure
-                      onClick={() => {
-                        setIsPopup(true)
-                        setIndex(index)
-                      }}
-                    >
-                      <img src={imgSrc} alt={data.alt} />
-                    </figure>
-
-                    <span className="date">2017.09.28</span>
-                  </li>
-                )
-              })}
-            </Masonry>
-          </div>
+            <i className="fas fa-search"></i>
+          </button>
         </div>
 
-        {/* popup */}
-        {isPopup && <Pop />}
-      </section>
+        {/* loading */}
+        {loading && (
+          <div className="loading-container">
+            <div className="loading"></div>
+            <div className="loading-text">loading</div>
+          </div>
+        )}
+
+        {/* gallery */}
+        <div className="gallery__wrapper" ref={wrapper}>
+          <Masonry
+            className={'gallery__list'}
+            elementType={'ul'}
+            disableImagesLoaded={false}
+            updateOnEachImageLoad={false}
+            options={MasonryOptions}
+          >
+            {items.map((data, index) => {
+              // 썸네일 이미지 주소
+              let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
+
+              return (
+                <li className={'gallery__item'} key={index}>
+                  <div className="number">
+                    <span>0{index + 1}</span>
+                  </div>
+
+                  <div className="title__wrapper">
+                    <h2>{data.title}</h2>
+                    <p>{data.owner}</p>
+                  </div>
+
+                  <figure
+                    onClick={() => {
+                      setIsPopup(true)
+                      setIndex(index)
+                    }}
+                  >
+                    <img src={imgSrc} alt={data.alt} />
+                  </figure>
+
+                  <span className="date">2017.09.28</span>
+                </li>
+              )
+            })}
+          </Masonry>
+        </div>
+      </div>
+
+      {/* popup */}
+      {isPopup && <Pop />}
     </main>
   )
 

@@ -97,7 +97,7 @@ function Contact() {
 
   return (
     <main className="contact">
-      <section className="sub__visual">
+      <div className="sub__visual">
         <div className="inner">
           <div className="slogan">
             <h1>
@@ -108,7 +108,7 @@ function Contact() {
             </h2>
           </div>
         </div>
-      </section>
+      </div>
 
       <div className="contents" ref={frame}>
         <section className="contact__info">
