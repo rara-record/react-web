@@ -2,7 +2,16 @@ import { useState, useEffect, useRef } from 'react'
 
 function Community() {
   const frame = useRef(null)
+  const input = useRef(null)
+  const textarea = useRef(null)
+  const showBox = useRef(null)
 
+  // 초기 데이터 셋팅
+  const [posts, setPosts] = useState([
+    { title: '질문 있습니다', content: ' Lorem, ipsum dolor.' },
+  ])
+
+  l
   useEffect(() => {
     frame.current.classList.add('on')
   }, [])
@@ -14,15 +23,20 @@ function Community() {
           <h1>Community</h1>
 
           <section className="input__box">
-            <input type="text" placeholder="제목을 입력하세요" />
+            <input type="text" placeholder="제목을 입력하세요" ref={input} />
             <br />
-            <textarea cols="30" rows="10" placeholder="본문을 입력하세요" />
+            <textarea
+              cols="30"
+              rows="10"
+              placeholder="본문을 입력하세요"
+              ref={textarea}
+            />
             <br />
             <button>CANCEL</button>
-            <button>CREATE</button>
+            <button onClick={creactPost}>CREATE</button>
           </section>
 
-          <section className="show__box"></section>
+          <section className="show__box" ref={showBox}></section>
         </div>
       </div>
     </main>
