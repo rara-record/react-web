@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 
 function Community() {
+  /// ref
   const frame = useRef(null)
   const input = useRef(null)
   const textarea = useRef(null)
@@ -11,7 +12,16 @@ function Community() {
     { title: '질문 있습니다', content: ' Lorem, ipsum dolor.' },
   ])
 
-  l
+  const creactPost = () => {
+    setPosts([
+      { title: input.current.value, content: textarea.current.value },
+      ...posts,
+    ])
+
+    input.current.value = ''
+    textarea.current.value = ''
+  }
+
   useEffect(() => {
     frame.current.classList.add('on')
   }, [])
@@ -36,7 +46,16 @@ function Community() {
             <button onClick={creactPost}>CREATE</button>
           </section>
 
-          <section className="show__box" ref={showBox}></section>
+          <section className="show__box" ref={showBox}>
+            {posts.map((post, index) => {
+              return (
+                <article key={index}>
+                  <h2>{post.title}</h2>
+                  <p>{post.content}</p>
+                </article>
+              )
+            })}
+          </section>
         </div>
       </div>
     </main>
