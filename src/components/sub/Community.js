@@ -28,6 +28,23 @@ function Community() {
     /* filter : 특정조건이 성립하는 데이터만 다시 새롭게 반환 */
   }
 
+  // 출력모드에서 수정모드로 변경하는 함수
+  const enableUpdate = (index) => {
+    setPosts(
+      posts.map((post, postIndex) => {
+        if (postIndex === index) post.enableUpdate = true
+        return post
+      })
+    )
+    console.log(posts)
+  }
+
+  // 수정모드에서 출력모드로 변경하는 함수
+  const disableUpdate = (index) => {}
+
+  // 실제 포스트 수정 업데이트 함수
+  const updatePost = (index) => {}
+
   useEffect(() => {
     frame.current.classList.add('on')
   }, [])
@@ -66,13 +83,31 @@ function Community() {
               return (
                 <article key={index}>
                   <div className="post">
-                    <h2>{post.title}</h2>
-                    <p>{post.content}</p>
+                    {post.enableUpdate ? (
+                      <>
+                        <input type="text" defaultValue={post.title} />
+                        <textarea defaultValue={post.content}></textarea>
+                      </>
+                    ) : (
+                      <>
+                        <h2>{post.title}</h2>
+                        <p>{post.content}</p>
+                      </>
+                    )}
                   </div>
 
                   <ul className="btns">
-                    <li>수정</li>
-                    <li onClick={() => deletePost(index)}>삭제</li>
+                    {post.enableUpdate ? (
+                      <>
+                        <li onClick={() => enableUpdate(index)}>저장</li>
+                        <li onClick={() => deletePost(index)}>취소</li>
+                      </>
+                    ) : (
+                      <>
+                        <li onClick={() => enableUpdate(index)}>수정</li>
+                        <li onClick={() => deletePost(index)}>삭제</li>
+                      </>
+                    )}
                   </ul>
                 </article>
               )
