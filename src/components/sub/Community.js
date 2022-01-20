@@ -5,6 +5,8 @@ function Community() {
   const frame = useRef(null)
   const input = useRef(null)
   const textarea = useRef(null)
+  const updateInput = useRef(null)
+  const updateTextarea = useRef(null)
   const showBox = useRef(null)
 
   // 초기 데이터 셋팅
@@ -51,7 +53,18 @@ function Community() {
   }
 
   // 실제 포스트 수정 업데이트 함수
-  const updatePost = (index) => {}
+  const updatePost = (index) => {
+    setPosts(
+      posts.map((post, selectedPost) => {
+        if (selectedPost === index) {
+          post.title = updateInput.current.value
+          post.content = updateTextarea.current.value
+          post.enableUpdate = false
+        }
+        return post
+      })
+    )
+  }
 
   useEffect(() => {
     frame.current.classList.add('on')
@@ -94,8 +107,15 @@ function Community() {
                     {post.enableUpdate ? (
                       // 수정모드
                       <>
-                        <input type="text" defaultValue={post.title} />
-                        <textarea defaultValue={post.content}></textarea>
+                        <input
+                          type="text"
+                          defaultValue={post.title}
+                          ref={updateInput}
+                        />
+                        <textarea
+                          defaultValue={post.content}
+                          ref={updateTextarea}
+                        ></textarea>
                       </>
                     ) : (
                       // 출력모드
@@ -110,7 +130,7 @@ function Community() {
                     {post.enableUpdate ? (
                       // 수정모드
                       <>
-                        <li onClick={() => enableUpdate(index)}>저장</li>
+                        <li onClick={() => updatePost(index)}>저장</li>
                         <li onClick={() => disableUpdate(index)}>취소</li>
                       </>
                     ) : (
