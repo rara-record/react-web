@@ -12,14 +12,20 @@ function Community() {
     { title: '질문 있습니다', content: ' Lorem, ipsum dolor.' },
   ])
 
+  // post 추가 함수
   const creactPost = () => {
     setPosts([
       { title: input.current.value, content: textarea.current.value },
       ...posts,
     ])
-
     input.current.value = ''
     textarea.current.value = ''
+  }
+
+  // post 삭제 함수
+  const deletePost = (index) => {
+    setPosts(posts.filter((_, selectedPost) => index !== selectedPost))
+    /* filter : 특정조건이 성립하는 데이터만 다시 새롭게 반환 */
   }
 
   useEffect(() => {
@@ -59,8 +65,15 @@ function Community() {
             {posts.map((post, index) => {
               return (
                 <article key={index}>
-                  <h2>{post.title}</h2>
-                  <p>{post.content}</p>
+                  <div className="post">
+                    <h2>{post.title}</h2>
+                    <p>{post.content}</p>
+                  </div>
+
+                  <ul className="btns">
+                    <li>수정</li>
+                    <li onClick={() => deletePost(index)}>삭제</li>
+                  </ul>
                 </article>
               )
             })}
