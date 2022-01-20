@@ -101,6 +101,7 @@
 
         article {
           position: relative;
+          width: calc((100% / 3) - 12rem);
           color: #fff;
 
           span {
@@ -289,6 +290,7 @@
       .about__info {
         .info__wrapper {
           article {
+            width: 100%;
             p {
               padding-right: 12rem;
               font: normal 1.4rem/2 'Playfair Display', serif;
