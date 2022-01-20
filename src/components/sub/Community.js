@@ -31,8 +31,8 @@ function Community() {
   // 출력모드에서 수정모드로 변경하는 함수
   const enableUpdate = (index) => {
     setPosts(
-      posts.map((post, postIndex) => {
-        if (postIndex === index) post.enableUpdate = true
+      posts.map((post, selectedPost) => {
+        if (selectedPost === index) post.enableUpdate = true
         return post
       })
     )
@@ -40,7 +40,15 @@ function Community() {
   }
 
   // 수정모드에서 출력모드로 변경하는 함수
-  const disableUpdate = (index) => {}
+  const disableUpdate = (index) => {
+    setPosts(
+      posts.map((post, selectedPost) => {
+        if (selectedPost === index) post.enableUpdate = false
+        return post
+      })
+    )
+    console.log(posts)
+  }
 
   // 실제 포스트 수정 업데이트 함수
   const updatePost = (index) => {}
@@ -84,11 +92,13 @@ function Community() {
                 <article key={index}>
                   <div className="post">
                     {post.enableUpdate ? (
+                      // 수정모드
                       <>
                         <input type="text" defaultValue={post.title} />
                         <textarea defaultValue={post.content}></textarea>
                       </>
                     ) : (
+                      // 출력모드
                       <>
                         <h2>{post.title}</h2>
                         <p>{post.content}</p>
@@ -98,11 +108,13 @@ function Community() {
 
                   <ul className="btns">
                     {post.enableUpdate ? (
+                      // 수정모드
                       <>
                         <li onClick={() => enableUpdate(index)}>저장</li>
-                        <li onClick={() => deletePost(index)}>취소</li>
+                        <li onClick={() => disableUpdate(index)}>취소</li>
                       </>
                     ) : (
+                      // 출력모드
                       <>
                         <li onClick={() => enableUpdate(index)}>수정</li>
                         <li onClick={() => deletePost(index)}>삭제</li>
