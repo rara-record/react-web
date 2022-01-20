@@ -42,8 +42,17 @@ function Community() {
               ref={textarea}
             />
             <br />
-            <button>CANCEL</button>
-            <button onClick={creactPost}>CREATE</button>
+            {/* CANCEL BUTTON */}
+            <button
+              onClick={() => {
+                input.current.value = ''
+                textarea.current.value = ''
+              }}
+            >
+              CANCEL
+            </button>
+            {/* CREATE BUTTON */}
+            <button onClick={() => creactPost()}>CREATE</button>
           </section>
 
           <section className="show__box" ref={showBox}>
