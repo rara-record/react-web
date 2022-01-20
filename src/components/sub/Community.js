@@ -16,6 +16,10 @@ function Community() {
 
   // post 추가 함수
   const creactPost = () => {
+    if (!input.current.value || !textarea.current.value) {
+      alert('제목과 본문을 입력하세요')
+      return
+    }
     setPosts([
       { title: input.current.value, content: textarea.current.value },
       ...posts,
