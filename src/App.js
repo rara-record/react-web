@@ -1,5 +1,4 @@
 import './css/style.css'
-import Anime from './class/anime.js'
 import { Route, Switch } from 'react-router-dom'
 
 // import common component

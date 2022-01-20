@@ -96,6 +96,7 @@
 
       .info__wrapper {
         display: flex;
+        flex-wrap: wrap;
         grid-gap: 12rem;
 
         article {
@@ -275,6 +276,126 @@
 
           &:nth-of-type(4) {
             transform: translateX(100%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1179px) {
+  .about {
+    .contents {
+      .about__info {
+        .info__wrapper {
+          article {
+            p {
+              padding-right: 12rem;
+              font: normal 1.4rem/2 'Playfair Display', serif;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .about {
+    .sub__visual {
+      height: 60vh;
+
+      .slogan {
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h1 {
+          width: 40rem;
+        }
+      }
+    }
+
+    .contents {
+      .about__project {
+        .slider {
+          .slider__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+
+            > div {
+              width: 50%;
+            }
+          }
+        }
+      }
+
+      .about__team {
+        .team__wrapper {
+          .team__list {
+            width: 50%;
+            &:first-child {
+              transform: translateY(0);
+            }
+
+            &:nth-of-type(3) {
+              transform: translateY(0);
+            }
+
+            &:nth-of-type(4) {
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .about {
+    .contents {
+      .about__project {
+        .inner {
+          .text__box {
+            margin-bottom: 2rem;
+          }
+        }
+
+        .slider {
+          .slider__wrapper {
+            padding: 0 3rem;
+
+            > div {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .about__info {
+        .info__wrapper {
+          article {
+            h2 {
+              font: normal 3rem/1.2em $font-main;
+            }
+
+            p {
+              padding-right: 6rem;
+              font: normal 1.6rem/2 $font-point;
+            }
+          }
+        }
+      }
+
+      .about__team {
+        .team__wrapper {
+          .team__list {
+            width: 100%;
+
+            figure {
+              width: 325px;
+            }
           }
         }
       }

@@ -1,12 +1,11 @@
 .bg-grid {
-  // @include pos-center;
   display: flex;
 
   div {
     position: absolute;
+    top: 0;
     width: 1px;
     height: 100%;
-    top: 0;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
 
     @for $i from 1 through 6 {
@@ -15,13 +14,15 @@
       }
     }
 
-    &::last-child {
+    &:last-child {
       border: none;
     }
+  }
 
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
-
 
 .wrap {
   display: block;
@@ -43,6 +44,28 @@
 
   & a {
     color: $white;
+  }
+}
+
+.contents {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.5s 0.7s ease-in-out;
+
+  &.on {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.anime {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+
+  &.on {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
 

@@ -2,10 +2,6 @@
   $border : rgb(211, 205, 205);
   $point: #9a1824;
 
-  section {
-    padding: 0;
-  }
-
   .sub__visual {
     position: relative;
     @include bgImge('/public/img/contact-sub-visual.jpg');
@@ -47,17 +43,6 @@
           animation: text_animation 0.5s 0.4s ease-in-out forwards;
         }
       }
-
-      // &::before {
-      //   position: absolute;
-      //   top: 0;
-      //   right: 0;
-      //   display: block;
-      //   height: 100%;
-      //   background: $black;
-      //   animation: text_animation_before 0.5s 0.2s ease-in-out forwards;
-      //   content: '';
-      // }
     }
   }
 
@@ -124,7 +109,7 @@
   
           h1 {
             padding-top: 3rem;
-            font: normal 2.3rem/1 $font-main;
+            font: bold 2rem/1 $font-second;
           }
   
           .detail {
@@ -301,6 +286,7 @@
 
       h1 {
         margin: 2rem 0 1.5rem;
+        padding: 0;
         font: normal 5rem/1 $font-main;
         color: $point;
       } 

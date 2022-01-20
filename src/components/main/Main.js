@@ -28,13 +28,14 @@ function Main() {
     let offSetArray = []
     for (let sec of sections) offSetArray.push(sec.offsetTop)
     position.current = offSetArray
+    console.log(position.current)
   }
 
   // useRef로 담아놓은 세로 섹션 위치만큼 반복을 돌면서
   // 스크롤 조건이 맞을때에만 해당 순번의 버튼 활성화
   const handleScroll = () => {
     let scroll = window.scrollY
-    const btns = main.current.querySelectorAll('.myScroll')
+    const btns = main.current.querySelectorAll('#btns li')
 
     position.current.map((pos, index) => {
       if (scroll >= pos) {
@@ -65,7 +66,7 @@ function Main() {
   }, [index])
 
   return (
-    <div id="main__Wrapper" ref={main}>
+    <div id="main__wrapper" ref={main}>
       <Header type={'main'} />
       <Visual />
       <Intro />

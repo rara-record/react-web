@@ -9,14 +9,12 @@ function Contact() {
   const container = useRef(null)
   const btnBranch = useRef(null)
 
-  //생성된 map인스턴스가 담길 state생성
   const [map, setMap] = useState(null)
   // 순서값을 index스테이트에 넣어서 관리
   const [index, setIndex] = useState(0)
-  //toggle값에 따라 트래픽보기 버튼 활성화, 비활성화
   const [toggle, setToggle] = useState(false)
 
-  //state에 담을 초기 정보값
+  // 초기 정보값
   const data = [
     {
       title: '본점',
@@ -47,18 +45,15 @@ function Contact() {
   //컴포넌트 생성시
   useEffect(() => {
     frame.current.classList.add('on')
-
     container.current.innerHTML = ''
     const options = {
       center: mapData[index].latlng,
       level: 3,
     }
-
-    //카카오맵 생성자로부터 인스턴스 복사해서 맵 실행
+    //카카오 맵 실행
     const map = new kakao.maps.Map(container.current, options)
     setMap(map)
-
-    // 마커 인스턴스 호출 (호출시 mapData stae에서 정보값 호출)
+    // 마커 인스턴스 호출
     new kakao.maps.Marker({
       map: map,
       position: mapData[index].latlng,
@@ -69,31 +64,24 @@ function Contact() {
         mapData[index].imgPos
       ),
     })
-
     map.setCenter(mapData[index].latlng)
-
     //지도 타입변경 패널 프레임에 생성
     const mapTypeControl = new kakao.maps.MapTypeControl()
     map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT)
-    //휠로 줌 기능 활성화
     map.setZoomable(true)
-    //마우스 드래그기능 활성화
     map.setDraggable(true)
 
-    // 모든 버튼 초기화 한 뒤, index state번째의 li요소만 활성화
     for (const btn of btnBranch.current.children) {
       btn.classList.remove('on')
       btnBranch.current.children[index].classList.add('on')
     }
 
     const mapSet = () => map.setCenter(mapData[index].latlng)
-
     // 윈도우 리사이즈시 마커 위치 중앙배치
     window.addEventListener('resize', mapSet)
 
-    // 해당 컴포넌트가 사라질때 기존 window에 등록된 이벤트 제거
     return () => window.addEventListener('resize', mapSet)
-  }, [index]) // 의존성에 index스테이트를 추가해 추후 순서값이 바뀔때마다 지도 다시 렌더링
+  }, [index])
 
   return (
     <main className="contact">
