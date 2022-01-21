@@ -1,17 +1,14 @@
 import React from 'react'
-import axios from 'axios'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function About() {
   const path = process.env.PUBLIC_URL
-  const [team, setTeam] = useState([])
   const frame = useRef(null)
+  const members = useSelector((state) => state.memberReducer.members)
 
   useEffect(() => {
-    axios.get(`${path}/db/team.json`).then((json) => {
-      setTeam(json.data.team)
-    })
     frame.current.classList.add('on')
   }, [])
 
@@ -120,16 +117,16 @@ function About() {
               </div>
 
               <div className="team__wrapper">
-                {team.map((team, index) => {
+                {members.map((member, index) => {
                   return (
                     <article key={index} className="team__list">
                       <div className="team__info">
-                        <h3 className="team__name">{team.name}</h3>
-                        <h4 className="team__position">{team.position}</h4>
+                        <h3 className="team__name">{member.name}</h3>
+                        <h4 className="team__position">{member.position}</h4>
                       </div>
 
                       <figure className="team__img">
-                        <img src={path + team.image} alt={team.alt} />
+                        <img src={path + member.image} alt={member.alt} />
 
                         <ul className="team__sns">
                           <li>

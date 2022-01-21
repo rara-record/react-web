@@ -35,10 +35,6 @@ function Youtube() {
             <div className="about__subtitle">GUSTAV CALATRAVA</div>
           </h2>
         </div>
-        {/* <h1 className="title">YOUTUBE</h1> */}
-        {/* <figure>
-          <img src={`${path}/img/test2.jpg`} alt="" />
-        </figure> */}
       </div>
 
       <div className="youtube__contents">
@@ -51,14 +47,15 @@ function Youtube() {
               stretch: 0,
               depth: 100,
               modifier: 1,
-              slideShadows: true,
+              slideShadows: false,
             }}
             loop={true}
+            speed={500}
             slidesPerView={'auto'}
             loopedSlides={3}
-            spaceBetween={20}
-            speed={500}
+            spaceBetween={0}
             centeredSlides={true}
+            grabCursor={true}
             observer={true}
             observeParents={true}
             // breakpoints={

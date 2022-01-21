@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
 function Community() {
-  /// ref
   const frame = useRef(null)
   const input = useRef(null)
   const textarea = useRef(null)
@@ -9,10 +8,16 @@ function Community() {
   const updateTextarea = useRef(null)
   const showBox = useRef(null)
 
-  // 초기 데이터 셋팅
-  const [posts, setPosts] = useState([
-    { title: '질문 있습니다', content: ' Lorem, ipsum dolor.' },
-  ])
+  const getLocalItems = () => {
+    let data = localStorage.getItem('posts')
+
+    if (data) {
+      return JSON.parse(data)
+    } else {
+      return []
+    }
+  }
+  const [posts, setPosts] = useState(getLocalItems)
 
   // post 추가 함수
   const creactPost = () => {
@@ -71,8 +76,9 @@ function Community() {
   }
 
   useEffect(() => {
+    localStorage.setItem('posts', JSON.stringify(posts))
     frame.current.classList.add('on')
-  }, [])
+  }, [posts])
 
   return (
     <main className="community">

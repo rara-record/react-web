@@ -2,7 +2,7 @@
   $ponit: #9a1824;
 
   .sub__visual {
-    @include bgImge('/public/img/test1.jpg');
+    @include bgImge('/public/img/youtube-sub-visual.jpg');
     position: relative;
     height: 70vh;
     overflow: hidden;
@@ -79,10 +79,10 @@
     .mySwiper {
       .swiper-wrapper {
         .swiper-slide {
+          position: relative;
+          top: 50%;
           width: 50rem;
-          height: 65rem;
-          padding: 0 2rem;
-          cursor: pointer;
+          height: 50rem;
 
           article {
             width: 100%;
@@ -105,6 +105,7 @@
                 h2 {
                   display: inline-block;
                   width: 100%;
+                  height: 3rem;
                   overflow: hidden;
                   color: $white;
                   font: normal 2.5rem/1 $font-point;
@@ -114,9 +115,9 @@
               }
 
               p {
-                padding: 2rem;
-                color: $white;
-                font: normal 1.4rem/1.2 $font-second;
+                padding: 1rem 3rem;
+                color: #4c4c4c;
+                font: 300 1.4rem/1.3 $font-main;
               }
             }
           }

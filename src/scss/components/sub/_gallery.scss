@@ -158,9 +158,11 @@
     background-color: rgba(0, 0, 0, 0.9);
 
     h1 {
+      margin-bottom: 3rem;
       color: $white;
-      font: normal 3rem/1 $font-main;
+      font: normal 5rem/1 $font-point;
       letter-spacing: 0.05rem;
+      text-transform: uppercase;
     }
 
     figure {
@@ -173,7 +175,7 @@
       top: 3vw;
       right: 5vw;
       color: #fff;
-      font: bold 1.8rem/1 $font-main;
+      font: bold 2rem/1 $font-main;
       letter-spacing: 0.1rem;
       text-transform: uppercase;
       cursor: pointer;

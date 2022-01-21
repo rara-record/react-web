@@ -4,6 +4,8 @@ import Intro from './Intro'
 import Banner from './Banner'
 import Project from './Project'
 import Brand from './Brand'
+import News from './News'
+import Members from './Members'
 import Btns from './Btns'
 import Anime from './../../class/anime'
 import { useEffect, useState, useRef } from 'react'
@@ -73,6 +75,8 @@ function Main() {
       <Banner />
       <Project />
       <Brand />
+      <News />
+      <Members />
       <Btns getIndex={getIndex} />
     </div>
   )

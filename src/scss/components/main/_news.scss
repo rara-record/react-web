@@ -1,0 +1,44 @@
+#news {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 150px 0px;
+  background: #eee;
+
+  .inner {
+    position: relative;
+    width: 1180px;
+    margin: 0px auto;
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .txtBox {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: space-between;
+      width: 100%;
+      height: 40vh;
+
+      article {
+        width: 32%;
+        height: 48%;
+        padding: 50px;
+        background: #fff;
+
+        h3 {
+          margin-bottom: 20px;
+          color: #333;
+          font: bold 20px/1 'arial';
+        }
+        p {
+          color: #666;
+          font: 14px/1.2 'arial';
+        }
+      }
+    }
+  }
+}

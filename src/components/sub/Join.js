@@ -62,7 +62,7 @@ function Join() {
                     <td>
                       <input type="text" id="userid" name="userid" />
                       <button>중복확인</button>
-                      <p>5~12자의 영문, 숫자로 입력해 주시기 바랍니다.</p>
+                      <p>5~12자의 영문, 숫자로 입력해 주세요.</p>
                     </td>
                   </tr>
 
@@ -73,11 +73,7 @@ function Join() {
                     </th>
                     <td>
                       <input type="password" id="pwd1" name="pwd1" />
-                      <p>
-                        10자 이상의 영문, 숫자, 특수문자로 입력해 주시기
-                        바랍니다.(연속된 문자 '123','abc','qwe','111'..등은
-                        사용불가 합니다.)
-                      </p>
+                      <p>10자 이상의 영문, 숫자, 특수문자로 입력해 주세요.</p>
                     </td>
                   </tr>
 
@@ -88,9 +84,7 @@ function Join() {
                     </th>
                     <td>
                       <input type="password" id="pwd2" name="pwd2" />
-                      <p>
-                        정확한 확인을 위하여 한번 더 입력해 주시기 바랍니다.
-                      </p>
+                      <p>정확한 확인을 위하여 한번 더 입력해 주세요.</p>
                     </td>
                   </tr>
 
