@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 
@@ -26,18 +27,22 @@ function Youtube() {
   return (
     <main className="youtube">
       <div className="sub__visual">
-        <h1 className="title">YOUTUBE</h1>
-        <figure>
-          <video
-            src={`${path}/video/youtube-sub-visual.mp4`}
-            muted
-            loop
-          ></video>
-        </figure>
+        <div className="slogan">
+          <h1>
+            <div className="about__title">YOUTUBE</div>
+          </h1>
+          <h2>
+            <div className="about__subtitle">GUSTAV CALATRAVA</div>
+          </h2>
+        </div>
+        {/* <h1 className="title">YOUTUBE</h1> */}
+        {/* <figure>
+          <img src={`${path}/img/test2.jpg`} alt="" />
+        </figure> */}
       </div>
 
       <div className="youtube__contents">
-        <div className="inner anime" ref={frame}>
+        <div className="inner contents" ref={frame}>
           <Swiper
             effect={'coverflow'}
             className="mySwiper"
@@ -83,14 +88,14 @@ function Youtube() {
                     <div className="text-box">
                       <div className="title">
                         <h2>
-                          {tit_len >= 40 ? tit.substr(0, 30) + '...' : tit}
+                          {tit_len >= 40 ? tit.substr(0, 25) + '...' : tit}
                         </h2>
-                        <div className="date">
+                        {/* <div className="date">
                           {item.snippet.publishedAt.split('T')[0].slice(2)}
-                        </div>
+                        </div> */}
                       </div>
                       <p>
-                        {desc_len >= 20 ? desc.substr(0, 50) + '...' : desc}
+                        {desc_len >= 20 ? desc.substr(0, 110) + '...' : desc}
                       </p>
                     </div>
                   </article>
@@ -117,6 +122,7 @@ function Youtube() {
           height="100%"
           allowFullScreen
         ></iframe>
+        <h2>{data[index].title}</h2>
         <span
           onClick={() => {
             setIsPopup(false)

@@ -2,9 +2,50 @@
   $ponit: #9a1824;
 
   .sub__visual {
+    @include bgImge('/public/img/test1.jpg');
     position: relative;
-    height: 50vh;
+    height: 70vh;
     overflow: hidden;
+    background-position: 0 50%;
+
+    .slogan {
+      position: absolute;
+      top: 50%;
+      left: 4.5rem;
+      padding: 2rem 10rem;
+      transform: translate(0, -50%);
+      perspective: 900px;
+
+      h1 {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+
+        .about__title {
+          position: relative;
+          color: $white;
+          font: 700 8rem/10rem $font-main;
+          letter-spacing: -0.2rem;
+          text-align: center;
+          cursor: pointer;
+          opacity: 0;
+          animation: text_animation 0.5s 0.2s ease-in-out forwards;
+        }
+      }
+
+      h2 {
+        position: relative;
+        overflow: hidden;
+
+        .about__subtitle {
+          color: $white;
+          font: 700 3rem/3.5rem $font-main;
+          text-align: center;
+          opacity: 0;
+          animation: text_animation 0.5s 0.4s ease-in-out forwards;
+        }
+      }
+    }
 
     .title {
       position: absolute;
@@ -58,28 +99,24 @@
             }
 
             .text-box {
+              text-align: center;
+
               .title {
                 h2 {
                   display: inline-block;
                   width: 100%;
-                  margin-bottom: 1rem;
                   overflow: hidden;
                   color: $white;
-                  font-size: 2.2rem;
+                  font: normal 2.5rem/1 $font-point;
                   white-space: nowrap;
                   text-overflow: ellipsis;
-                }
-
-                .date {
-                  color: $white;
-                  font-size: 1.4rem;
                 }
               }
 
               p {
-                padding: 2rem 0;
+                padding: 2rem;
                 color: $white;
-                font-size: 1.4rem;
+                font: normal 1.4rem/1.2 $font-second;
               }
             }
           }
@@ -103,7 +140,8 @@
       top: 3vw;
       right: 5vw;
       color: #fff;
-      font: bold 14px/1 'arial';
+      font: bold 16px/1 'arial';
+      text-transform: uppercase;
       cursor: pointer;
     }
   }
