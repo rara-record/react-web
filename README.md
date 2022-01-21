@@ -70,6 +70,11 @@ import {NavLink} from "react-router-dom";
 <NavLink exact to="/">DCODELAB</NavLink>
 ```
 
+- public 폴더
+```react
+const path = process.env.PUBLIC_URL
+```
+
 - Redux 설치
 ```react
 npm install redux react-redux --save
