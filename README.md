@@ -31,6 +31,7 @@ import {Route} from "react-router-dom";
 3. npm i sass-lint
 4. .sass-lint.yml
 5. npm run sass
+6. ruby sass : sass --watch -E utf-8 scss/style.scss:css/style.css
 
 ## gitHub Page배포
 1. npm install gh-pages --save-dev
@@ -69,7 +70,7 @@ import {NavLink} from "react-router-dom";
 <NavLink exact to="/">DCODELAB</NavLink>
 ```
 
--Redux 설치
+- Redux 설치
 ```react
 npm install redux react-redux --save
 ```
