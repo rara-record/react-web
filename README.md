@@ -69,6 +69,10 @@ import {NavLink} from "react-router-dom";
 <NavLink exact to="/">DCODELAB</NavLink>
 ```
 
+-Redux 설치
+```react
+npm install redux react-redux --save
+```
 
 
 
