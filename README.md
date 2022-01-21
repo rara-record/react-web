@@ -25,6 +25,12 @@ ReactDOM.render(
 import {Route} from "react-router-dom";
 ```
 
+## Redux 설치
+```react
+npm install redux react-redux --save
+```
+
+
 ## sass 세팅
 1. npm i node-sass
 2. "sass": "node-sass -wr --source-map true src/scss/style.scss src/css/style.css"
@@ -53,6 +59,7 @@ ES7 React/Redux/GraphQL/React-Native snippets
 ### - pretter/eslint 
 https://poiemaweb.com/eslint
 
+### React
 - App.js
 ```react
 import "./css/style.css";
@@ -74,11 +81,5 @@ import {NavLink} from "react-router-dom";
 ```react
 const path = process.env.PUBLIC_URL
 ```
-
-- Redux 설치
-```react
-npm install redux react-redux --save
-```
-
 
 
