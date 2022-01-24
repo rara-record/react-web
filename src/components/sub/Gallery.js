@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
-import { FilckrData } from '../../data/FlickrData'
+import { FlickrData } from '../../data/FlickrData'
 import Masonry from 'react-masonry-component'
-const path = process.env.PUBLIC_URL
+const body = document.querySelector('body')
 
 const MasonryOptions = {
   fitWidth: false,
@@ -114,7 +114,9 @@ function Gallery() {
               return (
                 <li className={'gallery__item'} key={index}>
                   <div className="number">
-                    <span>0{index + 1}</span>
+                    <span>
+                      {parseInt(index) < 9 ? '0' + (index + 1) : index + 1}
+                    </span>
                   </div>
 
                   <div className="title__wrapper">
@@ -131,7 +133,7 @@ function Gallery() {
                     <img src={imgSrc} alt={data.alt} />
                   </figure>
 
-                  <span className="date">2022.09.2{index}</span>
+                  <span className="date">2022.01.20</span>
                 </li>
               )
             })}
@@ -148,6 +150,13 @@ function Gallery() {
   function Pop() {
     const target = items[index]
     const imgSrc = `https://live.staticflickr.com/${target.server}/${target.id}_${target.secret}_b.jpg`
+
+    useEffect(() => {
+      body.style.overflow = 'hidden'
+      return () => {
+        body.style.overflow = 'auto'
+      }
+    }, [])
 
     return (
       <aside className="pop">
@@ -171,9 +180,9 @@ function Gallery() {
     let url = ''
 
     if (opt.type === 'interest') {
-      url = FilckrData.initURL
+      url = FlickrData.initURL
     } else if (opt.type === 'search') {
-      url = `${FilckrData.searchURL}${opt.tags}`
+      url = `${FlickrData.searchURL}${opt.tags}`
     } else {
       console.error('api 요청 타입을 interest, search 중에서 지정하세요')
     }

@@ -24,10 +24,10 @@ function Youtube() {
       <div className="sub__visual">
         <div className="slogan">
           <h1>
-            <div className="about__title">YOUTUBE</div>
+            <div className="title">YOUTUBE</div>
           </h1>
           <h2>
-            <div className="about__subtitle">GUSTAV CALATRAVA</div>
+            <div className="subtitle">GUSTAV CALATRAVA</div>
           </h2>
         </div>
       </div>
@@ -39,8 +39,8 @@ function Youtube() {
             className="mySwiper"
             coverflowEffect={{
               rotate: 50,
-              stretch: 0,
-              depth: 100,
+              stretch: -70,
+              depth: 300,
               modifier: 1,
               slideShadows: false,
             }}
@@ -51,8 +51,8 @@ function Youtube() {
             spaceBetween={0}
             centeredSlides={true}
             grabCursor={true}
-            observer={true}
-            observeParents={true}
+            // observer={true}
+            // observeParents={true}
             // breakpoints={
             //   ({ 768: { slidesPerView: 'auto' } },
             //   { 320: { slidesPerView: 1, spaceBetween: 0 } })
@@ -82,12 +82,9 @@ function Youtube() {
                         <h2>
                           {tit_len >= 40 ? tit.substr(0, 25) + '...' : tit}
                         </h2>
-                        {/* <div className="date">
-                          {item.snippet.publishedAt.split('T')[0].slice(2)}
-                        </div> */}
                       </div>
                       <p>
-                        {desc_len >= 20 ? desc.substr(0, 110) + '...' : desc}
+                        {desc_len >= 20 ? desc.substr(0, 130) + '...' : desc}
                       </p>
                     </div>
                   </article>

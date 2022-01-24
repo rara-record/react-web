@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux'
 function Members() {
   const path = process.env.PUBLIC_URL
   const members = useSelector((state) => state.memberReducer.members)
-  console.log(members)
 
   return (
-    <section className="members">
+    <section className="members myScroll">
       <div className="inner">
         <div id="section__title">
           <h1>Introduce Members</h1>

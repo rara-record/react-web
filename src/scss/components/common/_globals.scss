@@ -65,27 +65,49 @@
   }
 }
 
+.slogan {
+  position: absolute;
+  top: 50%;
+  left: 4.5rem;
+  padding: 2rem 10rem;
+  transform: translate(0, -50%);
+  perspective: 900px;
+
+  h1 {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    .title {
+      position: relative;
+      color: $white;
+      font: 700 8rem/10rem $font-main;
+      letter-spacing: -0.2rem;
+      text-align: center;
+      cursor: pointer;
+      opacity: 0;
+      animation: text_animation 0.5s 0.2s ease-in-out forwards;
+    }
+  }
+
+  h2 {
+    position: relative;
+    overflow: hidden;
+
+    .subtitle {
+      color: $white;
+      font: 700 3rem/3.5rem $font-main;
+      text-align: center;
+      opacity: 0;
+      animation: text_animation 0.5s 0.4s ease-in-out forwards;
+    }
+  }
+}
+
 .wrap {
   display: block;
   clear: both;
   content: '';
-}
-
-.whiteBg {
-  background: $white !important;
-  border-bottom: 1px solid $black;
-
-  & a {
-    color: black !important;
-  }
-}
-
-.transparent {
-  background: #0c0c0c;
-
-  & a {
-    color: $white;
-  }
 }
 
 .contents {

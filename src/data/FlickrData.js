@@ -5,13 +5,14 @@ let options = {
     search: 'flickr.photos.search',
   },
   key: 'c0a94718ea348229ebc99f0d38e533a1',
-  per_page: 8,
+  per_page: 50,
   format: 'json',
   alt: 'galleryImg',
 }
+
 let { base, method, key, per_page, format } = options
 
-export const FilckrData = {
+export const FlickrData = {
   initURL: `${base}method=${method.init}&api_key=${key}&per_page=${per_page}&format=${format}&nojsoncallback=1&privacy_filter=1`,
 
   searchURL: `${base}method=${method.search}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&&privacy_filter=1&tags=`,

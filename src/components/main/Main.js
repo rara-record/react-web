@@ -3,9 +3,8 @@ import Visual from './Visual'
 import Intro from './Intro'
 import Banner from './Banner'
 import Project from './Project'
-// import Brand from './Brand'
-import News from './News'
 import Members from './Members'
+import News from './News'
 import Video from './Video'
 import Btns from './Btns'
 import Anime from './../../class/anime'
@@ -76,7 +75,6 @@ function Main() {
       <Banner />
       <Project />
       <Video />
-      {/* <Brand /> */}
       <News />
       <Members />
       <Btns getIndex={getIndex} />

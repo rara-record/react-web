@@ -1,3 +1,10 @@
+export const setVisual = (visual) => {
+  return {
+    type: 'SET_VISUAL',
+    payload: visual,
+  }
+}
+
 export const setMembers = (members) => {
   return {
     type: 'SET_MEMBERS',

@@ -1,6 +1,36 @@
 import { combineReducers } from 'redux'
 
-// 초기상태로 들어갈 값
+// 초기 메인 비주얼 데아터
+const initVisual = {
+  visual: [
+    {
+      title: 'ART MUSEUM',
+      sub_title: 'RESIDENTAL',
+      paragraph:
+        'Art Museum ornare gravida vehicula. Ut ullamcorper the duscipit lacinia lorem ac feugiat nibh. Integer odio augle auctore tincidunt volutpat convallis vel nulla.',
+      image: '/img/main-visual-01.jpg',
+      alt: 'VISUAL IMAGE1',
+    },
+    {
+      title: 'AVM BUILDING',
+      sub_title: 'ARCHITECTURE',
+      paragraph:
+        'Avm Building ornare gravida vehicula. Ut ullamcorper the duscipit lacinia lorem ac feugiat nibh. Integer odio augle auctore tincidunt volutpat convallis vel nulla.',
+      image: '/img/main-visual-02.jpg',
+      alt: 'VISUAL IMAGE2',
+    },
+    {
+      title: 'DRANA VILLA',
+      sub_title: 'ARCHITECTURE',
+      paragraph:
+        'Drana Villa gravida vehicula. Ut ullamcorper the duscipit laciniathe lorem ac moss feugiat nibh. Integer odio ugle auctorethe tincidunt volutpat the convallis.',
+      image: '/img/main-visual-03.jpg',
+      alt: 'VISUAL IMAGE3',
+    },
+  ],
+}
+
+// 초기 멤버 데이터
 const initMember = {
   members: [
     {
@@ -30,6 +60,16 @@ const initMember = {
   ],
 }
 
+const visualReducer = (state = initVisual, action) => {
+  switch (action.type) {
+    case 'SET_VISUAL':
+      return { ...state, visual: action.payload }
+
+    default:
+      return state
+  }
+}
+
 // initMember를 초기값으로 지정해서 객체정보값을 반환하는 reducer함수 정의
 // 이때 두번째 인수인 action객체로부터는 type(액션이름)과 payload(자식 컴포넌트에서 전달받을 값)을 전달받음
 const memberReducer = (state = initMember, action) => {
@@ -55,6 +95,7 @@ const youtubeReducer = (state = { youtube: [] }, action) => {
 
 // 리듀서 합치기
 const reducers = combineReducers({
+  visualReducer,
   memberReducer,
   youtubeReducer,
 })

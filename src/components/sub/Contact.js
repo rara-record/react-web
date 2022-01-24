@@ -89,10 +89,10 @@ function Contact() {
         <div className="inner">
           <div className="slogan">
             <h1>
-              <div className="about__title">CONTACT US</div>
+              <div className="title">CONTACT US</div>
             </h1>
             <h2>
-              <div className="about__subtitle">GUSTAV CALATRAVA</div>
+              <div className="subtitle">GUSTAV CALATRAVA</div>
             </h2>
           </div>
         </div>

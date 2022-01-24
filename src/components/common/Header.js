@@ -3,25 +3,9 @@ import { NavLink } from 'react-router-dom'
 
 function Header(props) {
   const active = { color: 'aqua' }
-  const [state, setstate] = useState(false)
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    console.log('렌더링')
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
-  const handleScroll = () => {
-    window.scrollY > 120 ? setstate(true) : setstate(false)
-  }
 
   return (
-    <header
-      className={`${props.type} myScroll ${state ? 'whiteBg' : 'transparent'}`}
-    >
+    <header className={`${props.type} myScroll `}>
       <h1 className="logo">
         <NavLink exact to="/">
           D.

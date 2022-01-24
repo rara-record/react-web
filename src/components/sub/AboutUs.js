@@ -1,12 +1,14 @@
 import React from 'react'
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setMembers } from '../../redux/actions'
 
 function About() {
   const path = process.env.PUBLIC_URL
   const frame = useRef(null)
   const members = useSelector((state) => state.memberReducer.members)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     frame.current.classList.add('on')
@@ -19,10 +21,10 @@ function About() {
           <div className="inner">
             <div className="slogan">
               <h1>
-                <div className="about__title">ABOUT US</div>
+                <div className="title">ABOUT US</div>
               </h1>
               <h2>
-                <div className="about__subtitle">GUSTAV CALATRAVA</div>
+                <div className="subtitle">GUSTAV CALATRAVA</div>
               </h2>
             </div>
           </div>
@@ -155,6 +157,20 @@ function About() {
                   )
                 })}
               </div>
+              <button
+                onClick={() => {
+                  const newMembers = [...members]
+                  newMembers[0] = {
+                    name: 'Julia',
+                    position: 'Vice President',
+                    image: '/img/about-team-img-01.jpg',
+                    alt: 'Team1',
+                  }
+                  dispatch(setMembers(newMembers))
+                }}
+              >
+                맴버 변경
+              </button>
             </div>
 
             <div className="bg-grid">
