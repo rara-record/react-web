@@ -1,0 +1,11 @@
+.video {
+  position: relative;
+
+  .video__box {
+    position: relative;
+    z-index: 100;
+    grid-gap: 2rem;
+    margin-top: 5rem;
+    @include flexCenter;
+  }
+}

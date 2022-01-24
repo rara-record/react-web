@@ -1,118 +1,118 @@
-.brand {
-  position: relative;
-  background-image: url('/public/img/brand-bg.png');
-  background-position: bottom left;
+// .brand {
+//   position: relative;
+//   background-image: url('/public/img/brand-bg.png');
+//   background-position: bottom left;
 
-  .brand__wrapper {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-  }
+//   .brand__wrapper {
+//     position: relative;
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
 
-  &__content {
-    width: calc(100% / 2);
-    padding-right: 7%;
+//   &__content {
+//     width: calc(100% / 2);
+//     padding-right: 7%;
 
-    &__title {
-      h1 {
-        position: relative;
-        margin-bottom: 6rem;
-        color: $black;
-        font: normal 4rem/1 $font-main;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
+//     &__title {
+//       h1 {
+//         position: relative;
+//         margin-bottom: 6rem;
+//         color: $black;
+//         font: normal 4rem/1 $font-main;
+//         letter-spacing: 0.1em;
+//         text-transform: uppercase;
 
-        &::after {
-          position: absolute;
-          bottom: -75%;
-          left: 0;
-          width: 4rem;
-          height: 0.1rem;
-          background-color: $dark;
-          content: '';
-        }
-      }
+//         &::after {
+//           position: absolute;
+//           bottom: -75%;
+//           left: 0;
+//           width: 4rem;
+//           height: 0.1rem;
+//           background-color: $dark;
+//           content: '';
+//         }
+//       }
 
-      p {
-        margin: 1.7rem 9rem 4rem 0;
-        margin-bottom: 6rem;
-        color: $dark;
-        font: normal 1.7rem/1.5em $font-second;
-      }
-    }
+//       p {
+//         margin: 1.7rem 9rem 4rem 0;
+//         margin-bottom: 6rem;
+//         color: $dark;
+//         font: normal 1.7rem/1.5em $font-second;
+//       }
+//     }
 
-    &__icon {
-      display: flex;
-      flex-wrap: wrap;
+//     &__icon {
+//       display: flex;
+//       flex-wrap: wrap;
 
-      article {
-        width: 50%;
-        margin-bottom: 4rem;
+//       article {
+//         width: 50%;
+//         margin-bottom: 4rem;
 
-        figure {
-          float: left;
-          width: 5rem;
-        }
+//         figure {
+//           float: left;
+//           width: 5rem;
+//         }
 
-        .text {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          float: rig;
-          padding-left: 2rem;
-          color: $dark;
+//         .text {
+//           display: flex;
+//           flex-direction: column;
+//           justify-content: center;
+//           float: rig;
+//           padding-left: 2rem;
+//           color: $dark;
 
-          h2 {
-            padding-bottom: 1rem;
-            font: normal 1.6rem/1 $font-main;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-          }
+//           h2 {
+//             padding-bottom: 1rem;
+//             font: normal 1.6rem/1 $font-main;
+//             font-weight: 400;
+//             letter-spacing: 0.1em;
+//           }
 
-          span {
-            font: normal 1.4rem/1 $font-second;
-          }
-        }
+//           span {
+//             font: normal 1.4rem/1 $font-second;
+//           }
+//         }
 
-        &::after {
-          display: block;
-          clear: both;
-          content: '';
-        }
-      }
-    }
-  }
+//         &::after {
+//           display: block;
+//           clear: both;
+//           content: '';
+//         }
+//       }
+//     }
+//   }
 
-  &__image {
-    position: absolute;
-    right: -10rem;
-    bottom: -10rem;
-  }
+//   &__image {
+//     position: absolute;
+//     right: -10rem;
+//     bottom: -10rem;
+//   }
 
-  .text__wrapper {
-    position: absolute;
-    right: 15rem;
-    bottom: 6rem;
-    z-index: -1;
+//   .text__wrapper {
+//     position: absolute;
+//     right: 15rem;
+//     bottom: 6rem;
+//     z-index: -1;
 
-    span {
-      color: #edf7fa;
-      font: bold 23rem/1 $font-second;
-      letter-spacing: 0.5rem;
-      opacity: 0.8;
-    }
-  }
-}
+//     span {
+//       color: #edf7fa;
+//       font: bold 23rem/1 $font-second;
+//       letter-spacing: 0.5rem;
+//       opacity: 0.8;
+//     }
+//   }
+// }
 
-@media screen and (max-width: 1179px) {
-  .brand {
-    &__content {
-      width: 100%;
-      padding: 0;
-    }
+// @media screen and (max-width: 1179px) {
+//   .brand {
+//     &__content {
+//       width: 100%;
+//       padding: 0;
+//     }
 
-    &__image {
-      position: static;
-    }
-  }
-}
+//     &__image {
+//       position: static;
+//     }
+//   }
+// }

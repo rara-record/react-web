@@ -44,9 +44,19 @@ const memberReducer = (state = initMember, action) => {
   }
 }
 
+const youtubeReducer = (state = { youtube: [] }, action) => {
+  switch (action.type) {
+    case 'SET_YOUTUBE':
+      return { ...state, youtube: action.payload }
+    default:
+      return state
+  }
+}
+
 // 리듀서 합치기
 const reducers = combineReducers({
   memberReducer,
+  youtubeReducer,
 })
 
 // 내보내기

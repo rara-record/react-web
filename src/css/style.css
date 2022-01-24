@@ -450,6 +450,42 @@ footer {
     .bg-grid {
       display: none; } }
 
+#section__title {
+  padding-bottom: 10rem;
+  text-align: center; }
+  #section__title h1 {
+    position: relative;
+    padding: 0.6rem 0;
+    color: #222;
+    font: 700 3.9rem/1.15em "Roboto Condensed", sans-serif;
+    letter-spacing: -0.04em;
+    text-transform: uppercase; }
+    #section__title h1::before {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -150%;
+      width: 0.1px;
+      height: 5rem;
+      margin-bottom: 2rem;
+      background-color: #858585;
+      content: ''; }
+    #section__title h1::after {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -250%;
+      width: 0.1px;
+      height: 5rem;
+      margin-bottom: 2rem;
+      background-color: #858585;
+      content: ''; }
+  #section__title p {
+    margin: 0.1em 0 0.7rem;
+    color: #1e1e1e;
+    font: 300 1.5rem/1.73em "Roboto Condensed", sans-serif;
+    font-style: italic; }
+
 .wrap {
   display: block;
   clear: both;
@@ -756,118 +792,82 @@ footer .inner {
     .project__content__box {
       width: 100%; } }
 
-.brand {
-  position: relative;
-  background-image: url("/public/img/brand-bg.png");
-  background-position: bottom left; }
-  .brand .brand__wrapper {
+.members .members__contents {
+  flex-wrap: wrap;
+  grid-gap: 2rem;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .members .members__contents article {
+    text-align: center; }
+    .members .members__contents article h2 {
+      margin: 1rem;
+      color: #4c4c4c;
+      font: bold 1.7rem/1 "Playfair Display", serif; }
+    .members .members__contents article p {
+      margin: 1rem;
+      color: #9e9e9e;
+      font: normal 1.4rem/1 "Roboto Condensed", sans-serif; }
+    .members .members__contents article img {
+      width: 30rem;
+      height: 30rem; }
+
+.video {
+  position: relative; }
+  .video .video__box {
     position: relative;
+    z-index: 100;
+    grid-gap: 2rem;
+    margin-top: 5rem;
     display: flex;
-    flex-wrap: wrap; }
-  .brand__content {
-    width: calc(100% / 2);
-    padding-right: 7%; }
-    .brand__content__title h1 {
-      position: relative;
-      margin-bottom: 6rem;
-      color: #1e1e1e;
-      font: normal 4rem/1 "Roboto Condensed", sans-serif;
-      letter-spacing: 0.1em;
-      text-transform: uppercase; }
-      .brand__content__title h1::after {
-        position: absolute;
-        bottom: -75%;
-        left: 0;
-        width: 4rem;
-        height: 0.1rem;
-        background-color: #222;
-        content: ''; }
-    .brand__content__title p {
-      margin: 1.7rem 9rem 4rem 0;
-      margin-bottom: 6rem;
-      color: #222;
-      font: normal 1.7rem/1.5em "Roboto", sans-serif; }
-    .brand__content__icon {
-      display: flex;
-      flex-wrap: wrap; }
-      .brand__content__icon article {
-        width: 50%;
-        margin-bottom: 4rem; }
-        .brand__content__icon article figure {
-          float: left;
-          width: 5rem; }
-        .brand__content__icon article .text {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          float: rig;
-          padding-left: 2rem;
-          color: #222; }
-          .brand__content__icon article .text h2 {
-            padding-bottom: 1rem;
-            font: normal 1.6rem/1 "Roboto Condensed", sans-serif;
-            font-weight: 400;
-            letter-spacing: 0.1em; }
-          .brand__content__icon article .text span {
-            font: normal 1.4rem/1 "Roboto", sans-serif; }
-        .brand__content__icon article::after {
-          display: block;
-          clear: both;
-          content: ''; }
-  .brand__image {
-    position: absolute;
-    right: -10rem;
-    bottom: -10rem; }
-  .brand .text__wrapper {
-    position: absolute;
-    right: 15rem;
-    bottom: 6rem;
-    z-index: -1; }
-    .brand .text__wrapper span {
-      color: #edf7fa;
-      font: bold 23rem/1 "Roboto", sans-serif;
-      letter-spacing: 0.5rem;
-      opacity: 0.8; }
+    align-items: center;
+    justify-content: center; }
 
-@media screen and (max-width: 1179px) {
-  .brand__content {
-    width: 100%;
-    padding: 0; }
-  .brand__image {
-    position: static; } }
-
-#news {
+.news {
   position: relative;
   width: 100%;
-  height: 100vh;
-  padding: 150px 0px;
-  background: #eee; }
-  #news .inner {
+  height: 100vh; }
+  .news__box {
     position: relative;
-    width: 1180px;
-    margin: 0px auto; }
-    #news .inner h2 {
-      margin-bottom: 20px;
-      text-align: center; }
-    #news .inner .txtBox {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: space-between;
-      justify-content: space-between;
-      width: 100%;
-      height: 40vh; }
-      #news .inner .txtBox article {
-        width: 32%;
-        height: 48%;
-        padding: 50px;
-        background: #fff; }
-        #news .inner .txtBox article h3 {
-          margin-bottom: 20px;
-          color: #333;
-          font: bold 20px/1 'arial'; }
-        #news .inner .txtBox article p {
-          color: #666;
-          font: 14px/1.2 'arial'; }
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 2rem;
+    align-content: space-between;
+    justify-content: space-between;
+    width: 100%;
+    height: 40vh;
+    margin-top: 5rem; }
+    .news__box article {
+      height: 48%;
+      padding: 4.5rem 5rem;
+      background: #eee; }
+      .news__box article h3 {
+        margin-bottom: 1rem;
+        color: #222;
+        font: 700 2.2rem/1 'font-main';
+        text-transform: uppercase; }
+      .news__box article .news__info {
+        margin-bottom: 1.7rem;
+        color: rgba(32, 32, 32, 0.6);
+        font: 300 1.5rem/1 'font-main';
+        font-style: italic; }
+        .news__box article .news__info span {
+          position: relative;
+          margin-right: 0.5rem;
+          padding-right: 0.9rem; }
+          .news__box article .news__info span::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-style: normal;
+            content: '|'; }
+          .news__box article .news__info span:last-child::after {
+            display: none; }
+      .news__box article p {
+        color: #4c4c4c;
+        font: 300 1.5rem/1.73em "Roboto", sans-serif; }
 
 #btns {
   position: fixed;
@@ -1510,10 +1510,7 @@ footer .inner {
             background: none;
             display: inline-block;
             font: 12px/1 'arial';
-            color: orange;
             cursor: pointer; }
-            .community .inner .show__box article .btns li:nth-of-type(2) {
-              color: red; }
 
 .contact .sub__visual {
   position: relative;

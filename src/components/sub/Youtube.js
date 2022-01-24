@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import { useEffect, useState, useRef } from 'react'
-import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
@@ -8,20 +8,15 @@ import SwiperCore, { EffectCoverflow } from 'swiper'
 SwiperCore.use([EffectCoverflow])
 
 function Youtube() {
-  const path = process.env.PUBLIC_URL
-  const key = 'AIzaSyDcBGvXJV3oUXOEOuKGWX8KoJHrdp8sF4s'
-  const playListId = 'PLjyJ0gUvOKvCsP_vyVlJZbiwgHIycsuKN'
-  const num = 10
-  const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playListId}&maxResults=${num}`
-
-  const [data, setData] = useState([])
+  const frame = useRef(null)
   const [isPopup, setIsPopup] = useState(false)
   const [index, setIndex] = useState(0)
 
-  const frame = useRef(null)
+  const youtube = useSelector((state) => state)
+  const vidData = youtube.youtubeReducer.youtube
 
   useEffect(() => {
-    getYoutube(url)
+    frame.current.classList.add('on')
   }, [])
 
   return (
@@ -63,7 +58,7 @@ function Youtube() {
             //   { 320: { slidesPerView: 1, spaceBetween: 0 } })
             // }
           >
-            {data.map((item, index) => {
+            {vidData.map((item, index) => {
               let tit = item.snippet.title
               let tit_len = tit.length
 
@@ -113,13 +108,13 @@ function Youtube() {
         <iframe
           src={
             'https://www.youtube.com/embed/' +
-            data[index].snippet.resourceId.videoId
+            vidData[index].snippet.resourceId.videoId
           }
           width="100%"
           height="100%"
           allowFullScreen
         ></iframe>
-        <h2>{data[index].title}</h2>
+        <h2>{vidData[index].title}</h2>
         <span
           onClick={() => {
             setIsPopup(false)
@@ -129,14 +124,6 @@ function Youtube() {
         </span>
       </aside>
     )
-  }
-
-  async function getYoutube(url) {
-    await axios.get(url).then((json) => setData(json.data.items))
-
-    setTimeout(() => {
-      frame.current.classList.add('on')
-    }, 0)
   }
 }
 

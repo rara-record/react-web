@@ -1,0 +1,29 @@
+.members {
+  .members__contents {
+    flex-wrap: wrap;
+    grid-gap: 2rem;
+    margin-top: 5rem;
+    @include flexCenter;
+
+    article {
+      text-align: center;
+
+      h2 {
+        margin: 1rem;
+        color: $text;
+        font: bold 1.7rem/1 $font-point;
+      }
+
+      p {
+        margin: 1rem;
+        color: $gray;
+        font: normal 1.4rem/1 $font-main;
+      }
+
+      img {
+        width: 30rem;
+        height: 30rem;
+      }
+    }
+  }
+}

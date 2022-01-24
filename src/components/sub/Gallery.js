@@ -131,7 +131,7 @@ function Gallery() {
                     <img src={imgSrc} alt={data.alt} />
                   </figure>
 
-                  <span className="date">2017.09.28</span>
+                  <span className="date">2022.09.2{index}</span>
                 </li>
               )
             })}

@@ -3,9 +3,10 @@ import Visual from './Visual'
 import Intro from './Intro'
 import Banner from './Banner'
 import Project from './Project'
-import Brand from './Brand'
+// import Brand from './Brand'
 import News from './News'
 import Members from './Members'
+import Video from './Video'
 import Btns from './Btns'
 import Anime from './../../class/anime'
 import { useEffect, useState, useRef } from 'react'
@@ -74,7 +75,8 @@ function Main() {
       <Intro />
       <Banner />
       <Project />
-      <Brand />
+      <Video />
+      {/* <Brand /> */}
       <News />
       <Members />
       <Btns getIndex={getIndex} />

@@ -4,3 +4,10 @@ export const setMembers = (members) => {
     payload: members,
   }
 }
+
+export const setYoutube = (data) => {
+  return {
+    type: 'SET_YOUTUBE',
+    payload: data,
+  }
+}

@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react/cjs/react.development'
+import { useEffect, useState } from 'react'
 
 function News() {
+  const date = new Date()
+
   // 초기 데이터 설정
   const basic = [
     { title: 'Hello1', content: 'Here comes description in detail.' },
@@ -31,22 +33,41 @@ function News() {
   }, [])
 
   return (
-    <section id="news" className="myScroll">
+    <section className="news myScroll">
       <div className="inner">
-        <h2>RECENT NEWS</h2>
+        <div id="section__title">
+          <h1>LATEST BLOG ENTRIES</h1>
+          <p>
+            Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+            lorem quis
+          </p>
+        </div>
 
-        <div className="txtBox">
+        <div className="news__box">
           {posts.map((post, index) => {
             if (index < 6) {
               return (
                 <article key={index}>
                   <h3>{post.title}</h3>
+                  <div className="news__info">
+                    <span>by admin</span>
+                    <span>Housing</span>
+                    <span>November {index + 1}, 2017</span>
+                  </div>
                   <p>{post.content}</p>
                 </article>
               )
             }
           })}
         </div>
+      </div>
+      <div className="bg-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </section>
   )

@@ -24,6 +24,47 @@
   }
 }
 
+#section__title {
+  padding-bottom: 10rem;
+  text-align: center;
+
+  h1 {
+    position: relative;
+    padding: 0.6rem 0;
+    color: $dark;
+    font: 700 3.9rem/1.15em $font-main;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+
+    &::before {
+      @include pos-center-x;
+      top: -150%;
+      width: 0.1px;
+      height: 5rem;
+      margin-bottom: 2rem;
+      background-color: #858585;
+      content: '';
+    }
+
+    &::after {
+      @include pos-center-x;
+      bottom: -250%;
+      width: 0.1px;
+      height: 5rem;
+      margin-bottom: 2rem;
+      background-color: #858585;
+      content: '';
+    }
+  }
+
+  p {
+    margin: 0.1em 0 0.7rem;
+    color: $black;
+    font: 300 1.5rem/1.73em $font-main;
+    font-style: italic;
+  }
+}
+
 .wrap {
   display: block;
   clear: both;

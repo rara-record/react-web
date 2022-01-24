@@ -51,5 +51,16 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
+  },
+  "description": "1. npx create-react-app\r 2. npx create-react-app@5.0.0 my-app",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rara-record/react-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rara-record/react-portfolio/issues"
   }
 }
