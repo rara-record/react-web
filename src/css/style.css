@@ -393,6 +393,8 @@ main .sub__visual {
     text-transform: uppercase; }
 
 footer {
+  position: relative;
+  z-index: 200;
   width: 100%;
   padding: 5rem 0;
   border-top: 0.1rem solid #f4f4f4; }
@@ -400,10 +402,6 @@ footer {
     width: 1180px;
     margin: 0 auto;
     text-align: center; }
-    footer .inner p {
-      color: #888;
-      font: 1.2rem/1 'arial';
-      text-align: center; }
 
 @media screen and (max-width: 1179px) {
   #main__wrapper section {
@@ -411,14 +409,12 @@ footer {
   .inner {
     width: 100%;
     height: 100%;
-    margin: 0 auto;
     padding: 0 4rem; } }
 
 @media screen and (max-width: 768px) {
   html {
     font-size: 55%; }
   .inner {
-    width: 100%;
     padding: 0 3rem; } }
 
 .bg-grid {
@@ -448,6 +444,8 @@ footer {
       display: none; } }
 
 #section__title {
+  position: relative;
+  z-index: 200;
   padding-bottom: 10rem;
   text-align: center; }
   #section__title h1 {
@@ -558,7 +556,8 @@ header #gnb-desktop {
   top: 50%;
   transform: translateY(-50%);
   right: 4.5rem;
-  bottom: 0; }
+  bottom: 0;
+  z-index: 200; }
   header #gnb-desktop li {
     float: left; }
     header #gnb-desktop li a {
@@ -597,6 +596,8 @@ header.main {
 header.sub {
   color: white;
   background-color: #1e1e1e; }
+  header.sub .bg-grid {
+    display: none; }
 
 footer .inner {
   min-height: 0; }
@@ -604,12 +605,13 @@ footer .inner {
 .visual {
   position: relative;
   width: 100%;
-  height: 100vh;
-  max-height: 100vh; }
+  height: 100%; }
   .visual .visual__contents {
     width: 100%;
     height: 100%;
     padding: 4rem 0; }
+    .visual .visual__contents .inner {
+      max-width: 1245px; }
   .visual .mySwiper {
     position: relative;
     z-index: 700;
@@ -655,7 +657,7 @@ footer .inner {
             z-index: 2;
             margin-top: 14rem;
             color: #272727;
-            font: 500 5.5rem/1.2 "Roboto Condensed", sans-serif;
+            font: 500 5.5rem/1.4 "Roboto Condensed", sans-serif;
             text-transform: uppercase; }
             .visual .mySwiper .swiper-slide .slider__block__text .main__title:hover {
               color: #c5a47e; }
@@ -723,7 +725,7 @@ footer .inner {
       bottom: 5em; }
     .visual .mySwiper button.next {
       top: 0;
-      right: 15rem; }
+      right: 20rem; }
     .visual .mySwiper::after {
       position: absolute;
       bottom: 0px;
@@ -759,6 +761,91 @@ footer .inner {
     transform: translate(-10px, 0); }
   100% {
     transform: translate(0, 0); } }
+
+@media screen and (max-width: 1179px) {
+  .visual .mySwiper {
+    height: 100%; }
+    .visual .mySwiper .swiper-slide {
+      display: flex;
+      width: 100%; }
+      .visual .mySwiper .swiper-slide .slider__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-align: left; }
+        .visual .mySwiper .swiper-slide .slider__block__image {
+          width: 100%;
+          max-width: 100%; }
+        .visual .mySwiper .swiper-slide .slider__block__text {
+          position: static;
+          width: 100%;
+          max-width: 100%; }
+          .visual .mySwiper .swiper-slide .slider__block__text .main__title {
+            margin-top: 10rem; }
+          .visual .mySwiper .swiper-slide .slider__block__text .number {
+            position: relative;
+            bottom: 4rem;
+            margin-top: 6rem;
+            font: 600 25rem/10rem "Roboto Condensed", sans-serif; }
+          .visual .mySwiper .swiper-slide .slider__block__text::before {
+            display: none; }
+    .visual .mySwiper button.prev {
+      left: -1.5rem; }
+    .visual .mySwiper button.next {
+      top: 0;
+      right: 0; }
+    .visual .mySwiper::after {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+      content: ''; }
+  .visual footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; }
+    .visual footer .social .social__icons {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .visual footer .social .social__icons li {
+        padding-right: 2.3rem;
+        color: #c5a47e;
+        font-size: 1.6rem; }
+    .visual footer .copyright {
+      color: #888;
+      font: 300 1.4rem/1 "Roboto", sans-serif; }
+      .visual footer .copyright span {
+        color: #c5a47e; } }
+
+@media screen and (max-width: 768px) {
+  .visual .mySwiper .swiper-slide .slider__block__image {
+    height: 23rem; }
+  .visual .mySwiper .swiper-slide .slider__block__text .main__title {
+    font-size: 6rem; }
+  .visual .mySwiper .swiper-slide .slider__block__text .sub__title {
+    font-size: 1.9rem; }
+  .visual .mySwiper .swiper-slide .slider__block__text .paragraph {
+    font-size: 1.7rem; }
+  .visual .mySwiper .swiper-slide .slider__block__text .link {
+    font-size: 1.6rem; }
+  .visual footer {
+    padding: 2rem 0; }
+    .visual footer .social {
+      padding: 1rem 0; }
+      .visual footer .social .social__icons li {
+        font-size: 1.8rem; }
+    .visual footer .copyright {
+      padding: 1rem 0;
+      color: #888;
+      font: 300 1.6rem/1 "Roboto", sans-serif; } }
 
 .intro__title {
   text-align: center; }
@@ -901,7 +988,8 @@ footer .inner {
       height: 30rem; }
 
 .video {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .video .video__box {
     position: relative;
     z-index: 100;
@@ -960,6 +1048,7 @@ footer .inner {
   position: fixed;
   top: 50%;
   right: 50px;
+  z-index: 1000;
   transform: translateY(-50%); }
   #btns li {
     width: 10px;
@@ -972,6 +1061,10 @@ footer .inner {
     #btns li.on {
       height: 80px;
       color: pink; }
+
+@media screen and (max-width: 1179px) {
+  #btns {
+    display: none; } }
 
 .about .sub__visual {
   position: relative;

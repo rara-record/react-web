@@ -2,6 +2,7 @@
   position: fixed;
   top: 50%;
   right: 50px;
+  z-index: 1000;
   transform: translateY(-50%);
 
   li {
@@ -17,5 +18,11 @@
       height: 80px;
       color: pink;
     }
+  }
+}
+
+@media screen and (max-width: 1179px) {
+  #btns {
+    display: none;
   }
 }

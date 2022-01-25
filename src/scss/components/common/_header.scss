@@ -12,6 +12,7 @@ header {
     @include pos-center-y;
     right: 4.5rem;
     bottom: 0;
+    z-index: 200;
 
     li {
       float: left;
@@ -68,4 +69,8 @@ header.main {
 header.sub {
   color: $white;
   background-color: $black;
+
+  .bg-grid {
+    display: none;
+  }
 }

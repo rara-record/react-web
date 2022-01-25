@@ -4,13 +4,16 @@
 
   position: relative;
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
+  height: 100%;
 
   .visual__contents {
     width: 100%;
     height: 100%;
     padding: 4rem 0;
+
+    .inner {
+      max-width: 1245px;
+    }
   }
 
   .mySwiper {
@@ -68,7 +71,7 @@
             z-index: 2;
             margin-top: 14rem;
             color: $visualColor;
-            font: 500 5.5rem/1.2 $font-main;
+            font: 500 5.5rem/1.4 $font-main;
             text-transform: uppercase;
 
             &:hover {
@@ -165,7 +168,7 @@
 
     button.next {
       top: 0;
-      right: 15rem;
+      right: 20rem;
     }
 
     &::after {
@@ -222,7 +225,153 @@
 }
 
 @media screen and (max-width: 1179px) {
+  .visual {
+    $visualColor: #272727;
+    $visualPoint: #c5a47e;
+
+    .mySwiper {
+      height: 100%;
+
+      .swiper-slide {
+        display: flex;
+        width: 100%;
+
+        .slider__block {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          text-align: left;
+
+          &__image {
+            width: 100%;
+            max-width: 100%;
+          }
+
+          &__text {
+            position: static;
+            width: 100%;
+            max-width: 100%;
+
+            .main__title {
+              margin-top: 10rem;
+            }
+
+            .number {
+              position: relative;
+              bottom: 4rem;
+              margin-top: 6rem;
+              font: 600 25rem/10rem $font-main;
+            }
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+
+      button.prev {
+        left: -1.5rem;
+      }
+
+      button.next {
+        top: 0;
+        right: 0;
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        z-index: 2;
+        display: block;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+        content: '';
+      }
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+
+      .social {
+        .social__icons {
+          @include flexCenter;
+
+          li {
+            padding-right: 2.3rem;
+            color: $visualPoint;
+            font-size: 1.6rem;
+          }
+        }
+      }
+
+      .copyright {
+        color: #888;
+        font: 300 1.4rem/1 $font-second;
+
+        span {
+          color: $visualPoint;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .visual {
+    .mySwiper {
+      .swiper-slide {
+        .slider__block {
+          &__image {
+            height: 23rem;
+          }
+
+          &__text {
+            .main__title {
+              font-size: 6rem;
+            }
+
+            .sub__title {
+              font-size: 1.9rem;
+            }
+
+            .paragraph {
+              font-size: 1.7rem;
+            }
+
+            .link {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      padding: 2rem 0;
+
+      .social {
+        padding: 1rem 0;
+
+        .social__icons {
+          li {
+            font-size: 1.8rem;
+          }
+        }
+      }
+
+      .copyright {
+        padding: 1rem 0;
+        color: #888;
+        font: 300 1.6rem/1 $font-second;
+      }
+    }
+  }
 }
