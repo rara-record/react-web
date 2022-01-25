@@ -49,6 +49,15 @@ function Header(props) {
       <NavLink exact to="#" className="menu__bars">
         <i className="fas fa-bars"></i>
       </NavLink>
+
+      <div className="bg-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </header>
   )
 }

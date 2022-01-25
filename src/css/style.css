@@ -361,9 +361,7 @@ header {
   position: relative;
   z-index: 100;
   width: 100%;
-  height: 100px;
-  background: #1e1e1e;
-  transition: 0.5s; }
+  height: 100px; }
 
 #main__wrapper section {
   padding: 15rem 0; }
@@ -547,148 +545,205 @@ footer {
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important; }
 
-header {
-  background: #0c0c0c; }
+header .logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 4.5rem; }
+  header .logo a {
+    font: bold 4.5rem/1 "Playfair Display", serif; }
+
+header #gnb-desktop {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4.5rem;
+  bottom: 0; }
+  header #gnb-desktop li {
+    float: left; }
+    header #gnb-desktop li a {
+      display: inline-block;
+      padding: 2.2rem 3rem;
+      font: 1.5rem/1 "Roboto Condensed", sans-serif;
+      letter-spacing: 1.1px;
+      text-transform: uppercase; }
+
+header .menu__bars {
+  display: none; }
+
+@media screen and (max-width: 1199px) {
   header .logo {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 4.5rem; }
+    left: 2rem; }
     header .logo a {
       color: #fff;
       font: bold 5rem/1 "Roboto", sans-serif; }
   header #gnb-desktop {
+    display: none !important; }
+  header .menu__bars {
+    right: 2rem;
+    display: block;
+    color: white;
+    cursor: pointer;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    right: 4.5rem;
-    bottom: 0; }
-    header #gnb-desktop li {
-      float: left; }
-      header #gnb-desktop li a {
-        display: inline-block;
-        padding: 2.2rem 3rem;
-        color: #fff;
-        font: 1.5rem/1 "Roboto Condensed", sans-serif;
-        letter-spacing: 1.1px;
-        text-transform: uppercase; }
-  header .menu__bars {
-    display: none; }
-  @media screen and (max-width: 1199px) {
-    header .logo {
-      left: 2rem; }
-      header .logo a {
-        color: #fff;
-        font: bold 5rem/1 "Roboto", sans-serif; }
-    header #gnb-desktop {
-      display: none !important; }
-    header .menu__bars {
-      right: 2rem;
-      display: block;
-      color: white;
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%); }
-      header .menu__bars i {
-        font-size: 2.5rem; } }
+    transform: translateY(-50%); }
+    header .menu__bars i {
+      font-size: 2.5rem; } }
+
+header.main {
+  color: #1e1e1e;
+  background-color: white; }
+
+header.sub {
+  color: white;
+  background-color: #1e1e1e; }
 
 footer .inner {
   min-height: 0; }
 
 .visual {
+  position: relative;
   width: 100%;
   height: 100vh;
-  max-height: 1100px;
-  background-color: #0c0c0c; }
-  .visual .slider__wrapper {
-    display: flex;
-    width: 400%;
+  max-height: 100vh; }
+  .visual .visual__contents {
+    width: 100%;
     height: 100%;
-    margin-left: 10rem;
-    overflow: hidden; }
-    .visual .slider__wrapper .slider {
+    padding: 4rem 0; }
+    .visual .visual__contents .inner {
+      width: 1245px; }
+  .visual .mySwiper {
+    position: relative;
+    z-index: 700;
+    width: 100%;
+    height: 61rem;
+    margin-bottom: 4rem;
+    cursor: grab; }
+    .visual .mySwiper .swiper-slide {
       display: flex;
-      align-items: center;
-      justify-content: start;
-      height: 100%;
-      margin-right: 46.5rem; }
-      .visual .slider__wrapper .slider__item {
-        position: relative; }
-        .visual .slider__wrapper .slider__item__pic {
-          width: 100%;
-          height: 60rem; }
-        .visual .slider__wrapper .slider__item__text {
+      width: 100%;
+      font: normal 1.8rem/1 "Roboto Condensed", sans-serif; }
+      .visual .mySwiper .swiper-slide .slider__block {
+        width: 100%;
+        height: 100%;
+        text-align: left; }
+        .visual .mySwiper .swiper-slide .slider__block__image {
+          position: relative;
+          width: 70%;
+          max-width: 82.5rem;
+          height: 56rem;
+          max-height: 56rem;
+          overflow: hidden; }
+          .visual .mySwiper .swiper-slide .slider__block__image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 1.5s ease-in-out; }
+          .visual .mySwiper .swiper-slide .slider__block__image:hover img {
+            transform: scale(1.1); }
+        .visual .mySwiper .swiper-slide .slider__block__text {
           position: absolute;
-          top: 10%;
-          right: -39.5%;
-          display: inline-block;
-          width: 53%; }
-          .visual .slider__wrapper .slider__item__text a {
-            color: #fff;
-            font: normal 10rem/1.1em "Roboto Condensed", sans-serif;
-            letter-spacing: 10.2px;
-            text-transform: uppercase; }
-        .visual .slider__wrapper .slider__item__contents {
-          position: absolute;
-          bottom: 0;
-          left: 100%;
-          width: 45%;
-          padding-left: 6rem;
-          color: #fff;
-          font-size: 1.4rem;
-          letter-spacing: 0.03rem; }
-          .visual .slider__wrapper .slider__item__contents .content__info {
-            margin-bottom: 4rem; }
-            .visual .slider__wrapper .slider__item__contents .content__info span {
-              font-family: "Roboto", sans-serif; }
-            .visual .slider__wrapper .slider__item__contents .content__info p {
-              display: inline-block;
-              font: italic 1.6rem/1 "Roboto", sans-serif; }
-          .visual .slider__wrapper .slider__item__contents .content__btn {
+          top: 0;
+          right: 0;
+          width: 30%;
+          max-width: 37.5rem;
+          height: 100%;
+          max-height: 56rem;
+          background-color: transparent; }
+          .visual .mySwiper .swiper-slide .slider__block__text .main__title {
             position: relative;
-            margin-bottom: 1.5rem; }
-            .visual .slider__wrapper .slider__item__contents .content__btn a {
-              display: block;
-              padding-bottom: 0.8rem;
-              font-family: "Roboto", sans-serif; }
-              .visual .slider__wrapper .slider__item__contents .content__btn a::after {
-                position: absolute;
-                bottom: 2px;
-                left: 0;
-                width: 18px;
-                height: 2px;
-                background-color: currentColor;
-                transition: all 0.3s ease;
-                content: ''; }
-  .visual .sns__wrapper {
-    position: absolute;
-    bottom: 6.2vh;
-    left: 10rem;
-    z-index: 50; }
-    .visual .sns__wrapper a {
-      position: relative;
-      padding-right: 52px;
-      color: #fff;
-      font-size: 1.5rem;
-      transition: color 0.3s ease; }
-      .visual .sns__wrapper a:not(:last-child)::after {
-        position: absolute;
-        right: 1.2rem;
-        bottom: 0.9rem;
-        width: 2.6rem;
-        height: 0.1rem;
-        background-color: rgba(255, 255, 255, 0.3);
-        content: ''; }
-      .visual .sns__wrapper a:hover {
-        color: rgba(255, 255, 255, 0.3); }
-  .visual .button__wrapper {
-    position: absolute;
-    right: 0;
-    bottom: 0; }
-    .visual .button__wrapper button {
-      color: #fff;
-      font-size: 50px; }
+            z-index: 2;
+            margin-top: 14rem;
+            color: #272727;
+            font: 500 5.5rem/1.2 "Roboto Condensed", sans-serif;
+            text-transform: uppercase; }
+            .visual .mySwiper .swiper-slide .slider__block__text .main__title:hover {
+              color: #c5a47e; }
+          .visual .mySwiper .swiper-slide .slider__block__text .sub__title {
+            position: relative;
+            z-index: 2;
+            color: #c5a47e;
+            font: 300 1.4rem/1 "Roboto Condensed", sans-serif;
+            letter-spacing: 0.9rem; }
+          .visual .mySwiper .swiper-slide .slider__block__text .paragraph {
+            max-width: 41.3rem;
+            margin: 3rem 0 3.5rem;
+            color: #888;
+            font: 300 1.6rem/1.75em "Roboto", sans-serif; }
+          .visual .mySwiper .swiper-slide .slider__block__text .link {
+            position: relative;
+            display: inline-block;
+            padding-left: 10rem;
+            color: #c5a47e;
+            font: 400 1.5rem/1 "Roboto Condensed", sans-serif;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out; }
+            .visual .mySwiper .swiper-slide .slider__block__text .link:hover {
+              color: #c5a47e; }
+            .visual .mySwiper .swiper-slide .slider__block__text .link::before {
+              position: absolute;
+              bottom: 0.7rem;
+              left: 0;
+              width: 9rem;
+              height: 1px;
+              background: #c5a47e;
+              content: ''; }
+          .visual .mySwiper .swiper-slide .slider__block__text .number {
+            position: relative;
+            bottom: 4rem;
+            z-index: -1;
+            display: block;
+            width: 90%;
+            margin-top: 5rem;
+            color: #f4f4f4;
+            font: 600 25rem/20rem "Roboto Condensed", sans-serif;
+            text-align: right; }
+          .visual .mySwiper .swiper-slide .slider__block__text::before {
+            position: absolute;
+            left: -5rem;
+            width: 20rem;
+            max-width: 40.8rem;
+            height: 100%;
+            background-color: #f4f4f4;
+            content: ''; }
+    .visual .mySwiper button {
+      position: absolute;
+      z-index: 2;
+      width: 5rem;
+      height: 5rem;
+      background-color: white; }
+      .visual .mySwiper button i {
+        color: #c5a47e;
+        font: normal 1.6rem/1 FontAwesome;
+        transition: all 0.3s ease-in-out; }
+      .visual .mySwiper button:hover i {
+        animation: arrowRight 1s infinite; }
+    .visual .mySwiper button.prev {
+      bottom: 5em; }
+    .visual .mySwiper button.next {
+      top: 0;
+      right: 22rem; }
+    .visual .mySwiper::after {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+      content: ''; }
+
+@keyframes arrowRight {
+  0% {
+    transform: translate(0, 0); }
+  50% {
+    transform: translate(-10px, 0); }
+  100% {
+    transform: translate(0, 0); } }
 
 .intro__title {
   text-align: center; }

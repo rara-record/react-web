@@ -30,7 +30,7 @@ function Main() {
     let offSetArray = []
     for (let sec of sections) offSetArray.push(sec.offsetTop)
     position.current = offSetArray
-    console.log(position.current)
+    // console.log(position.current)
   }
 
   // useRef로 담아놓은 세로 섹션 위치만큼 반복을 돌면서
@@ -48,7 +48,6 @@ function Main() {
   }
 
   useEffect(() => {
-    console.log(index)
     // 처음 컴포넌트 생성시 배열값 생성
     handleResize()
     // 브라우저가 리사이즈 될 때마다 getPosition호출해서 배열값 갱신

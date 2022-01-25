@@ -1,13 +1,10 @@
 header {
-  background: #0c0c0c;
-
   .logo {
     @include pos-center-y;
     left: 4.5rem;
 
     a {
-      color: #fff;
-      font: bold 5rem/1 $font-second;
+      font: bold 4.5rem/1 $font-point;
     }
   }
 
@@ -22,7 +19,6 @@ header {
       a {
         display: inline-block;
         padding: 2.2rem 3rem;
-        color: #fff;
         font: 1.5rem/1 $font-main;
         letter-spacing: 1.1px;
         text-transform: uppercase;
@@ -62,4 +58,14 @@ header {
 
   @media screen and (max-width: 768px) {
   }
+}
+
+header.main {
+  color: $black;
+  background-color: $white;
+}
+
+header.sub {
+  color: $white;
+  background-color: $black;
 }

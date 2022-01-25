@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import { useEffect, useState, useRef } from 'react'
 import { useSelector } from 'react-redux'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
 import SwiperCore, { EffectCoverflow } from 'swiper'
 SwiperCore.use([EffectCoverflow])
+const body = document.querySelector('body')
 
 function Youtube() {
   const frame = useRef(null)
@@ -100,6 +100,13 @@ function Youtube() {
   )
 
   function Pop() {
+    useEffect(() => {
+      body.style.overflow = 'hidden'
+      return () => {
+        body.style.overflow = 'auto'
+      }
+    }, [])
+
     return (
       <aside className="pop">
         <iframe
