@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { SliderData } from '../../data/SliderData'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Navigation, Parallax } from 'swiper'
@@ -35,6 +35,11 @@ function Visual() {
     onSwiper: setSwiper,
     onSlideChange: (e) => setMainImageIndex(e.activeIndex),
   }
+
+  useEffect(() => {
+    navigationPrevRef.current.classList.add('on')
+    navigationNextRef.current.classList.add('on')
+  }, [])
 
   return (
     <figure className="visual">

@@ -13,8 +13,8 @@
 @import './abstracts/mixins/background';
 @import './abstracts/mixins/flexbox';
 
-// modules
-@import './components/modules/buttons';
+// animation
+@import './abstracts//animation.scss/animation';
 
 // common style
 @import './components/common/layout';
@@ -27,7 +27,6 @@
 @import './components/main/intro.scss';
 @import './components/main/banner.scss';
 @import './components/main/project.scss';
-// @import './components/main/brand.scss';
 @import './components/main/members.scss';
 @import './components/main/video.scss';
 @import './components/main/news.scss';

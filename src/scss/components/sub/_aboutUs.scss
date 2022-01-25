@@ -50,7 +50,10 @@
       padding: 9rem 0;
 
       .inner {
+        position: relative;
+        z-index: 200;
         min-height: 30rem;
+
         .text__box {
           text-align: center;
 
@@ -69,6 +72,9 @@
       }
 
       .slider {
+        position: relative;
+        z-index: 200;
+
         .slider__wrapper {
           display: flex;
         }
@@ -393,24 +399,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes text_animation_before {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes text_animation {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
   }
 }

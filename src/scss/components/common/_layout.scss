@@ -2,6 +2,7 @@ html {
   font-size: 62.5%;
 }
 
+// header 공통
 header {
   position: relative;
   z-index: 100;
@@ -9,12 +10,22 @@ header {
   height: 100px;
 }
 
+// 메인 페이지
 #main__wrapper {
   section {
+    position: relative;
     padding: 15rem 0;
+
+    .inner {
+      width: 1180px;
+      height: 100%;
+      min-height: 50rem;
+      margin: 0 auto;
+    }
   }
 }
 
+// 서브 페이지
 main {
   .sub__visual {
     width: 100%;
@@ -22,11 +33,12 @@ main {
     padding: 0;
 
     .inner {
-      h1 {
-        font: normal 8rem/10rem $font-main;
-        letter-spacing: -0.4rem;
+      > h1 {
+        margin-bottom: 5rem;
+        padding: 5rem 0;
+        color: $dark;
+        font: bold 7rem/1 $font-main;
         text-transform: uppercase;
-        cursor: pointer;
       }
 
       p {
@@ -36,23 +48,31 @@ main {
       }
     }
   }
-}
 
-.inner {
-  width: 1180px;
-  height: 100%;
-  min-height: 50rem;
-  margin: 0 auto;
+  .contents {
+    .inner {
+      position: relative;
+      z-index: 200;
+    }
+  }
 
-  > h1 {
-    margin-bottom: 5rem;
-    padding: 5rem 0;
-    color: $dark;
-    font: bold 7rem/1 $font-main;
-    text-transform: uppercase;
+  .inner {
+    width: 1180px;
+    height: 100%;
+    min-height: 50rem;
+    margin: 0 auto;
+
+    > h1 {
+      margin-bottom: 5rem;
+      padding: 5rem 0;
+      color: $dark;
+      font: bold 7rem/1 $font-main;
+      text-transform: uppercase;
+    }
   }
 }
 
+// footer 공통
 footer {
   position: relative;
   z-index: 200;

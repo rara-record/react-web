@@ -32,6 +32,7 @@
     flex-wrap: wrap;
     grid-gap: 4rem;
     justify-content: space-between;
+    padding-top: 5rem;
 
     .icon__list {
       position: relative;
@@ -61,14 +62,13 @@
           h2 {
             padding: 3rem 0 2rem;
             color: $dark;
-            font: normal 1.6rem/1.2em $font-main;
+            font: normal 1.8rem/1.2em $font-main;
             letter-spacing: 0.1em;
           }
 
           p {
-            color: $dark;
             color: $gray;
-            // font: normal 1.4rem/1.5em $font-text;
+            font: 300 1.4rem/1.5em $font-second;
           }
         }
       }

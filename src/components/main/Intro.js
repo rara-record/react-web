@@ -7,12 +7,11 @@ function Intro() {
     <>
       <section className="intro myScroll">
         <div className="inner">
-          <div className="intro__title">
-            <h1>service</h1>
+          <div id="section__title">
+            <h1>OUR SERVICES</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit,{' '}
-              <br></br>sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua ut.
+              Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+              lorem quis
             </p>
           </div>
 
@@ -42,6 +41,15 @@ function Intro() {
               )
             })}
           </div>
+        </div>
+
+        <div className="bg-grid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </section>
     </>
