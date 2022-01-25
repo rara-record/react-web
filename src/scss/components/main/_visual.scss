@@ -1,5 +1,7 @@
 .visual {
   $visualColor: #272727;
+  $visualPoint: #c5a47e;
+
   position: relative;
   width: 100%;
   height: 100vh;
@@ -9,10 +11,6 @@
     width: 100%;
     height: 100%;
     padding: 4rem 0;
-
-    .inner {
-      width: 1245px;
-    }
   }
 
   .mySwiper {
@@ -123,8 +121,8 @@
             bottom: 4rem;
             z-index: -1;
             display: block;
-            width: 90%;
-            margin-top: 5rem;
+            width: 85%;
+            margin-top: 6rem;
             color: #f4f4f4;
             font: 600 25rem/20rem $font-main;
             text-align: right;
@@ -167,7 +165,7 @@
 
     button.next {
       top: 0;
-      right: 22rem;
+      right: 15rem;
     }
 
     &::after {
@@ -182,6 +180,33 @@
       content: '';
     }
   }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .social {
+      .social__icons {
+        @include flexCenter;
+
+        li {
+          padding-right: 2.3rem;
+          color: $visualPoint;
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .copyright {
+      color: #888;
+      font: 300 1.4rem/1 $font-second;
+
+      span {
+        color: $visualPoint;
+      }
+    }
+  }
 }
 
 @keyframes arrowRight {
@@ -194,4 +219,10 @@
   100% {
     transform: translate(0, 0);
   }
+}
+
+@media screen and (max-width: 1179px) {
+}
+
+@media screen and (max-width: 768px) {
 }

@@ -86,24 +86,29 @@ function Visual() {
           </Swiper>
 
           <footer>
-            <div class="widget">
-              <ul class="social__icons">
-                <li class="social__icons__item">
-                  <a class="social__link" href="https://www.facebook.com/">
-                    {' '}
-                    <span class="next-social-icon fa fa-facebook-f"></span>{' '}
+            <div className="social">
+              <ul className="social__icons">
+                <li className="social__icons__item">
+                  <a className="social__link" href="https://www.facebook.com/">
+                    <i className="fa fa-facebook-f"></i>
                   </a>
                 </li>
-                <li class="social__icons__item">
-                  <a class="social__link" href="https://www.facebook.com/">
-                    {' '}
-                    <span class="next-social-icon fa fa-facebook-f"></span>{' '}
+
+                <li className="social__icons__item">
+                  <a className="social__link" href="https://www.facebook.com/">
+                    <i className="fab fa-twitter"></i>
                   </a>
                 </li>
-                <li class="social__icons__item">
-                  <a class="social__link" href="https://www.facebook.com/">
-                    {' '}
-                    <span class="next-social-icon fa fa-facebook-f"></span>{' '}
+
+                <li className="social__icons__item">
+                  <a className="social__link" href="https://www.facebook.com/">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </li>
+
+                <li className="social__icons__item">
+                  <a className="social__link" href="https://www.facebook.com/">
+                    <i className="fab fa-github"></i>
                   </a>
                 </li>
               </ul>
