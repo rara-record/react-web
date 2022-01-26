@@ -125,15 +125,6 @@ function Visual() {
           </footer>
         </div>
       </div>
-
-      <div className="bg-grid">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
     </figure>
   )
 }

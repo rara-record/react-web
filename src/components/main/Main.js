@@ -7,6 +7,7 @@ import Members from './Members'
 import News from './News'
 import Video from './Video'
 import Btns from './Btns'
+import Line from './../common/Line'
 import Anime from './../../class/anime'
 import { useEffect, useState, useRef } from 'react'
 
@@ -76,6 +77,7 @@ function Main() {
       <Video />
       <News />
       <Members />
+      <Line />
       <Btns getIndex={getIndex} />
     </div>
   )

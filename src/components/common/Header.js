@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
+import Line from './../common/Line'
 
 function Header(props) {
   const active = { color: 'aqua' }
@@ -50,14 +51,7 @@ function Header(props) {
         <i className="fas fa-bars"></i>
       </NavLink>
 
-      <div className="bg-grid">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <Line />
     </header>
   )
 }

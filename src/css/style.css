@@ -404,14 +404,17 @@ header {
   width: 100%;
   height: 100px; }
 
-#main__wrapper section {
-  position: relative;
-  padding: 15rem 0; }
-  #main__wrapper section .inner {
-    width: 1180px;
-    height: 100%;
-    min-height: 50rem;
-    margin: 0 auto; }
+#main__wrapper {
+  position: relative; }
+  #main__wrapper section {
+    position: relative;
+    z-index: 200;
+    padding: 15rem 0; }
+    #main__wrapper section .inner {
+      width: 1180px;
+      height: 100%;
+      min-height: 50rem;
+      margin: 0 auto; }
 
 main .sub__visual {
   width: 100%;
@@ -420,7 +423,7 @@ main .sub__visual {
   main .sub__visual .inner > h1 {
     margin-bottom: 5rem;
     padding: 5rem 0;
-    color: #222;
+    color: #272727;
     font: bold 7rem/1 "Roboto Condensed", sans-serif;
     text-transform: uppercase; }
   main .sub__visual .inner p {
@@ -440,7 +443,7 @@ main .inner {
   main .inner > h1 {
     margin-bottom: 5rem;
     padding: 5rem 0;
-    color: #222;
+    color: #272727;
     font: bold 7rem/1 "Roboto Condensed", sans-serif;
     text-transform: uppercase; }
 
@@ -458,10 +461,10 @@ footer {
 @media screen and (max-width: 1179px) {
   #main__wrapper section {
     padding: 8rem 0; }
-  .inner {
-    width: 100%;
-    height: 100%;
-    padding: 0 4rem; } }
+    #main__wrapper section .inner {
+      width: 100%;
+      height: 100%;
+      padding: 0 4rem; } }
 
 @media screen and (max-width: 768px) {
   html {
@@ -470,7 +473,9 @@ footer {
     padding: 0 3rem; } }
 
 .bg-grid {
-  display: flex; }
+  display: flex;
+  width: 1300px;
+  margin: 0 auto; }
   .bg-grid div {
     position: absolute;
     top: 0;
@@ -489,11 +494,32 @@ footer {
       left: 83.33333%; }
     .bg-grid div:nth-of-type(6) {
       left: 100%; }
-    .bg-grid div:last-child {
-      border: none; }
-  @media screen and (max-width: 768px) {
-    .bg-grid {
-      display: none; } }
+    @media screen and (max-width: 1179px) {
+      .bg-grid div:nth-of-type(1) {
+        left: 25%; }
+      .bg-grid div:nth-of-type(2) {
+        left: 50%; }
+      .bg-grid div:nth-of-type(3) {
+        left: 75%; }
+      .bg-grid div:nth-of-type(4) {
+        left: 100%; }
+      .bg-grid div:nth-of-type(5) {
+        left: 125%; }
+      .bg-grid div:nth-of-type(6) {
+        left: 150%; } }
+    @media screen and (max-width: 768px) {
+      .bg-grid div:nth-of-type(1) {
+        left: 50%; }
+      .bg-grid div:nth-of-type(2) {
+        left: 100%; }
+      .bg-grid div:nth-of-type(3) {
+        left: 150%; }
+      .bg-grid div:nth-of-type(4) {
+        left: 200%; }
+      .bg-grid div:nth-of-type(5) {
+        left: 250%; }
+      .bg-grid div:nth-of-type(6) {
+        left: 300%; } }
 
 #section__title {
   position: relative;
@@ -503,7 +529,7 @@ footer {
   #section__title h1 {
     position: relative;
     padding: 0.6rem 0;
-    color: #222;
+    color: #272727;
     font: 700 3.9rem/1.15em "Roboto Condensed", sans-serif;
     letter-spacing: -0.04em;
     text-transform: uppercase; }
@@ -797,7 +823,8 @@ footer .inner {
   .visual footer {
     display: flex;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    padding: 4rem 0; }
     .visual footer .social .social__icons {
       display: flex;
       align-items: center;
@@ -916,14 +943,14 @@ footer .inner {
       bottom: -75%;
       width: 4rem;
       height: 0.1rem;
-      background-color: #222;
+      background-color: #272727;
       content: '';
       position: absolute;
       left: 50%;
       transform: translateX(-50%); }
   .intro__title p {
     margin-bottom: 6rem;
-    color: #222;
+    color: #272727;
     font: normal 1.7rem/1.5em "Roboto", sans-serif; }
 
 .intro .icon__wrpper {
@@ -936,7 +963,6 @@ footer .inner {
     position: relative;
     width: calc((100% / 4) - 4rem);
     padding: 3rem 2rem;
-    border: 2px solid #eaeaea;
     cursor: pointer; }
     .intro .icon__wrpper .icon__list .icon__front {
       display: flex;
@@ -953,7 +979,7 @@ footer .inner {
         text-align: center; }
         .intro .icon__wrpper .icon__list .icon__front .icon__text h2 {
           padding: 3rem 0 2rem;
-          color: #222;
+          color: #272727;
           font: normal 1.8rem/1.2em "Roboto Condensed", sans-serif;
           letter-spacing: 0.1em; }
         .intro .icon__wrpper .icon__list .icon__front .icon__text p {
@@ -1001,7 +1027,7 @@ footer .inner {
     .project__content__box h2 {
       margin: -9px 0px 97px 0px;
       padding: 0% 28% 0% 0%;
-      font: normal 3rem/4rem "Roboto", sans-serif; }
+      font: normal 3rem/4rem "Playfair Display", serif; }
   .project__content__img {
     padding-bottom: 1.5rem; }
   .project__content__text h3 {
@@ -1077,7 +1103,7 @@ footer .inner {
       background: #eee; }
       .news__box article h3 {
         margin-bottom: 1rem;
-        color: #222;
+        color: #272727;
         font: 700 2.2rem/1 'font-main';
         text-transform: uppercase; }
       .news__box article .news__info {
@@ -1381,6 +1407,8 @@ footer .inner {
     padding: 15rem 0; }
   .gallery h1 {
     cursor: pointer; }
+    .gallery h1:hover {
+      color: #c5a47e; }
   .gallery__wrapper {
     position: relative;
     transform: translateY(200px);
@@ -1403,11 +1431,12 @@ footer .inner {
         color: #ca2f1a;
         font: normal 7rem/1 'Ruslan Display'; }
     .gallery__item .title__wrapper {
-      width: 15rem; }
+      width: 20rem; }
       .gallery__item .title__wrapper h2 {
         padding-bottom: 0.5rem;
         overflow: hidden;
-        font: 600 1.6rem/1 "Roboto Condensed", sans-serif;
+        color: #272727;
+        font: 600 2rem/1.3 "Roboto Condensed", sans-serif;
         letter-spacing: 0.05rem;
         white-space: nowrap;
         text-transform: uppercase;
@@ -1618,79 +1647,69 @@ footer .inner {
     text-transform: uppercase;
     cursor: pointer; }
 
-.community {
-  background-color: #efefef; }
-  .community .inner {
-    padding: 15rem 0; }
-    .community .inner .input__box {
-      width: 100%;
-      padding: 50px;
-      margin-bottom: 50px;
-      border: 1px solid #aaa; }
-      .community .inner .input__box input {
-        width: 60%;
-        padding: 5px 10px;
-        border: 1px solid #bbb;
-        margin-bottom: 10px; }
-      .community .inner .input__box textarea {
-        width: 60%;
-        padding: 10px;
-        border: 1px solid #bbb;
-        margin-bottom: 15px;
-        resize: none; }
-      .community .inner .input__box button {
-        width: 150px;
-        height: 30px;
-        background: #555;
-        border: none;
-        color: #fff;
-        margin-right: 10px; }
-    .community .inner .show__box {
-      width: 100%;
-      padding: 50px;
-      border: 1px solid #aaa; }
-      .community .inner .show__box article {
-        width: 100%;
-        padding: 30px 40px;
-        background: #fff;
-        margin-bottom: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-content: center; }
-        .community .inner .show__box article .post {
-          width: 70%; }
-          .community .inner .show__box article .post h2 {
-            font: bold 20px/1 'arial';
-            color: #555;
-            margin-bottom: 5px; }
-          .community .inner .show__box article .post p {
-            font: 12px/1.2 'arial';
-            color: #777; }
-          .community .inner .show__box article .post input {
-            width: 70%;
-            padding: 5px 10px;
-            border: 1px solid skyblue;
-            background: lightcyan;
-            margin-bottom: 5px; }
-          .community .inner .show__box article .post textarea {
-            width: 70%;
-            padding: 10px;
-            border: 1px solid skyblue;
-            background: lightcyan;
-            resize: none; }
-        .community .inner .show__box article .btns {
-          display: inline-flex;
-          justify-content: center;
-          font-size: 0;
-          align-items: center; }
-          .community .inner .show__box article .btns li {
-            margin: 5px;
-            border: none;
-            background: none;
-            display: inline-block;
-            font: 12px/1 'arial';
-            cursor: pointer; }
+.community .notice {
+  padding-bottom: 0; }
+  .community .notice table {
+    width: 100%;
+    margin-bottom: 5rem;
+    border-top: 1px solid #999999;
+    border-collapse: collapse; }
+    .community .notice table th {
+      padding: 1.4rem 0;
+      color: #333333;
+      font: 1.4rem/1 "Roboto Condensed", sans-serif;
+      background: white;
+      border-bottom: 1px solid #dbdbdb; }
+    .community .notice table td {
+      padding: 2rem;
+      font: 1.6rem/1 "Roboto Condensed", sans-serif;
+      letter-spacing: 0.5px;
+      text-align: center;
+      border-bottom: 1px solid #bbb; }
+      .community .notice table td a {
+        color: #333; }
+      .community .notice table td:nth-of-type(2) {
+        text-align: left; }
+    .community .notice table tr:hover td {
+      background: #eeeded; }
+
+.community .pagination {
+  position: relative;
+  width: 100%;
+  padding-bottom: 2rem;
+  text-align: center; }
+  .community .pagination::after {
+    display: block;
+    clear: both;
+    content: ''; }
+  .community .pagination .prev,
+  .community .pagination .next {
+    display: inline-block;
+    color: #666;
+    font: 2rem/3rem "Roboto Condensed", sans-serif;
+    text-align: center; }
+  .community .pagination .numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    font-size: 0;
+    text-align: center; }
+    .community .pagination .numbers a {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      margin: 0 0.5rem;
+      color: #666;
+      font: 1.1rem/3rem "Roboto Condensed", sans-serif;
+      text-align: center;
+      transition: 0.5s; }
+      .community .pagination .numbers a:hover {
+        font: bold 1.3rem/3rem;
+        border-bottom: 1px solid #bbb; }
+
+.community input {
+  border: 1px solid #000; }
 
 .contact .sub__visual {
   position: relative;
@@ -1710,7 +1729,7 @@ footer .inner {
     text-align: center;
     box-shadow: 0 0 0.7rem 0 rgba(43, 52, 58, 0.08);
     cursor: pointer;
-    color: #222; }
+    color: #272727; }
     .contact .contents .contact__info .inner article .info__icon {
       position: relative;
       display: inline-block;
@@ -1902,7 +1921,7 @@ footer .inner {
       .contact .contents .contact__location .inner .traffic li {
         font: bold 1.7rem/1 "Roboto Condensed", sans-serif;
         cursor: pointer;
-        color: #222; }
+        color: #272727; }
         .contact .contents .contact__location .inner .traffic li span {
           color: #9a1824; }
 

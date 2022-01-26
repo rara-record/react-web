@@ -12,8 +12,11 @@ header {
 
 // 메인 페이지
 #main__wrapper {
+  position: relative;
+
   section {
     position: relative;
+    z-index: 200;
     padding: 15rem 0;
 
     .inner {
@@ -91,13 +94,13 @@ footer {
   #main__wrapper {
     section {
       padding: 8rem 0;
-    }
-  }
 
-  .inner {
-    width: 100%;
-    height: 100%;
-    padding: 0 4rem;
+      .inner {
+        width: 100%;
+        height: 100%;
+        padding: 0 4rem;
+      }
+    }
   }
 }
 

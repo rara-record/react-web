@@ -1,5 +1,7 @@
 .bg-grid {
   display: flex;
+  width: 1300px;
+  margin: 0 auto;
 
   div {
     position: absolute;
@@ -14,13 +16,21 @@
       }
     }
 
-    &:last-child {
-      border: none;
+    @media screen and (max-width: 1179px) {
+      @for $i from 1 through 6 {
+        &:nth-of-type(#{$i}) {
+          left: (100% / 4) * $i;
+        }
+      }
     }
-  }
 
-  @media screen and (max-width: 768px) {
-    display: none;
+    @media screen and (max-width: 768px) {
+      @for $i from 1 through 6 {
+        &:nth-of-type(#{$i}) {
+          left: (100% / 2) * $i;
+        }
+      }
+    }
   }
 }
 
