@@ -69,7 +69,7 @@
           height: 100%;
           max-height: 56rem;
           background-color: transparent;
-          animation: fadeInRight 1s 0.2s ease-in-out;
+          animation: fadeInRight 1.6s ease-in-out;
 
           .main__title {
             position: relative;
@@ -168,6 +168,12 @@
       opacity: 0;
       transition: all 1s 1.7s ease-in-out;
 
+      &:hover {
+        i {
+          animation: arrowRight 1s infinite;
+        }
+      }
+
       &.on {
         transform: translateX(0px);
         opacity: 1;
@@ -180,6 +186,12 @@
       transform: translateX(50px);
       opacity: 0;
       transition: all 1s 1.5s ease-in-out;
+
+      &:hover {
+        i {
+          animation: arrowLeft 1s infinite;
+        }
+      }
 
       &.on {
         transform: translateX(0px);

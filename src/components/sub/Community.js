@@ -26,40 +26,39 @@ function Community() {
       </section>
 
       <div className="contents" ref={frame}>
-        <section className="notice">
+        <section className="list">
           <div className="inner">
-            <div className="table__wrapper">
-              <div className="list__info">
-                <p className="hit">
-                  전체:
-                  <b>{length}</b>개 (1 / <b>1</b> 페이지)
-                </p>
+            <div className="list__opt">
+              <p className="hit">
+                전체:
+                <b>{length}</b>개 (1 / <b>1</b> 페이지)
+              </p>
 
-                <div>
-                  <select class="" onchange="pageCat(this.value);">
-                    <option value="">전체</option>
-                    <option value="39">공연</option>
-                    <option value="40">전시</option>
-                    <option value="48">행사</option>
-                    <option value="49">기타</option>
-                  </select>
+              <div>
+                <select>
+                  <option value="">전체</option>
+                  <option value="39">공연</option>
+                  <option value="40">전시</option>
+                  <option value="48">행사</option>
+                  <option value="49">기타</option>
+                </select>
 
-                  <select
-                    title="건별보기를 선택하시면 해당 페이지 리스트 갯수를 설정하실 수 있습니다."
-                    id="rowsSel"
-                  >
-                    <option value="10" selected="selected">
-                      10건씩 보기
-                    </option>
-                    <option value="20">20건씩 보기</option>
-                    <option value="50">50건씩 보기</option>
-                  </select>
-                  <a href=""></a>
-                </div>
+                <select
+                  title="건별보기를 선택하시면 해당 페이지 리스트 갯수를 설정하실 수 있습니다."
+                  id="rowsSel"
+                >
+                  <option value="10" selected="selected">
+                    10건씩 보기
+                  </option>
+                  <option value="20">20건씩 보기</option>
+                  <option value="50">50건씩 보기</option>
+                </select>
+                <a href=""></a>
               </div>
-              <table>
-                <caption className="visually-hidden">공지 사항 게시판</caption>
-                {/* <thead>
+            </div>
+            <table class="list__style">
+              <caption className="visually-hidden">공지 사항 게시판</caption>
+              {/* <thead>
                   <tr>
                     <th scope="col">NO</th>
                     <th scope="col">제목</th>
@@ -67,25 +66,24 @@ function Community() {
                     <th scope="col">작성일</th>
                   </tr>
                 </thead> */}
-                <tbody>
-                  {posts
-                    .slice(0)
-                    .reverse()
-                    .map((data, index) => {
-                      return (
-                        <tr key={index}>
-                          <td>{data.category}</td>
-                          <td>
-                            <Link to="#">{data.title}</Link>
-                          </td>
-                          <td>{data.writer}</td>
-                          <td>{data.date}</td>
-                        </tr>
-                      )
-                    })}
-                </tbody>
-              </table>
-            </div>
+              <tbody>
+                {posts
+                  .slice(0)
+                  .reverse()
+                  .map((data, index) => {
+                    return (
+                      <tr key={index}>
+                        <td>{data.category}</td>
+                        <td>
+                          <Link to="#">{data.title}</Link>
+                        </td>
+                        <td>{data.writer}</td>
+                        <td>{data.date}</td>
+                      </tr>
+                    )
+                  })}
+              </tbody>
+            </table>
           </div>
         </section>
 

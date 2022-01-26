@@ -382,6 +382,14 @@ img {
   100% {
     transform: translate(0, 0); } }
 
+@keyframes arrowLeft {
+  0% {
+    transform: translate(0, 0); }
+  50% {
+    transform: translate(10px, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
 @keyframes text_animation_before {
   0% {
     width: 0%; }
@@ -421,6 +429,7 @@ main .sub__visual {
   height: 50vh;
   padding: 0; }
   main .sub__visual .inner > h1 {
+    display: inline-block;
     margin-bottom: 5rem;
     padding: 5rem 0;
     color: #272727;
@@ -726,7 +735,7 @@ footer .inner {
           height: 100%;
           max-height: 56rem;
           background-color: transparent;
-          animation: fadeInRight 1s 0.2s ease-in-out; }
+          animation: fadeInRight 1.6s ease-in-out; }
           .visual .mySwiper .swiper-slide .slider__block__text .main__title {
             position: relative;
             z-index: 2;
@@ -798,6 +807,8 @@ footer .inner {
       transform: translateX(-50px);
       opacity: 0;
       transition: all 1s 1.7s ease-in-out; }
+      .visual .mySwiper button.prev:hover i {
+        animation: arrowRight 1s infinite; }
       .visual .mySwiper button.prev.on {
         transform: translateX(0px);
         opacity: 1; }
@@ -807,6 +818,8 @@ footer .inner {
       transform: translateX(50px);
       opacity: 0;
       transition: all 1s 1.5s ease-in-out; }
+      .visual .mySwiper button.next:hover i {
+        animation: arrowLeft 1s infinite; }
       .visual .mySwiper button.next.on {
         transform: translateX(0px);
         opacity: 1; }
@@ -1647,31 +1660,49 @@ footer .inner {
     text-transform: uppercase;
     cursor: pointer; }
 
-.community .notice {
-  padding-bottom: 0; }
-  .community .notice table {
-    width: 100%;
-    margin-bottom: 5rem;
-    border-top: 1px solid #999999;
-    border-collapse: collapse; }
-    .community .notice table th {
-      padding: 1.4rem 0;
-      color: #333333;
-      font: 1.4rem/1 "Roboto Condensed", sans-serif;
-      background: white;
-      border-bottom: 1px solid #dbdbdb; }
-    .community .notice table td {
-      padding: 2rem;
-      font: 1.6rem/1 "Roboto Condensed", sans-serif;
-      letter-spacing: 0.5px;
-      text-align: center;
-      border-bottom: 1px solid #bbb; }
-      .community .notice table td a {
-        color: #333; }
-      .community .notice table td:nth-of-type(2) {
-        text-align: left; }
-    .community .notice table tr:hover td {
-      background: #eeeded; }
+.community .list__opt {
+  overflow: hidden;
+  padding: 10px 0;
+  border-top: 2px solid #000; }
+  .community .list__opt .hit {
+    float: left;
+    margin: 8px 0;
+    padding-left: 18px;
+    background: url("/public/img/page_ico.gif") 0 1px no-repeat;
+    font-size: 15px; }
+    .community .list__opt .hit b {
+      color: #9a1824; }
+  .community .list__opt div {
+    float: right; }
+    .community .list__opt div select .list_opt div select {
+      width: 110px;
+      height: 35px;
+      padding-left: 10px;
+      border: 1px solid #ccc; }
+
+.community .list__style {
+  width: 100%;
+  margin-bottom: 5rem;
+  border-top: 1px solid #999999;
+  border-collapse: collapse; }
+  .community .list__style th {
+    padding: 1.4rem 0;
+    color: #333333;
+    font: 1.4rem/1 "Roboto Condensed", sans-serif;
+    background: white;
+    border-bottom: 1px solid #dbdbdb; }
+  .community .list__style td {
+    padding: 2rem;
+    font: 1.6rem/1 "Roboto Condensed", sans-serif;
+    letter-spacing: 0.5px;
+    text-align: center;
+    border-bottom: 1px solid #bbb; }
+    .community .list__style td a {
+      color: #333; }
+    .community .list__style td:nth-of-type(2) {
+      text-align: left; }
+  .community .list__style tr:hover td {
+    background: #eeeded; }
 
 .community .pagination {
   position: relative;

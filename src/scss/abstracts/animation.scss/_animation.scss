@@ -38,6 +38,18 @@
   }
 }
 
+@keyframes arrowLeft {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 @keyframes text_animation_before {
   0% {
     width: 0%;

@@ -1,8 +1,34 @@
-.community {
-  .notice {
-    padding-bottom: 0;
+.community {  
+  .list {
+    &__opt {
+      overflow:hidden; 
+      padding:10px 0; 
+      border-top:2px solid #000;
+    
+    
+      .hit {
+        float:left; 
+        margin:8px 0; 
+        padding-left:18px; 
+        background:url('/public/img/page_ico.gif') 0 1px no-repeat; 
+        font-size:15px;
+    
+        b {
+          color:#9a1824;
+        }
+      }
+    
+      div {
+        float:right;
+    
+        select {
+          .list_opt div select{width:110px; height:35px; padding-left:10px; border:1px solid #ccc;}
+    
+        }
+      }
+    }
 
-    table {
+    &__style {
       width: 100%;
       margin-bottom: 5rem;
       border-top: 1px solid #999999;

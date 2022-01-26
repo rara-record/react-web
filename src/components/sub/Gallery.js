@@ -98,46 +98,9 @@ function Gallery() {
           </div>
         )}
 
-        {/* gallery */}
+        {/* gallery list*/}
         <div className="gallery__wrapper" ref={wrapper}>
-          <Masonry
-            className={'gallery__list'}
-            elementType={'ul'}
-            disableImagesLoaded={false}
-            updateOnEachImageLoad={false}
-            options={MasonryOptions}
-          >
-            {items.map((data, index) => {
-              // 썸네일 이미지 주소
-              let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
-
-              return (
-                <li className={'gallery__item'} key={index}>
-                  <div className="number">
-                    <span>
-                      {parseInt(index) < 9 ? '0' + (index + 1) : index + 1}
-                    </span>
-                  </div>
-
-                  <div className="title__wrapper">
-                    <h2>{data.title}</h2>
-                    <p>{data.owner}</p>
-                  </div>
-
-                  <figure
-                    onClick={() => {
-                      setIsPopup(true)
-                      setIndex(index)
-                    }}
-                  >
-                    <img src={imgSrc} alt={data.alt} />
-                  </figure>
-
-                  <span className="date">2022.01.20</span>
-                </li>
-              )
-            })}
-          </Masonry>
+          <List />
         </div>
       </div>
 
@@ -198,6 +161,50 @@ function Gallery() {
         setEnableClick(true)
       }, 1000)
     }, 1000)
+  }
+
+  // 갤러리 리스트 함수
+  function List() {
+    return (
+      <Masonry
+        className={'gallery__list'}
+        elementType={'ul'}
+        disableImagesLoaded={false}
+        updateOnEachImageLoad={false}
+        options={MasonryOptions}
+      >
+        {items.map((data, index) => {
+          // 썸네일 이미지 주소
+          let imgSrc = `https://live.staticflickr.com/${data.server}/${data.id}_${data.secret}_m.jpg`
+
+          return (
+            <li className={'gallery__item'} key={index}>
+              <div className="number">
+                <span>
+                  {parseInt(index) < 9 ? '0' + (index + 1) : index + 1}
+                </span>
+              </div>
+
+              <div className="title__wrapper">
+                <h2>{data.title}</h2>
+                <p>{data.owner}</p>
+              </div>
+
+              <figure
+                onClick={() => {
+                  setIsPopup(true)
+                  setIndex(index)
+                }}
+              >
+                <img src={imgSrc} alt={data.alt} />
+              </figure>
+
+              <span className="date">2022.01.20</span>
+            </li>
+          )
+        })}
+      </Masonry>
+    )
   }
 }
 
