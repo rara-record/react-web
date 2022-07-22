@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function News() {
-  const date = new Date()
-
   // 초기 데이터 설정
   const basic = [
     { title: 'Hello1', content: 'Here comes description in detail.' },
@@ -47,14 +46,16 @@ function News() {
           {posts.map((post, index) => {
             if (index < 6) {
               return (
-                <article key={index}>
-                  <h3>{post.title}</h3>
-                  <div className="news__info">
-                    <span>by admin</span>
-                    <span>Housing</span>
-                    <span>November {index + 1}, 2017</span>
-                  </div>
-                  <p>{post.content}</p>
+                <article>
+                  <Link to="/community" key={index}>
+                    <h3>{post.title}</h3>
+                    <div className="news__info">
+                      <span>by admin</span>
+                      <span>Housing</span>
+                      <span>November {index + 1}, 2017</span>
+                    </div>
+                    <p>{post.content}</p>
+                  </Link>
                 </article>
               )
             }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function Members() {
   const path = process.env.PUBLIC_URL
@@ -19,9 +20,11 @@ function Members() {
           {members.map((member, index) => {
             return (
               <article key={index}>
-                <img src={path + member.image} alt={member.alt} />
-                <h2>{member.name}</h2>
-                <p>{member.position}</p>
+                <Link to="/about">
+                  <img src={path + member.image} alt={member.alt} />
+                  <h2>{member.name}</h2>
+                  <p>{member.position}</p>
+                </Link>
               </article>
             )
           })}

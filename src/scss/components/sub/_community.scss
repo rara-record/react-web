@@ -1,182 +1,107 @@
-.community {  
-  .list {
-    &__opt {
-      overflow:hidden; 
-      padding:10px 0; 
-      border-top:2px solid #000;
-    
-    
-      .hit {
-        float:left; 
-        margin:8px 0; 
-        padding-left:18px; 
-        background:url('/public/img/page_ico.gif') 0 1px no-repeat; 
-        font-size:15px;
-    
-        b {
-          color:#9a1824;
-        }
-      }
-    
-      div {
-        float:right;
-    
-        select {
-          .list_opt div select{width:110px; height:35px; padding-left:10px; border:1px solid #ccc;}
-    
-        }
-      }
-    }
+.community {
+  font-size: 16px;
+  background-color: #efefef;
 
-    &__style {
+  .inner {
+    padding: 15rem 0;
+
+    .input__box {
       width: 100%;
-      margin-bottom: 5rem;
-      border-top: 1px solid #999999;
-      border-collapse: collapse;
-
-      th {
-        padding: 1.4rem 0;
-        color: #333333;
-        font: 1.4rem/1 $font-main;
-        background: $white;
-        border-bottom: 1px solid #dbdbdb;
-      }
-
-      td {
-        padding: 2rem;
-        font: 1.6rem/1 $font-main;
-        letter-spacing: 0.5px;
-        text-align: center;
-        border-bottom: 1px solid #bbb;
-
-        a {
-          color: #333;
-        }
-
-        &:nth-of-type(2) {
-          text-align: left;
+      margin-bottom: 50px;
+      padding: 50px;
+      border: 1px solid #aaa;
+      input {
+        width: 60%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #bbb;
+        &::placeholder {
+          font-size: 12px;
         }
       }
+      textarea {
+        width: 60%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #bbb;
+        resize: none;
+      }
 
-      tr {
-        &:hover td {
-          background: #eeeded;
+      button {
+        width: 150px;
+        height: 30px;
+        margin-right: 10px;
+        color: #fff;
+        background: #555;
+        border: none;
+      }
+    }
+
+    .show__box {
+      width: 100%;
+      padding: 50px;
+      border: 1px solid #aaa;
+
+      article {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 30px 40px;
+        background: #fff;
+
+        .post {
+          width: 70%;
+
+          h2 {
+            margin-bottom: 5px;
+            color: #555;
+            font: bold 20px/1 'arial';
+          }
+          p {
+            color: #777;
+            font: 12px/1.2 'arial';
+          }
+
+          input {
+            width: 70%;
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            background: lightcyan;
+            border: 1px solid skyblue;
+          }
+          textarea {
+            width: 70%;
+            padding: 10px;
+            background: lightcyan;
+            border: 1px solid skyblue;
+            resize: none;
+          }
+        }
+
+        .btns {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0;
+
+          li {
+            display: inline-block;
+            margin: 5px;
+            color: orange;
+            font: 12px/1 'arial';
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            &:nth-of-type(2) {
+              color: red;
+            }
+          }
         }
       }
     }
-  }
-
-  .pagination {
-    position: relative;
-    width: 100%;
-    padding-bottom: 2rem;
-
-    text-align: center;
-
-    &::after {
-      display: block;
-      clear: both;
-      content: '';
-    }
-
-    .prev,
-    .next {
-      display: inline-block;
-      color: #666;
-      font: 2rem/3rem $font-main;
-      text-align: center;
-    }
-
-    .numbers {
-      @include flexCenter;
-      display: inline-flex;
-      font-size: 0;
-      text-align: center;
-
-      a {
-        display: inline-block;
-        width: 3rem;
-        height: 3rem;
-        margin: 0 0.5rem;
-        color: #666;
-        font: 1.1rem/3rem $font-main;
-        text-align: center;
-        transition: 0.5s;
-
-        &:hover {
-          font: bold 1.3rem/3rem;
-          border-bottom: 1px solid #bbb;
-        }
-      }
-    }
-  }
-
-  input {
-    border: 1px solid #000;
   }
 }
-
-// .community {
-//   background-color: #efefef;
-  
-//   .inner {
-//       padding: 15rem 0;
-
-//     .input__box {
-//       width: 100%; padding: 50px; margin-bottom: 50px; border: 1px solid #aaa;
-//       input {
-//         width: 60%; padding: 5px 10px; border: 1px solid #bbb; margin-bottom: 10px;
-//       }
-//       textarea {
-//         width: 60%; padding: 10px; border: 1px solid #bbb; margin-bottom: 15px; resize: none;
-//       }
-
-//       button {
-//         width: 150px; height: 30px; background: #555; border: none;
-//         color: #fff; margin-right: 10px;
-//       }
-//     } 
-
-//     .show__box {
-//       width: 100%; padding: 50px; border: 1px solid #aaa;
-
-//       article {
-//         width: 100%; padding: 30px 40px; background: #fff; margin-bottom: 20px;        
-//         display: flex; flex-wrap: wrap; 
-//         justify-content: space-between; align-content: center;
-
-//         .post {
-//           width: 70%;          
-
-//           h2 {
-//             font: bold 20px/1 'arial'; color: #555; margin-bottom: 5px;
-//           }
-//           p {
-//             font: 12px/1.2 'arial'; color: #777;
-//           }
-
-//           input {
-//             width: 70%; padding: 5px 10px; border: 1px solid skyblue; background: lightcyan;
-//             margin-bottom: 5px;
-//           }
-//           textarea {
-//             width: 70%; padding: 10px; border: 1px solid skyblue; background: lightcyan;
-//             resize: none;
-//           }
-//         }
-
-//         .btns {
-//           display: inline-flex; justify-content: center;
-//           font-size: 0; align-items: center;
-
-//           li {
-//             margin: 5px; border: none; background: none; display: inline-block;
-//             font: 12px/1 'arial'; cursor: pointer;
-//           }
-//         }
-        
-//       }
-//     }
-   
-//   }
-// }

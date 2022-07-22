@@ -1089,6 +1089,7 @@ footer .inner {
   .video .video__box {
     position: relative;
     z-index: 100;
+    flex-wrap: wrap;
     grid-gap: 2rem;
     margin-top: 5rem;
     display: flex;
@@ -1105,8 +1106,7 @@ footer .inner {
     display: flex;
     flex-wrap: wrap;
     grid-gap: 2rem;
-    align-content: space-between;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     height: 40vh;
     margin-top: 5rem; }
@@ -1150,12 +1150,12 @@ footer .inner {
     width: 10px;
     height: 10px;
     margin-bottom: 20px;
-    background-color: #111;
+    background-color: chocolate;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s; }
     #btns li.on {
-      height: 80px;
+      height: 60px;
       color: pink; }
 
 @media screen and (max-width: 1179px) {
@@ -1660,87 +1660,85 @@ footer .inner {
     text-transform: uppercase;
     cursor: pointer; }
 
-.community .list__opt {
-  overflow: hidden;
-  padding: 10px 0;
-  border-top: 2px solid #000; }
-  .community .list__opt .hit {
-    float: left;
-    margin: 8px 0;
-    padding-left: 18px;
-    background: url("/public/img/page_ico.gif") 0 1px no-repeat;
-    font-size: 15px; }
-    .community .list__opt .hit b {
-      color: #9a1824; }
-  .community .list__opt div {
-    float: right; }
-    .community .list__opt div select .list_opt div select {
-      width: 110px;
-      height: 35px;
-      padding-left: 10px;
-      border: 1px solid #ccc; }
-
-.community .list__style {
-  width: 100%;
-  margin-bottom: 5rem;
-  border-top: 1px solid #999999;
-  border-collapse: collapse; }
-  .community .list__style th {
-    padding: 1.4rem 0;
-    color: #333333;
-    font: 1.4rem/1 "Roboto Condensed", sans-serif;
-    background: white;
-    border-bottom: 1px solid #dbdbdb; }
-  .community .list__style td {
-    padding: 2rem;
-    font: 1.6rem/1 "Roboto Condensed", sans-serif;
-    letter-spacing: 0.5px;
-    text-align: center;
-    border-bottom: 1px solid #bbb; }
-    .community .list__style td a {
-      color: #333; }
-    .community .list__style td:nth-of-type(2) {
-      text-align: left; }
-  .community .list__style tr:hover td {
-    background: #eeeded; }
-
-.community .pagination {
-  position: relative;
-  width: 100%;
-  padding-bottom: 2rem;
-  text-align: center; }
-  .community .pagination::after {
-    display: block;
-    clear: both;
-    content: ''; }
-  .community .pagination .prev,
-  .community .pagination .next {
-    display: inline-block;
-    color: #666;
-    font: 2rem/3rem "Roboto Condensed", sans-serif;
-    text-align: center; }
-  .community .pagination .numbers {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: inline-flex;
-    font-size: 0;
-    text-align: center; }
-    .community .pagination .numbers a {
-      display: inline-block;
-      width: 3rem;
-      height: 3rem;
-      margin: 0 0.5rem;
-      color: #666;
-      font: 1.1rem/3rem "Roboto Condensed", sans-serif;
-      text-align: center;
-      transition: 0.5s; }
-      .community .pagination .numbers a:hover {
-        font: bold 1.3rem/3rem;
-        border-bottom: 1px solid #bbb; }
-
-.community input {
-  border: 1px solid #000; }
+.community {
+  font-size: 16px;
+  background-color: #efefef; }
+  .community .inner {
+    padding: 15rem 0; }
+    .community .inner .input__box {
+      width: 100%;
+      margin-bottom: 50px;
+      padding: 50px;
+      border: 1px solid #aaa; }
+      .community .inner .input__box input {
+        width: 60%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #bbb; }
+        .community .inner .input__box input::placeholder {
+          font-size: 12px; }
+      .community .inner .input__box textarea {
+        width: 60%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #bbb;
+        resize: none; }
+      .community .inner .input__box button {
+        width: 150px;
+        height: 30px;
+        margin-right: 10px;
+        color: #fff;
+        background: #555;
+        border: none; }
+    .community .inner .show__box {
+      width: 100%;
+      padding: 50px;
+      border: 1px solid #aaa; }
+      .community .inner .show__box article {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 30px 40px;
+        background: #fff; }
+        .community .inner .show__box article .post {
+          width: 70%; }
+          .community .inner .show__box article .post h2 {
+            margin-bottom: 5px;
+            color: #555;
+            font: bold 20px/1 'arial'; }
+          .community .inner .show__box article .post p {
+            color: #777;
+            font: 12px/1.2 'arial'; }
+          .community .inner .show__box article .post input {
+            width: 70%;
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            background: lightcyan;
+            border: 1px solid skyblue; }
+          .community .inner .show__box article .post textarea {
+            width: 70%;
+            padding: 10px;
+            background: lightcyan;
+            border: 1px solid skyblue;
+            resize: none; }
+        .community .inner .show__box article .btns {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0; }
+          .community .inner .show__box article .btns li {
+            display: inline-block;
+            margin: 5px;
+            color: orange;
+            font: 12px/1 'arial';
+            background: none;
+            border: none;
+            cursor: pointer; }
+            .community .inner .show__box article .btns li:nth-of-type(2) {
+              color: red; }
 
 .contact .sub__visual {
   position: relative;

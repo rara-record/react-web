@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { setYoutube } from '../../redux/actions'
 
 function Video() {
@@ -35,10 +36,14 @@ function Video() {
             lorem quis
           </p>
         </div>
-        <div className="video__box">
-          {vidData.map((vid, index) => {
-            {
-              return <img key={index} src={vid.snippet.thumbnails.medium.url} />
+        <div className="video__box" style={{ flex: 'wrap' }}>
+          {vidData.map((video, index) => {
+            if (index < 6) {
+              return (
+                <Link to="/youtube" key={index}>
+                  <img src={video.snippet.thumbnails.medium.url} alt="video" />
+                </Link>
+              )
             }
           })}
         </div>
