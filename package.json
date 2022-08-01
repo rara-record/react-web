@@ -57,11 +57,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rara-record/react-portfolio.git"
+    "url": "git+https://github.com/rara-record/react-web.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rara-record/react-portfolio/issues"
+    "url": "https://github.com/rara-record/react-web/issues"
   }
 }
