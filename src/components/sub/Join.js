@@ -90,7 +90,6 @@ function Join() {
 
   useEffect(() => {
     frame.current.classList.add('on')
-    console.log(err)
     const len = Object.keys(err).length
     if (len === 0 && isSubmit) {
       console.log('인증 성공')
@@ -99,7 +98,7 @@ function Join() {
       console.log('인증 실패')
       setSuccess(false)
     }
-  }, [err])
+  }, [err, isSubmit])
 
   return (
     <main className="join" ref={frame}>

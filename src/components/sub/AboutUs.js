@@ -1,14 +1,12 @@
 import React from 'react'
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { setMembers } from '../../redux/actions'
+import { useSelector } from 'react-redux'
 
 function About() {
   const path = process.env.PUBLIC_URL
   const frame = useRef(null)
   const members = useSelector((state) => state.memberReducer.members)
-  const dispatch = useDispatch()
 
   useEffect(() => {
     frame.current.classList.add('on')
