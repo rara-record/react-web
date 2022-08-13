@@ -1,85 +1,30 @@
-##  리액트 세팅
-1. npx create-react-app
-2. npx create-react-app@5.0.0 my-app
+# React Web BFOLIO
+![chrome_Bf4J1J45Z0](https://user-images.githubusercontent.com/70184893/184495572-f77e7539-0af2-4dfc-b365-5202968705d6.png)
 
-##  라우터 설치
-1. npm install react-router-dom@5 --save
-2. index.js에 라우터 모듈 import
-```react
-import {BrowserRouter} from 'react-router-dom';
-```
-3. index.js에 App컴포넌트를  브라우저 라우터 컴포넌트로 패키징
-```react
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>    
-  </React.StrictMode>,
-  
-  document.getElementById('root')
-);
-```
-4. app.js에 import
-```react
-import {Route} from "react-router-dom";
-```
+## 배포
+[사이트 구경하기](https://rara-record.github.io/react-web/#/)💗
 
-## Redux 설치
-```react
-npm install redux react-redux --save
-```
+## 페이지별 구성요소
+### 메인페이지
+
+- 비주얼영역 
+- 간단한 인터렉션
+- 전체 페이지 세로 스크롤 모션
+- 유튜브, 플릭커, 최신 게시글 미리보기 (Redux)
 
 
-## sass 세팅
-1. npm i node-sass
-2. "sass": "node-sass -wr --source-map true src/scss/style.scss src/css/style.css"
-3. npm i sass-lint
-4. .sass-lint.yml
-5. npm run sass
-6. ruby sass : sass --watch -E utf-8 scss/style.scss:css/style.css
+### 서브페이지
+**ABOUT**
+![chrome_uD9mu4QQC2](https://user-images.githubusercontent.com/70184893/184496141-5caa3137-f167-456e-b122-ea5e77c2de8a.png)
+**GALLERY**
+![chrome_4hTcwNp8Fb](https://user-images.githubusercontent.com/70184893/184495823-817b382e-3b9e-46e5-afa2-684333bea9cf.gif)
+**CONTACT**
+![chrome_kO5MUJ3KX3](https://user-images.githubusercontent.com/70184893/184496105-a9895634-cb18-419e-afd3-498597476d65.gif)
 
-## gitHub Page배포
-1. npm install gh-pages --save-dev
-2. package.json 설정
-> 3. "homepage": "https://dcodelabTutor.github.io/react_page",
-> 4. scripts 부분에
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
-5. npm run deploy 
-     
-## emmet json파일 설정
-"emmet.includeLanguages": {
-  "javascript": "javascriptreact"
-}, 
-
-## 확장
-ES7 React/Redux/GraphQL/React-Native snippets
-
-### - pretter/eslint 
-https://poiemaweb.com/eslint
-
-### React
-- App.js
-```react
-import "./css/style.css";
-import 파일명 from './파일주소'
-```
-
-- 링크, 네비, 라우터 impot구문
-```react
-import {NavLink, Link, Route} form 'react-router-dom';
-```
-
-- NavLink 쓰는법 예시
-```react
-import {NavLink} from "react-router-dom"; 
-<NavLink exact to="/">DCODELAB</NavLink>
-```
-
-- public 폴더
-```react
-const path = process.env.PUBLIC_URL
-```
-
+- ABOUT : 조직도, 맴버소개 페이지 - member.json에서 데이터 바인딩해서 동적으로 페이지 컴포넌트 구성
+- COMMUNITY : 게시판 페이지 - board.json에서 데이터를 바인딩, 검색기능, CRUD, localStorage, redux, 
+- GALLERY :  Fllickr 이미지 갤러리 - Flickr Api로 부터 데이터를 받아서 동적으로 갤러리 컴포넌트 구성, 팝업기능, masonry Api
+- YOUTUBE :  Youtube 동영상 갤러리 - Youtube Api로 부터 동적으로 동영상 갤러리 컴포넌트 구성
+- JOIN : 회원가입 페이지 - Form validation 기능 구현된 회원인증 컴포넌트 구성
+- CONTACT : 찾아오는 길 페이지 - Kakao Map Api로 카카오 지도 커스터마이징 컴포넌트 구성
 
