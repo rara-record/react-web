@@ -29,7 +29,7 @@ function News() {
   // 로컬 스토리지에 데이터 저장하기
   useEffect(() => {
     localStorage.setItem('posts', JSON.stringify(posts))
-  }, [])
+  }, [posts])
 
   return (
     <section className="news myScroll">
@@ -46,7 +46,7 @@ function News() {
           {posts.map((post, index) => {
             if (index < 6) {
               return (
-                <article>
+                <article key={index}>
                   <Link to="/community" key={index}>
                     <h3>{post.title}</h3>
                     <div className="news__info">

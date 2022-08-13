@@ -157,20 +157,6 @@ function About() {
                   )
                 })}
               </div>
-              <button
-                onClick={() => {
-                  const newMembers = [...members]
-                  newMembers[0] = {
-                    name: 'Julia',
-                    position: 'Vice President',
-                    image: '/img/about-team-img-01.jpg',
-                    alt: 'Team1',
-                  }
-                  dispatch(setMembers(newMembers))
-                }}
-              >
-                맴버 변경
-              </button>
             </div>
 
             <div className="bg-grid">

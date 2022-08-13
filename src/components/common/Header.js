@@ -1,15 +1,14 @@
-import { useEffect, useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import Line from './../common/Line'
 
 function Header(props) {
-  const active = { color: 'aqua' }
+  const active = { color: '#c5a47e' }
 
   return (
     <header className={`${props.type} myScroll `}>
       <h1 className="logo">
         <NavLink exact to="/">
-          D.
+          BFOLIO
         </NavLink>
       </h1>
 

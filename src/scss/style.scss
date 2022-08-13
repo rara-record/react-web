@@ -1,5 +1,9 @@
 @charset 'utf-8';
 
+$web : 1199px;
+$tablet : 739px;
+$mobile : 539px;
+
 // variables
 @import './abstracts/variables/typography';
 @import './abstracts/variables/color';

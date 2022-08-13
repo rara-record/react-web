@@ -31,7 +31,6 @@ function Main() {
     let offSetArray = []
     for (let sec of sections) offSetArray.push(sec.offsetTop)
     position.current = offSetArray
-    // console.log(position.current)
   }
 
   // useRef로 담아놓은 세로 섹션 위치만큼 반복을 돌면서

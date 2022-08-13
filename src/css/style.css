@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -678,8 +679,10 @@ header.sub {
   header.sub .bg-grid {
     display: none; }
 
-footer .inner {
-  min-height: 0; }
+footer {
+  font: normal 1.2rem/1 'arial'; }
+  footer .inner {
+    min-height: 0; }
 
 .visual {
   position: relative;
@@ -1150,7 +1153,7 @@ footer .inner {
     width: 10px;
     height: 10px;
     margin-bottom: 20px;
-    background-color: chocolate;
+    background-color: tan;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s; }
@@ -2004,139 +2007,85 @@ footer .inner {
           font: normal 1.2rem/1 "Roboto", sans-serif;
           color: #9a1824; }
 
-.join .inner {
-  padding: 15rem 0; }
-  .join .inner h1 {
-    margin-bottom: 5rem;
-    font: bold 7rem/1 "Roboto Condensed", sans-serif; }
-  .join .inner .step__box {
-    position: relative;
-    margin-bottom: 10rem;
-    text-align: center; }
-    .join .inner .step__box ol {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-items: center;
-      justify-content: center; }
-      .join .inner .step__box ol li {
-        position: relative;
-        margin-left: 13%; }
-        .join .inner .step__box ol li div {
-          box-sizing: border-box;
-          width: 9rem;
-          height: 9rem;
-          margin: 0 auto;
-          color: #555b65;
-          background-color: #fff;
-          border: 6px solid #727b89;
-          border-radius: 100px; }
-          .join .inner .step__box ol li div p {
-            margin: 1.8rem 0 0.7rem;
-            font: normal 1.4rem/1 "Roboto", sans-serif;
-            text-transform: uppercase; }
-          .join .inner .step__box ol li div em {
-            font: bold 2.4rem/1 "Roboto", sans-serif; }
-        .join .inner .step__box ol li span {
-          display: block;
-          margin-top: 2rem;
-          color: #555b65;
-          font: bold 1.6rem/1 "Roboto", sans-serif; }
-        .join .inner .step__box ol li:first-child {
-          margin-left: 0; }
-        .join .inner .step__box ol li:nth-of-type(3) div {
+.join .inner table {
+  width: 100%;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333; }
+  .join .inner table th,
+  .join .inner table td {
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #ddd; }
+  .join .inner table th {
+    width: 20%;
+    color: #555;
+    font: bold 1.6rem/1 'arial';
+    text-align: left;
+    border-right: 1px solid #ddd; }
+    .join .inner table th.btnSet {
+      text-align: center;
+      border-right: none; }
+      .join .inner table th.btnSet input[type='reset'],
+      .join .inner table th.btnSet input[type='submit'] {
+        width: 15rem;
+        height: 3.2rem;
+        margin: 1rem;
+        text-align: center;
+        border: 1px solid #555;
+        cursor: pointer;
+        transition: 0.5s; }
+        .join .inner table th.btnSet input[type='reset']:hover,
+        .join .inner table th.btnSet input[type='submit']:hover {
           color: #fff;
-          background-color: #9a1824;
-          border: 6px solid #9a1824; }
-        .join .inner .step__box ol li:nth-of-type(3) span {
-          color: #9a1824; }
-      .join .inner .step__box ol::before {
-        position: absolute;
-        top: 4.2rem;
-        left: 0;
-        width: 100%;
-        height: 0.6rem;
-        background-color: #eee;
-        content: ''; }
-  .join .inner .join__wrapper {
-    margin-top: 2rem;
-    color: #353535; }
-    .join .inner .join__wrapper .join__title {
-      margin-bottom: 2rem; }
-      .join .inner .join__wrapper .join__title em {
-        float: left;
-        padding-left: 30px;
-        font: normal 1.8rem/1 "Roboto Condensed", sans-serif;
-        background: url("/public/img/join-dot.gif") 0 0 no-repeat; }
-      .join .inner .join__wrapper .join__title span {
-        position: relative;
-        float: right;
-        margin-top: 0.4rem;
-        padding-right: 1rem;
-        color: #9a1824;
-        font: normal 1.4rem/1 "Roboto", sans-serif; }
-        .join .inner .join__wrapper .join__title span::after {
-          position: absolute;
-          top: 0;
-          right: 0;
-          width: 0.3rem;
-          height: 0.3rem;
-          background-color: #9a1824;
-          border: 1px solid #9a1824;
-          border-radius: 50%;
-          content: ''; }
-      .join .inner .join__wrapper .join__title::after {
-        display: block;
-        clear: both;
-        content: ''; }
-    .join .inner .join__wrapper form {
-      border-top: 2px solid #000; }
-      .join .inner .join__wrapper form colgroup head {
-        width: 20rem; }
-      .join .inner .join__wrapper form table {
-        width: 100%; }
-        .join .inner .join__wrapper form table tr th {
-          width: 20%;
-          padding: 3rem 0 3rem 2.5rem;
-          font: bold 1.6rem/1 "Roboto", sans-serif;
-          text-align: left;
-          border-bottom: 1px solid #e1e1e1; }
-          .join .inner .join__wrapper form table tr th label {
-            position: relative;
-            padding-right: 1rem; }
-            .join .inner .join__wrapper form table tr th label::after {
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: 0.3rem;
-              height: 0.3rem;
-              background-color: #9a1824;
-              border: 1px solid #9a1824;
-              border-radius: 50%;
-              content: ''; }
-        .join .inner .join__wrapper form table tr td {
-          padding: 14px 0;
-          border-bottom: 1px solid #e1e1e1; }
-          .join .inner .join__wrapper form table tr td input {
-            box-sizing: border-box;
-            width: 183px;
-            height: 48px;
-            padding: 14px 0 13px 15px;
-            font: normal 1.6rem/1 "Roboto", sans-serif;
-            border: 1px solid #ccc; }
-            .join .inner .join__wrapper form table tr td input:focus {
-              border-color: #9a1824; }
-          .join .inner .join__wrapper form table tr td button {
-            display: inline-block;
-            width: 10rem;
-            margin-left: 1rem;
-            padding: 1.6rem;
-            color: white;
-            font: normal 1.5rem/1 "Roboto", sans-serif;
-            text-align: center;
-            background-color: #555b65; }
-          .join .inner .join__wrapper form table tr td p {
-            margin-top: 1rem;
-            font: normal 1.3rem/1 "Roboto", sans-serif; }
+          background: #555; }
+  .join .inner table td {
+    font-size: 1.4rem; }
+    .join .inner table td input[type='text'],
+    .join .inner table td input[type='password'],
+    .join .inner table td select {
+      width: 60%;
+      padding: 1rem 2rem;
+      border: 1px solid #aaa; }
+    .join .inner table td textarea {
+      width: 60%;
+      height: 15rem;
+      padding: 1rem 2rem;
+      border: 1px solid #aaa;
+      resize: none; }
+    .join .inner table td label {
+      margin-right: 0.5rem;
+      color: #777;
+      font: 1.4rem/1 'arial'; }
+    .join .inner table td input[type='radio'],
+    .join .inner table td input[type='checkbox'] {
+      margin-right: 2rem; }
+
+.join .inner .err {
+  margin-left: 1rem;
+  color: #f52d2d;
+  font: 1.2rem/1 '맑은 고딕'; }
+
+@media screen and (max-width: 1199px) {
+  .join .inner table td input[type='text'],
+  .join .inner table td input[type='password'],
+  .join .inner table td select {
+    width: 90%; }
+  .join .inner table td textarea {
+    width: 90%; } }
+
+@media screen and (max-width: 739px) {
+  .join .inner table th {
+    position: absolute;
+    top: -99999px;
+    opacity: 0; }
+    .join .inner table th.btnSet {
+      position: relative;
+      top: 0px;
+      opacity: 1; }
+  .join .inner table td input[type='text'],
+  .join .inner table td input[type='password'],
+  .join .inner table td select {
+    width: 100%; }
+  .join .inner table td textarea {
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,10 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Navigation, Parallax } from 'swiper'
 import 'swiper/swiper.scss'
 import 'swiper/components/navigation/navigation.scss'
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa'
 
 function Visual() {
   const path = process.env.PUBLIC_URL
-  const [swiper, setSwiper] = useState(null)
+  const [setSwiper] = useState(null)
   const [mainImageIndex, setMainImageIndex] = useState(0)
 
   SwiperCore.use([Navigation, Parallax])
@@ -45,7 +46,7 @@ function Visual() {
     <figure className="visual">
       <div className="visual__contents">
         <div className="inner">
-          <Swiper {...swiperParams} ref={setSwiper} className="mySwiper">
+          <Swiper ref={setSwiper} {...swiperParams} className="mySwiper">
             {SliderData.map((item, index) => {
               return (
                 <SwiperSlide key={index}>
@@ -67,13 +68,7 @@ function Visual() {
                       <p className="paragraph" data-swiper-parallax-x="-40%">
                         {item.paragraph}
                       </p>
-                      <a
-                        className="link"
-                        href="#"
-                        data-swiper-parallax-x="-30%"
-                      >
-                        Discover
-                      </a>
+                      Discover
                       <span className="number" data-swiper-parallax-y="60%">
                         {index + 1}
                       </span>
@@ -82,11 +77,12 @@ function Visual() {
                 </SwiperSlide>
               )
             })}
+
             <button className="prev" ref={navigationPrevRef}>
-              <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
+              <FaLongArrowAltLeft size="16" color="#272727" />
             </button>
             <button className="next" ref={navigationNextRef}>
-              <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <FaLongArrowAltRight size="16" color="#272727" />
             </button>
           </Swiper>
 
@@ -120,7 +116,7 @@ function Visual() {
             </div>
 
             <p className="copyright">
-              © 2021 <span>NEXT ARCH.</span> All right reserved.
+              © 2022 <span>BORA </span> Frontend Developer
             </p>
           </footer>
         </div>
